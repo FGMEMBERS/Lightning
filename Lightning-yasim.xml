@@ -1,0 +1,181 @@
+<!-- English Electric Lightning F.1A -->
+
+<!--  I have failed to make this converge with the correct engine thrust
+	available - if anyone else can make it fly well, I'd be very pleased
+	to accept their config and offer both JSBSim and YASim variants.
+
+	There are several external animations which are easy with YASim and
+	not (as far as I am aware) possible with JSBSim
+	  
+     AJ MacLeod. aj-lists@adeptopensource.co.uk
+	 
+	 Ver 0.0.1
+	 
+-->
+
+<!-- datum is nose -->
+
+<airplane mass="25735">
+
+<!-- Approach configuration -->
+<approach speed="160" aoa="8">
+	<control-setting axis="/controls/engines/engine[0]/throttle" value="0.39"/>
+	<control-setting axis="/controls/engines/engine[1]/throttle" value="0.39"/>
+	<control-setting axis="/controls/flight/flaps" value="1.0"/>
+	<control-setting axis="/controls/gear/gear-down" value="1"/>
+	<control-setting axis="/controls/flight/speedbrake" value="1"/>
+	<control-setting axis="/controls/engines/engine[0]/afterburner" value="0"/>
+	<control-setting axis="/controls/engines/engine[1]/afterburner" value="0"/>
+</approach>
+
+<!-- Cruise configuration  -->
+<!--
+	<cruise speed="800" alt="10000">
+	<control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+	<control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+	<control-setting axis="/controls/flight/flaps" value="0.0"/>
+	<control-setting axis="/controls/gear/gear-down" value="0"/>
+	<control-setting axis="/controls/flight/speedbrake" value="0"/>
+	<control-setting axis="/controls/engines/engine[0]/afterburner" value="0"/>
+	<control-setting axis="/controls/engines/engine[1]/afterburner" value="0"/>
+-->
+	<cruise speed="1203" alt="40000" fuel="0.5">
+	<control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+	<control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+	<control-setting axis="/controls/flight/flaps" value="0.0"/>
+	<control-setting axis="/controls/gear/gear-down" value="0"/>
+	<control-setting axis="/controls/flight/speedbrake" value="0"/>
+	<control-setting axis="/controls/engines/engine[0]/afterburner" value="1"/>
+	<control-setting axis="/controls/engines/engine[1]/afterburner" value="1"/>
+</cruise>
+
+<!-- pilot eyepoint -->
+<cockpit x="0.0" y="0.0" z=".80"/>
+
+<!-- fuselage -->
+<fuselage ax="0" ay="0" az="0" bx="-13.716" by="0" bz="0" width="1.2" taper= "0.8" midpoint= "-3.5" />
+		  
+<!--The wing length is from tips to fuselage. -->
+
+<wing x="-6.32" y="0.64" z="0.18" taper=".45" incidence="2.0" length="6.27" chord="5.45" sweep="60" dihedral="-7.5" twist="3.0">
+  <stall aoa="28" width="8" peak="1.3"/>
+  <flap0 start="0.01" end="0.39" lift="1.4" drag="1.6"/>
+  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+  <flap1 start="0.47" end="0.91" lift="1.1" drag="1.1"/>
+  <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+  <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+  <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+  <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  <control-speed control="FLAP0" transition-time="8"/>
+  <control-speed control="FLAP1" transition-time="1"/>
+</wing>
+
+<!-- Elevators -->  
+<hstab x="-12.47" y="0.541" z="-0.67" incidence="0" length="2.05" chord="1.91" sweep="60" taper="0.54">
+	<stall aoa="27" width="10" peak="1.5"/>
+	<flap0 start="0" end="1" lift="1.5" drag="1.4"/>
+	<control-input axis="/controls/flight/elevator" control="FLAP0"/>
+	<control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+	<control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+	<control-speed control="FLAP0" transition-time="1"/>
+
+<!-- flap1 simulates the airbrake -->  
+	<flap1 start="0" end="0.25" lift="0.01" drag="3"/>
+	<control-input axis="/controls/flight/speedbrake" control="FLAP1"/>
+	<control-output control="FLAP1" prop="/surface-positions/speedbrake-pos-norm"/>
+	<control-speed control="FLAP1" transition-time="5"/>
+</hstab>
+
+<vstab x="-13.03" y="0" z="0.52" taper=".3177" length="3.61" chord="3.27" sweep="40" >
+	<stall aoa="27" width="10" peak="1.5"/>
+	<flap0 start="0" end=".6" lift="1.2" drag="1.2"/>
+	<control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+	<control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+	<control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+</vstab>
+
+<!-- RR Avon Mk210 turbojets, 11250lbs sea level thrust, 14430 Reheat. The Avon is a single shaft,
+axial flow engine -->
+
+<jet x="-4.98" y="0" z="-0.45" mass="2550" thrust="11250" afterburner="1430" n1-idle="32" n1-max="106" spool-time="1" tsfc="0.95">
+	<actionpt x="-15" y="0" z="-0.45"/>
+	<control-input axis="/controls/engines/engine[0]/throttle" src0="0.0" dst0="0.0" src1="0.88" dst1="1.0" control="THROTTLE"/>
+	<control-input axis="/controls/engines/engine[0]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+	<control-output control="REHEAT" prop="engines/engine[0]/afterburner" />
+</jet>
+
+<jet x="-6.1" y="0" z="0.45" mass="2550" thrust="11250" afterburner="1430" n1-idle="32" n1-max="106" spool-time="1" tsfc="0.95">
+	<actionpt x="-15" y="0" z="0.45"/>
+	<control-input axis="/controls/engines/engine[1]/throttle" src0="0.0" dst0="0.0" src1="0.88" dst1="1.0" control="THROTTLE"/>
+	<control-input axis="/controls/engines/engine[1]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
+	<control-output control="REHEAT" prop="engines/engine[1]/afterburner" />
+</jet>
+
+<!-- Braking Chute -->
+
+<!--
+<weight x="-15" y="0" z="0.9" mass-prop="/sim/model/lightning/controls/flight/chute_open" size="20" />
+-->
+
+<!-- gear -->
+<!-- nose -->
+<gear x="-1.70" y="0" z="-1.60" retract-time="6" compression="0.3" spring="0.6" damp="2" castering="1">
+	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+	<control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1" dst0="1" dst1="1" control="CASTERING"/>
+	<control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+	<control-speed control="EXTEND" transition-time="6"/>
+</gear>
+
+<!-- left main -->
+<gear x="-8.16" y="1.70" z="-1.50" upx="0.21888" upy="-0.13897" upz="0.349791" retract-time="5" compression="0.4" spring="0.8" damp="3">
+	<control-input axis="/controls/gear/brake-left" control="BRAKE"/> 	
+	<control-input axis="/controls/gear/brake-parking" control="BRAKE" /> 
+	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+	<control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+	<control-speed control="EXTEND" transition-time="5"/>
+	<control-speed control="BRAKE" transition-time="9"/>
+</gear>
+
+<!-- right main -->
+	<gear x="-8.16" y="-1.70" z="-1.50" upx="0.21888" upy="0.13897" upz="0.349791" retract-time="5" compression="0.4" spring="0.8" damp="3">
+	<control-input axis="/controls/gear/brake-right" control="BRAKE"/> 
+	<control-input axis="/controls/gear/brake-parking" control="BRAKE" /> 
+	<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+	<control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+	<control-speed control="EXTEND" transition-time="5"/>
+	<control-speed control="BRAKE" transition-time="9"/>
+</gear>
+
+<!-- Hook - F.6 only?
+<gear x="-10.3" y="0.0" z="-1.49" compression="1" spring="0.15">
+  <control-input axis="/controls/gear/tailhook" control="EXTEND"/>
+  <control-speed control="EXTEND" transition-time="5"/>
+  <control-output control="EXTEND" prop="/gear/tailhook/position-norm"/>
+</gear> -->
+
+<!-- Lightning F.1A had 5000lb fuel in the wing tanks and 2000 more in ventral -->
+<tank x="-9.3" y="0" z="-1.1" jet="true" capacity="2000"/> <!-- Ventral tank, smaller than later marks -->
+
+<!-- ballast -->
+
+<ballast x="-2.0" y="0" z="-0.45" mass="1200"/> <!-- cockpit -->
+<ballast x="-11" y="0" z="-0.35" mass="31"/>  <!-- AVPIN tank  -->
+<ballast x="-3.25" y="-0.2" z="0.4" mass="192"/> <!-- ADEN cannon -->
+<ballast x="-3.25" y="0.2" z="0.4" mass="192"/> <!-- ADEN cannon -->
+<ballast x="-7.95" y="1" z="0" mass="100"/>  <!-- trim -->
+
+
+
+<!-- 
+The Lightning F.1A has two forward pylons.  The usual configuration was with both carrying DA or live Firestreak missiles.  A clean aircraft is modeled here.
+-->
+
+<!--
+<weight x="-0.39" y="0" z="-1.33" size="1.5" 
+        mass-prop="/yasim/lightning/weights/right-inboard-lbs"/>
+<weight x="-0.79" y="2" z="-1.33" size="1" 
+        mass-prop="/yasim/lightning/weights/left-inboard-lbs"/>
+
+-->
+</airplane>

@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>Main Panel Hotspots</name>
+ <background>Aircraft/Lightning/Models/transparent.rgb</background>
+ <x>512</x>
+ <y>384</y> 
+ <w>1024</w>
+ <h>768</h>
+ <y-offset>0</y-offset>
+ <instruments>
+  <instrument>
+ 
+   <x>512</x>
+   <y>384</y>
+   <w>1024</w>
+   <h>768</h>
+   <w-base>1024</w-base>
+   <h-base>1024</h-base>
+
+  
+ <layers>
+ <layer>
+   <name>background</name>
+   <texture>
+     <path>Aircraft/Hunter/Models/transparent-bg.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+   </texture>
+  </layer>
+<!--
+  <layer>
+     <name>grid</name>
+     <texture>
+      <path>Aircraft/Lightning/Models/hotspotgrid.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.0</y1>
+      <x2>1.0</x2>
+      <y2>1.0</y2>
+     </texture>
+    </layer>
+-->  
+
+
+  </layers> 
+ <actions>
+
+    <!--
+    <action>
+     <name>_____</name>
+     <button>0</button>
+     <x>_____</x>
+     <y>_____</y>
+     <w>_____</w>
+     <h>_____</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>_____</property>
+      <step>_____</step>
+      <min>_____</min>
+      <max>_____</max>
+      <wrap>_____</wrap>
+     </binding>
+    </action>
+    -->
+<!-- Main Panel Hotspots -->
+	<!-- Attitude -->
+    <action>
+     <button>0</button>
+     <x>55</x>
+     <y>230</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/attitude-indicator/horizon-offset-deg</property>
+      <step>-1</step>
+      <min>-10</min>
+      <max>10</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>70</x>
+     <y>230</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/attitude-indicator/horizon-offset-deg</property>
+      <step>1</step>
+      <min>-10</min>
+      <max>10</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+	
+	<!-- Altimeter -->
+    <action>
+     <button>0</button>
+     <x>-85</x>
+     <y>-15</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/altimeter/setting-inhg</property>
+      <step>-0.01</step>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>-70</x>
+     <y>-15</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/altimeter/setting-inhg</property>
+      <step>0.01</step>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
+
+    <!-- Port Panel Hotspots -->
+    <action>
+     <button>0</button>
+     <x>-225</x>
+     <y>340</y>
+     <w>30</w>
+     <h>30</h>
+     <binding>
+      <command>nasal</command>
+      <script>Lightning.flaps(1)</script>
+      </binding>
+    </action>
+
+    <action>
+     <button>0</button>
+     <x>-225</x>
+     <y>380</y>
+     <w>30</w>
+     <h>30</h>
+     <binding>
+      <command>nasal</command>
+      <script>Lightning.flaps(0)</script>
+     </binding>
+    </action>
+
+	<!-- Chute Jettison -->
+    <action>
+     <button>0</button>
+     <x>-200</x>
+     <y>450</y>
+     <w>30</w>
+     <h>45</h>
+     <binding>
+      <command>property-assign</command>
+      <property>controls/switches/chute_jett</property>
+      <value type="int">1</value>
+     </binding>
+     <binding>
+      <command>property-assign</command>
+		<condition>
+			<greater-than>
+				<property>/systems/electrical/outputs/chute_jett</property>
+				<value>20</value>
+			</greater-than>
+		</condition>
+      <property>sim/model/lightning/controls/flight/chute_jettisoned</property>
+      <value type="int">1</value>
+     </binding>
+     <binding>
+      <command>property-assign</command>
+		<condition>
+			<greater-than>
+				<property>/systems/electrical/outputs/chute_jett</property>
+				<value>20</value>
+			</greater-than>
+		</condition>
+      <property>sim/model/lightning/controls/flight/chute_open</property>
+      <value type="int">0</value>
+     </binding>
+     <mod-up>
+      <binding>
+      <command>property-assign</command>
+      <property>controls/switches/chute_jett</property>
+      <value type="int">0</value>
+      </binding>
+     </mod-up>
+    </action>
+   
+	<!-- Chute Deploy -->
+    <action>
+     <button>0</button>
+     <x>-230</x>
+     <y>170</y>
+     <w>60</w>
+     <h>45</h>
+     <binding>
+      <command>property-assign</command>
+      <property>sim/model/lightning/controls/flight/chute_deployed</property>
+      <value type="int">1</value>
+     </binding>
+     <binding>
+      <command>property-assign</command>
+      <property>sim/model/lightning/controls/flight/chute_open</property>
+      <value type="int">1</value>
+     </binding>
+     <binding>
+      <command>nasal</command>
+      <script>Lightning.chuteAngle(0)</script>
+     </binding>
+    </action>
+	
+	<!-- Gear up -->
+    <action>
+     <button>0</button>
+     <x>-270</x>
+     <y>20</y>
+     <w>20</w>
+     <h>40</h>
+     <binding>
+      <command>nasal</command>
+      <script>controls.gearDown(-1)</script>
+     </binding>
+     <binding>
+      <command>property-assign</command>
+      <property>sim/model/lightning/controls/gear-guard-open</property>
+      <value type="int">1</value>
+     </binding>
+     <mod-up>
+      <binding>
+      <command>property-assign</command>
+      <property>sim/model/lightning/controls/gear-guard-open</property>
+      <value type="int">0</value>
+      </binding>
+     </mod-up>
+    </action>
+   	<!-- Gear Down -->
+    <action>
+     <button>0</button>
+     <x>-270</x>
+     <y>-50</y>
+     <w>20</w>
+     <h>40</h>
+     <binding>
+      <command>nasal</command>
+      <script>controls.gearDown(1)</script>
+     </binding>
+    </action>
+ <!-- Starboard Panel Hotspots -->
+    <action>
+     <button>0</button>
+     <x>275</x>
+     <y>-330</y>
+     <w>25</w>
+     <h>50</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/fuel/bingo[0]</property>
+      <step>-1</step>
+      <min>0</min>
+      <max>26</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
+    <action>
+     <button>0</button>
+     <x>305</x>
+     <y>-330</y>
+     <w>25</w>
+     <h>50</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/fuel/bingo[0]</property>
+      <step>1</step>
+      <min>0</min>
+      <max>26</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
+    <action>
+     <button>0</button>
+     <x>355</x>
+     <y>-330</y>
+     <w>25</w>
+     <h>50</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/fuel/bingo[1]</property>
+      <step>-1</step>
+      <min>0</min>
+      <max>26</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
+    <action>
+     <button>0</button>
+     <x>375</x>
+     <y>-330</y>
+     <w>25</w>
+     <h>50</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/fuel/bingo[1]</property>
+      <step>1</step>
+      <min>0</min>
+      <max>26</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
+   </actions>
+  </instrument>
+ </instruments>
+
+</PropertyList>
+

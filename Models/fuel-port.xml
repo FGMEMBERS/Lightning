@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!-- fuel port wing tank-->
+
+<PropertyList>
+
+ <path>fuel.ac</path>
+
+ <animation>
+
+  <type>rotate</type>
+  <object-name>fuel_Needle1</object-name>
+  <property>consumables/fuel/tank[1]/level-lb</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>-120</dep></entry>
+   <entry><ind>1400</ind><dep>20</dep></entry>
+   <entry><ind>1800</ind><dep>60</dep></entry>
+   <entry><ind>2200</ind><dep>100</dep></entry>
+   <entry><ind>2600</ind><dep>140</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_Needle2</object-name>
+  <property>instrumentation/fuel/bingo[0]</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>-120</dep></entry>
+   <entry><ind>26</ind><dep>140</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+ </PropertyList>

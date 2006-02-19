@@ -1,0 +1,1076 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>lightning-f1a.ac</path>
+
+	<offsets>
+		<!-- move model back  -->
+		<x-m>-7.9</x-m>
+		<!-- move model right -->
+		<y-m>0.0</y-m>
+		<!-- move model up (yasim)    -->
+		<!-- <z-m>0.46</z-m> -->
+		<!-- move model up (JSBSim)    -->
+		<z-m>0.12</z-m>
+		<pitch-deg>-1</pitch-deg>
+	</offsets>
+
+	<!-- Main Panel Top Row -->
+
+	<model>
+		<path>Aircraft/Lightning/Models/asi.xml</path>
+		<offsets>
+			<x-m>2.98</x-m>
+			<y-m>-0.068</y-m>
+			<z-m>0.93</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/ai.xml</path>
+		<offsets>
+			<x-m>2.98</x-m>
+			<y-m>0.04</y-m>
+			<z-m>0.93</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+
+	<model>
+		<path>Aircraft/Lightning/Models/hsi.xml</path>
+		<offsets>
+			<x-m>2.98</x-m>
+			<y-m>0.15</y-m>
+			<z-m>0.93</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/radar.xml</path>
+		<offsets>
+			<x-m>3.1</x-m>
+			<y-m>0.12</y-m>
+			<z-m>1.075</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+
+	<!-- Main Panel Bottom Row -->
+
+	<model>
+		<path>Aircraft/Lightning/Models/mach.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.155</y-m>
+			<z-m>0.80</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/altimeter.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.076</y-m>
+			<z-m>0.80</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/vsi.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>0.0035</y-m>
+			<z-m>0.80</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/rmi.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>0.085</y-m>
+			<z-m>0.80</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/ILS.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>0.167</y-m>
+			<z-m>0.80</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Port Panel -->
+	<model>
+		<path>Aircraft/Lightning/Models/gmeter.xml</path>
+		<offsets>
+			<x-m>3.00</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>0.95</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/slip.xml</path>
+		<offsets>
+			<x-m>3.015</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>0.91</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/standby_AI.xml</path>
+		<offsets>
+			<x-m>3.00</x-m>
+			<y-m>-0.145</y-m>
+			<z-m>1.0</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/trim.xml</path>
+		<offsets>
+			<x-m>3.04</x-m>
+			<y-m>-0.22</y-m>
+			<z-m>0.80</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/undercarriage-up-down.xml</path>
+		<offsets>
+			<x-m>3.04</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>0.78</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/flaps.xml</path>
+		<offsets>
+			<x-m>3.12</x-m>
+			<y-m>-0.30</y-m>
+			<z-m>0.60</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Starboard Panel -->
+	<model>
+		<path>Aircraft/Lightning/Models/rpm-1.xml</path>
+		<offsets>
+			<x-m>3.04</x-m>
+			<y-m>0.25</y-m>
+			<z-m>0.82</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/rpm-2.xml</path>
+		<offsets>
+			<x-m>3.04</x-m>
+			<y-m>0.325</y-m>
+			<z-m>0.82</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/jpt-1.xml</path>
+		<offsets>
+			<x-m>3.08</x-m>
+			<y-m>0.29</y-m>
+			<z-m>0.72</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/jpt-2.xml</path>
+		<offsets>
+			<x-m>3.08</x-m>
+			<y-m>0.37</y-m>
+			<z-m>0.72</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/fuel-port.xml</path>
+		<offsets>
+			<x-m>3.10</x-m>
+			<y-m>0.32</y-m>
+			<z-m>0.63</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/fuel-stbd.xml</path>
+		<offsets>
+			<x-m>3.10</x-m>
+			<y-m>0.40</y-m>
+			<z-m>0.63</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Port Side Items -->
+
+	<!-- Throttles -->
+	<model>
+		<path>Aircraft/Lightning/Models/throttles.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+
+	<!-- Starboard Side Items -->
+
+	<!-- Starboard Console -->
+	<model>
+		<path>Aircraft/Lightning/Models/stbd_console.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Lightning/Models/nozzles.xml</path>
+		<offsets>
+			<x-m>3.15</x-m>
+			<y-m>0.375</y-m>
+			<z-m>0.54</z-m>
+			<pitch-deg>-90</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Extraneous Items -->
+	<!-- Control Column -->
+	<model>
+		<path>Aircraft/Lightning/Models/stick.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+
+	<!-- Voltmeter -->
+	<model>
+		<path>Aircraft/Lightning/Models/voltmeter.xml</path>
+		<offsets>
+			<x-m>3.07</x-m>
+			<y-m>0.255</y-m>
+			<z-m>0.92</z-m>
+		</offsets>
+	</model>
+
+	<!-- Flap Switch -->
+	<animation>
+		<type>rotate</type>
+		<object-name>flap_switch-shaft</object-name>
+		<property>controls/flight/flaps-lever</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.01266</x-m>
+			<y-m>-0.222699</y-m>
+			<z-m>0.972592</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Chute Pull -->
+	<animation>
+		<type>translate</type>
+		<object-name>chute_pull_lever</object-name>
+		<object-name>chute_pull_lever_face</object-name>
+		<property>sim/model/lightning/controls/flight/chute_deployed</property>
+		<factor>0.05</factor>
+		<axis>
+			<x>0.10096</x>
+			<y>0</y>
+			<z>0.0363828</z>
+		</axis>
+	</animation>
+
+	<!-- Chute Jettison -->
+	<animation>
+		<type>translate</type>
+		<object-name>chute_jett_button</object-name>
+		<property>controls/switches/chute_jett</property>
+		<factor>-0.01</factor>
+		<axis>
+			<x>0.0137763</x>
+			<y>0</y>
+			<z>0.00501657</z>
+		</axis>
+	</animation>
+
+	<!-- Brake Chute -->
+	<model>
+		<path>Aircraft/Lightning/Models/chute.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Exhuasts -->
+	<model>
+		<path>Aircraft/Lightning/Models/exhaust1.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/Lightning/Models/exhaust2.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.92</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Port Nav Light -->
+	<model>
+		<path>Aircraft/Lightning/Models/light-red.xml</path>
+		<name>port_nav_light</name>
+		<offsets>
+			<x-m>11.6546</x-m>
+			<y-m>-5.00081</y-m>
+			<z-m>-0.162196</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	<!-- Stbd Nav Light -->
+	<model>
+		<path>Aircraft/Lightning/Models/light-green.xml</path>
+		<name>stbd_nav_light</name>
+		<offsets>
+			<x-m>11.6546</x-m>
+			<y-m>5.00081</y-m>
+			<z-m>-0.162196</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	<!-- Taxi Lights -->
+	<model>
+		<path>Aircraft/Lightning/Models/light-white.xml</path>
+		<name>port_taxi_light</name>
+		<offsets>
+			<x-m>8.64879</x-m>
+			<y-m>-2.00725</y-m>
+			<z-m>-0.417249</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/Lightning/Models/light-white.xml</path>
+		<name>stbd_taxi_light</name>
+		<offsets>
+			<x-m>8.64879</x-m>
+			<y-m>2.00725</y-m>
+			<z-m>-0.417249</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+			
+	<!-- Model Animations -->
+
+	<!-- Surface Animations -->
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-30</factor>
+		<center>
+			<x-m>14.329961</x-m>
+			<y-m>0</y-m>
+			<z-m>2.097085</z-m>
+		</center>
+		<axis>
+			<x>-0.3644</x>
+			<y>0</y>
+			<z>-1.8407</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>aileron_stbd</object-name>
+		<property>surface-positions/right-aileron-pos-norm</property>
+		<factor>15</factor>
+		<center>
+			<x-m>12.708694</x-m>
+			<y-m>-4.013696</y-m>
+			<z-m>-0.16556</z-m>
+		</center>
+		<axis>
+			<x>-0.010284</x>
+			<y>2.06388</y>
+			<z>0.063205</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>aileron_port</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>12.708694</x-m>
+			<y-m>4.013696</y-m>
+			<z-m>-0.16556</z-m>
+		</center>
+		<axis>
+			<x>-0.010284</x>
+			<y>-2.06388</y>
+			<z>0.063205</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>flap_port</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>-50</factor>
+		<center>
+			<x-m>10.505834</x-m>
+			<y-m>-1.742566</y-m>
+			<z-m>0.041514</z-m>
+		</center>
+		<axis>
+			<x>2.70234</x>
+			<y>-2.0371</y>
+			<z>-0.257981</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>flap_stbd</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>60</factor>
+		<center>
+			<x-m>10.505834</x-m>
+			<y-m>1.742566</y-m>
+			<z-m>0.041514</z-m>
+		</center>
+		<axis>
+			<x>2.70234</x>
+			<y>2.0371</y>
+			<z>-0.257981</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>tailplane_port</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>-30</factor>
+		<center>
+			<x-m>13.2</x-m>
+			<y-m>-0.71872</y-m>
+			<z-m>-0.864664</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>tailplane_stbd</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>30</factor>
+		<center>
+			<x-m>13.2</x-m>
+			<y-m>0.71872</y-m>
+			<z-m>-0.864664</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+	<!-- Gear Animation -->
+
+	<!-- Rear gear animation -->
+
+	<!-- Port -->
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_rr_wheel_cover_port</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.25</ind>
+				<dep>83</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.75923</x>
+			<y>-0.00824</y>
+			<z>0.042277</z>
+		</axis>
+		<center>
+			<x-m>10.6685</x-m>
+			<y-m>-2.60917</y-m>
+			<z-m>-0.105501</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_rr_assy_port</object-name>
+		<object-name>uc_rr_wheel_assy_port</object-name>
+		<object-name>uc_rr_leg_cover_port_down</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>70</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<center>
+			<x-m>8.98889</x-m>
+			<y-m>-2.10578</y-m>
+			<z-m>0.0429551</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_rr_assy_port</object-name>
+		<object-name>uc_rr_wheel_assy_port</object-name>
+		<object-name>uc_rr_leg_cover_port_down</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-90</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>8.98857</x-m>
+			<y-m>-2.11241</y-m>
+			<z-m>0.0430052</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>uc_rr_assy_port</object-name>
+		<object-name>uc_rr_wheel_assy_port</object-name>
+		<object-name>uc_rr_leg_cover_port_down</object-name>
+		<condition>
+			<greater-than>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0.03</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>uc_rr_leg_cover_port</object-name>
+		<condition>
+			<less-than>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0.03</value>
+			</less-than>
+		</condition>
+	</animation>
+	<!-- Compression -->
+	<animation>
+		<type>translate</type>
+		<object-name>uc_rr_leg_lower_port</object-name>
+		<object-name>uc_rr_wheel_assy_port</object-name>
+		<property>gear/gear[1]/compression-m</property>
+		<factor>1</factor>
+		<max>0.2</max>
+		<axis>
+			<x>0.21888</x>
+			<y>-0.13897</y>
+			<z>0.349791</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>scale</type>
+		<object-name>uc_rr_damper_arm_lower_port</object-name>
+		<object-name>uc_rr_damper_pivot_port</object-name>
+		<object-name>uc_rr_damper_arm_upper_port</object-name>
+		<property>gear/gear[1]/compression-m</property>
+		<x-factor>0.0</x-factor>
+		<y-factor>0.0</y-factor>
+		<z-factor>-0.9</z-factor>
+	</animation>
+
+	<!-- Starboard -->
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_rr_wheel_cover_stbd</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.25</ind>
+				<dep>-83</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.75923</x>
+			<y>0.00824</y>
+			<z>0.042277</z>
+		</axis>
+		<center>
+			<x-m>10.6685</x-m>
+			<y-m>2.60917</y-m>
+			<z-m>-0.105501</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_rr_assy_stbd</object-name>
+		<object-name>uc_rr_wheel_assy_stbd</object-name>
+		<object-name>uc_rr_leg_cover_stbd_down</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-70</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<center>
+			<x-m>8.98889</x-m>
+			<y-m>2.10578</y-m>
+			<z-m>0.0429551</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_rr_assy_stbd</object-name>
+		<object-name>uc_rr_wheel_assy_stbd</object-name>
+		<object-name>uc_rr_leg_cover_stbd_down</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>8.98857</x-m>
+			<y-m>2.11241</y-m>
+			<z-m>0.0430052</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>uc_rr_assy_stbd</object-name>
+		<object-name>uc_rr_wheel_assy_stbd</object-name>
+		<object-name>uc_rr_leg_cover_stbd_down</object-name>
+		<condition>
+			<greater-than>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0.03</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>uc_rr_leg_cover_stbd</object-name>
+		<condition>
+			<less-than>
+				<property>gear/gear[1]/position-norm</property>
+				<value>0.03</value>
+			</less-than>
+		</condition>
+	</animation>
+	<!-- Compression -->
+	<animation>
+		<type>translate</type>
+		<object-name>uc_rr_leg_lower_stbd</object-name>
+		<object-name>uc_rr_wheel_assy_stbd</object-name>
+		<property>gear/gear[1]/compression-m</property>
+		<factor>1</factor>
+		<max>0.2</max>
+		<axis>
+			<x>0.21888</x>
+			<y>0.13897</y>
+			<z>0.349791</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>scale</type>
+		<object-name>uc_rr_damper_arm_lower_stbd</object-name>
+		<object-name>uc_rr_damper_pivot_stbd</object-name>
+		<object-name>uc_rr_damper_arm_upper_stbd</object-name>
+		<property>gear/gear[2]/compression-m</property>
+		<x-factor>0.0</x-factor>
+		<y-factor>0.0</y-factor>
+		<z-factor>-0.9</z-factor>
+	</animation>
+
+	<!-- Nose Wheel Animation -->
+	<!-- Raise -->
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_f_leg_main</object-name>
+		<object-name>uc_f_piston_body</object-name>
+		<object-name>uc_f_piston_shaft</object-name>
+		<object-name>uc_f_top_pivot_mount</object-name>
+		<object-name>uc_f_link</object-name>
+		<object-name>uc_f_forks</object-name>
+		<object-name>uc_f_hub</object-name>
+		<object-name>uc_f_wheel_assy</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>120</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>60</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>3.01384</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.600502</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_fr_door_port</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.95</ind>
+				<dep>-85</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>-90</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.83342</x>
+			<y>-0.0315</y>
+			<z>-0.15061</z>
+		</axis>
+		<center>
+			<x-m>1.73564</x-m>
+			<y-m>-0.13927</y-m>
+			<z-m>-0.725075</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_fr_door_stbd</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.95</ind>
+				<dep>85</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>90</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.83342</x>
+			<y>0.0315</y>
+			<z>-0.15061</z>
+		</axis>
+		<center>
+			<x-m>1.73564</x-m>
+			<y-m>0.13927</y-m>
+			<z-m>-0.725075</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_fr_door_rear</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.00</ind>
+				<dep>-140</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>2.89717</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.9449</z-m>
+		</center>
+	</animation>
+
+	<!-- Caster -->
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_f_piston_body</object-name>
+		<object-name>uc_f_piston_shaft</object-name>
+		<object-name>uc_f_top_pivot_mount</object-name>
+		<object-name>uc_f_link</object-name>
+		<object-name>uc_f_forks</object-name>
+		<object-name>uc_f_hub</object-name>
+		<object-name>uc_f_wheel_assy</object-name>
+		<property>gear/gear/caster-angle-deg</property>
+		<factor>-1</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+		<center>
+			<x-m>2.72634</x-m>
+			<y-m>-0.000199996</y-m>
+			<z-m>-1.11505</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>uc_f_leg_main</object-name>
+		<object-name>uc_f_piston_body</object-name>
+		<object-name>uc_f_piston_shaft</object-name>
+		<object-name>uc_f_top_pivot_mount</object-name>
+		<object-name>uc_f_link</object-name>
+		<object-name>uc_f_forks</object-name>
+		<object-name>uc_f_hub</object-name>
+		<object-name>uc_f_wheel_assy</object-name>
+		<condition>
+			<greater-than>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<!-- Compression -->
+	<animation>
+		<type>translate</type>
+		<object-name>uc_f_piston_shaft</object-name>
+		<property>gear/gear[0]/compression-m</property>
+		<factor>0.5</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>uc_f_forks</object-name>
+		<object-name>uc_f_link</object-name>
+		<object-name>uc_f_wheel_assy</object-name>
+		<object-name>uc_f_hub</object-name>
+		<property>gear/gear[0]/compression-norm</property>
+		<factor>40</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>2.58785</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.522</z-m>
+		</center>
+	</animation>
+
+
+	<!-- spin wheels (not possible in JSBSim AFAIK)
+	<animation>
+		<type>spin</type>
+		<object-name>uc_f_wheel_assy</object-name>
+		<property>gear/gear/rollspeed-ms</property>
+		<factor>30</factor>
+		<center>
+			<x-m>2.97544</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.9158</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>spin</type>
+		<object-name>uc_rr_wheel_assy_port</object-name>
+		<property>gear/gear/rollspeed-ms</property>
+		<factor>30</factor>
+		<center>
+			<x-m>8.64465</x-m>
+			<y-m>2.05292</y-m>
+			<z-m>-1.82594</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>spin</type>
+		<object-name>uc_rr_wheel_assy_stbd</object-name>
+		<property>gear/gear/rollspeed-ms</property>
+		<factor>30</factor>
+		<center>
+			<x-m>8.64465</x-m>
+			<y-m>-2.05292</y-m>
+			<z-m>-1.82594</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+-->
+
+	<!-- Hotspots -->
+
+	<!-- Panel hotspots -->
+	<panel>
+		<path>Aircraft/Lightning/Models/lightning-hotspots-main.xml</path>
+		<bottom-left>
+			<x-m>3.13</x-m>
+			<y-m>-0.54</y-m>
+			<z-m>0.53</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>3.13</x-m>
+			<y-m>0.54</y-m>
+			<z-m>0.53</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>3.00</x-m>
+			<y-m>-0.54</y-m>
+			<z-m>1.04</z-m>
+		</top-left>
+		<offsets>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</panel>
+
+</PropertyList>

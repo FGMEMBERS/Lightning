@@ -1,0 +1,38 @@
+AVPIN - IsoPropylNitrate 1.036 g/cm^3
+
+Lightning held 13.6l / 3.6 usgal or 3 gallons IMP AVPIN
+
+RADAR = Ferranti AI.23 AIRPASS
+
+Cannon - Twin Aden Mk 4 30mm, 130 rounds per gun
+
+Dimensions...
+
+l.	16.84m
+h.	5.97m
+span.	10.62m
+wing area	44.1 m2
+
+Wing:	Sweep=60 degrees
+	Aspect Ratio = 3.19
+	Thickness to Chord ratio = 5%
+
+Airfoil Type: ASN/P1/3 (Root and tip)
+
+Measured from radome tip
+
+Engine 1 - 4.98 m back, 0.45 m down
+Engine 2 - 6.1m back, 0.45 up
+
+Tailpipes 15 m back, 0.45 up 0.45 down 
+
+Viewpoint 3.54 back, 1.21 up
+
+Burned approx 100 lb /min on low cruise
+
+POWER RATING  	% RPM  	MAXIMUM JPT 	TIME LIMIT(PER FLIGHT)
+MAXIMUM  	104 	800 		15 minutes combined duration
+INTERMEDIATE 	98 	755 		30 minutes
+MAX CONTINUOUS 	97 	720 		Unrestricted
+
+Refuelling rate - 150 Gal/min

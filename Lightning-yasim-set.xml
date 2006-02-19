@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+English Electric Lightning F.1A Config File
+AJ MacLeod (aj@adpetopensource.co.uk)
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>English Electric Lightning F.1A</description>
+  <author>AJ MacLeod</author>
+  <status>alpha</status>
+  <aircraft-version>0.1</aircraft-version>
+
+  <flight-model>yasim</flight-model>
+  <aero>Lightning-yasim</aero>
+
+  <sound>
+   <path>Aircraft/Lightning/Sounds/Lightning-sound.xml</path>
+  </sound>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+
+  <model>
+  <path>Aircraft/Lightning/Models/lightning-model.xml</path>
+  </model>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <!-- Note - relative to COG -->
+    <pitch-offset-deg>-20.0</pitch-offset-deg>
+    <x-offset-m archive="y">0.0</x-offset-m> <!--Right-->
+    <y-offset-m archive="y">1.68</y-offset-m> <!--Up-->
+    <z-offset-m archive="y">-4.2</z-offset-m> <!--Back-->
+   </config>
+  </view>
+
+<systems>
+	<!-- Null Electrical System, use nasal instead -->
+    <autopilot>
+      <path>Aircraft/Lightning/Systems/Lightning-autopilot.xml</path>
+		<settings>
+			<target-pitch-deg type="float">10</target-pitch-deg>
+			<target-altitude-ft type="float">25000</target-altitude-ft>	
+			<target-climb-rate-fps type="float">0</target-climb-rate-fps>
+			<target-speed-kt type="float">350.0</target-speed-kt>
+			<target-mach type="float">0.86</target-mach>
+		</settings>
+
+		<locks>
+			<auto-take-off type="string">Enabled</auto-take-off>
+			<rudder-control type="string">Initialised</rudder-control>
+			<auto-flap-control type="string">Manual</auto-flap-control>
+		</locks>
+
+    </autopilot>
+    <electrical>
+      <path></path>
+    </electrical>
+</systems>
+
+<submodels>
+	<serviceable type="bool">true</serviceable>
+	<path>Aircraft/Lightning/Models/lightning-submodels.xml</path>
+</submodels>
+
+  <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
+
+  <help>
+	<line>Approx Max. level speed: Mach 2.1</line>
+	<line>Take off configuration - use flaps, raise before 250 kts</line>
+	<line>Approach speed, with flaps and airbrakes : 160 kts</line>
+  </help>
+
+</sim>
+
+<controls>
+	<engines>
+		<engine n="0">
+			<running>true</running>
+			<afterburner>0</afterburner>
+		</engine>
+		<engine n="1">
+			<running>true</running>
+			<afterburner>0</afterburner>
+		</engine>
+	</engines>
+	<flight>
+		<flaps-lever type="double">0</flaps-lever>
+	</flight>
+	<gear>
+		<brake-parking>1</brake-parking>
+		<tailwheel-lock>false</tailwheel-lock>
+	</gear>
+</controls>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <level-gal_us archive="y">118</level-gal_us>
+   </tank>
+   <tank n="1">
+    <level-gal_us archive="y">118</level-gal_us>
+   </tank>
+  </fuel>
+ </consumables>
+
+<nasal>
+	<Lightning>
+		<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
+		<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
+		<file>Aircraft/Lightning/Systems/lightning-controls.nas</file>
+	</Lightning>
+</nasal>
+
+<input>
+	<keyboard>
+		<!-- Flap controls -->
+		<key n="91">
+			<name>[</name>	
+			<desc>Flaps Up</desc>	
+			<binding>
+				<command>nasal</command>
+				<script>
+					Lightning.flaps(0);
+				</script>
+			</binding>
+		</key>
+		<key n="93">
+			<name>]</name>	
+			<desc>Flaps Down</desc>	
+			<binding>
+				<command>nasal</command>
+				<script>
+					Lightning.flaps(1);
+				</script>
+			</binding>
+		</key>
+		<!-- Airbrake -->
+		<key n="2">
+			<name>Ctrl-B</name>	
+			<desc>Airbrakes</desc>	
+			<binding>
+				<command>nasal</command>
+				<script>
+					Lightning.airbrakes(1);
+				</script>
+			</binding>
+		</key>
+		<!-- Radar View -->
+		<key n="82">
+			<name>R</name>	
+			<desc>Radar View</desc>	
+			<binding>
+				<command>nasal</command>
+				<script>
+					Lightning.toggle_radar_view(0);
+				</script>
+			</binding>
+		</key>
+	</keyboard>
+</input>
+
+<instrumentation>
+	<radar>
+		<range type="int" archive="y">20</range>
+	</radar>
+</instrumentation>
+
+</PropertyList>
