@@ -26,16 +26,19 @@ registerTimerControlsNil = func {
 
 # ================================== Flaps ==================================================
 
-flaps = func{
+controls.flapsDown = func(down){
 	
-	down = arg[0];
-	setprop("controls/flight/flaps-lever", down);
+	if (down > 0) {setprop("controls/flight/flaps-lever",1);}
+	elsif (down < 0) {setprop("controls/flight/flaps-lever", 0);}
+
 	volts = getprop("systems/electrical/outputs/flaps");
 	if (volts > 22) {operative = 1;}
 	else {operative = 0;}
 
-	if (down == 1 and operative == 1) {registerTimerControls(flapRaise);}	# Set the clock running on flaps lowered
-	else {controls.flapsDown(-4 * operative);}	# Just raise the flaps
+	if (down > 0 and operative == 1) {registerTimerControls(flapRaise);}	# Set the clock running on flaps lever lowered
+	else {
+		if(operative > 0) {setprop("controls/flight/flaps", 0);}	# Just raise the flaps
+		}
 
 } # end function
 
@@ -44,18 +47,33 @@ flapRaise = func{
 	airspeed = getprop("velocities/airspeed-kt");
 
 	if (down == 1 and airspeed < 250) {
-		controls.flapsDown(4);
+		setprop("controls/flight/flaps", 1);
 		return registerTimerControls(flapRaise);		# Lower flaps and keep the timer going
 	}
 	elsif (down == 1 and airspeed > 250) {
-		controls.flapsDown(-4);
+		setprop("controls/flight/flaps", 0);
 		return registerTimerControls(flapRaise);		# Raise flaps automatically, keep watching	
 	}
 	else {
-		controls.flapsDown(-4);
+		setprop("controls/flight/flaps", 0);
 	}
 		
 } # end function
+
+# ================================== Gear ==================================================
+
+controls.gearDown = func(down){
+	power = getprop("systems/electrical/outputs/undercarriage");
+    if (down < 0){
+		setprop("sim/model/lightning/controls/gear-down",0);
+		if (power > 22) {setprop("controls/gear/gear-down", 0);}
+    }
+	elsif (down > 0){
+		setprop("sim/model/lightning/controls/gear-down",1);
+		if (power > 22) {setprop("controls/gear/gear-down",1);}
+    }
+}
+
 
 # ================================== Airbrakes ==================================================
 

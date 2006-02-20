@@ -91,7 +91,10 @@ initialize = func {
     props.globals.getNode("accelerations/pilot-gmin[0]", 1).setDoubleValue(1);
     props.globals.getNode("accelerations/pilot-gmax[0]", 1).setDoubleValue(1);
 
-    ### Initialise fuel stuff ###
+    ### Initialise Gear ###
+    props.globals.getNode("sim/lightning/controls/gear", 1).setIntValue(1);
+
+	### Initialise fuel stuff ###
     props.globals.getNode("instrumentation/fuel/bingo[0]", 1).setIntValue(0);
     props.globals.getNode("instrumentation/fuel/bingo[1]", 1).setIntValue(0);
    

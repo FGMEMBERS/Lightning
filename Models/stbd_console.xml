@@ -611,5 +611,14 @@
 
 	</animation>
 
+<!-- Disable Shadows -->
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>stbd_console</object-name>
+		<object-name>AI23_control_panel</object-name>
+		<object-name>autopilot_panel</object-name>
+	</animation>
+
  </PropertyList>
 

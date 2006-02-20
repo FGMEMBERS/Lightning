@@ -28,7 +28,7 @@
 <animation>
   <type>translate</type>
   <object-name>up-button</object-name>
-  <property>controls/gear/gear-down</property>
+  <property>sim/model/lightning/controls/gear-down</property>
   <interpolation>
    <entry><ind>0</ind><dep>0.01</dep></entry>
    <entry><ind>1</ind><dep>0</dep></entry>
@@ -43,21 +43,16 @@
 <animation>
 	<object-name>up-lamp</object-name>
 	<type>material</type>
+	<factor-prop>systems/electrical/outputs/undercarriage</factor-prop>
 	<condition>
-		<greater-than>
-			<property>systems/electrical/outputs/undercarriage</property>
-			<value>18</value>
-		</greater-than>
-	</condition>
-	<condition>
-		<less-than>
-			<property>controls/gear/gear-down</property>
+		<equals>
+			<property>gear/gear[0]/position-norm</property>
 			<value>1</value>
-		</less-than>
+		</equals>
 	</condition>
 
     <emission> 
-			<red>1.0</red>
+			<red>0.0357</red>
 			<green>0.0</green>
 			<blue>0.0</blue>
 	</emission>
@@ -67,20 +62,13 @@
 			<blue>0.0</blue>
 	</ambient>
 
-  <property>controls/gear/gear-down</property>
-  <condition>
-   <equals>
-    <property>controls/gear/gear-down</property>
-	<value>0</value>
-   </equals>
-   </condition>
  </animation>
  
   <!-- **************** gear-down **************** -->
 <animation>
   <type>translate</type>
   <object-name>down-button</object-name>
-  <property>controls/gear/gear-down</property>
+  <property>sim/model/lightning/controls/gear-down</property>
   <interpolation>
    <entry><ind>0</ind><dep>0.01</dep></entry>
    <entry><ind>1</ind><dep>0</dep></entry>
@@ -92,11 +80,11 @@
   </axis>
  </animation>
  
-<animation> 
+	<animation> 
 	<condition>
 		<greater-than>
 			<property>/systems/electrical/outputs/undercarriage</property>
-			<value>18</value>
+			<value>22</value>
 		</greater-than>
 	</condition>
 

@@ -127,6 +127,13 @@
 			<z>0</z>
 		</axis>
 	</animation>
+
+	<!-- disable shadows -->
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>throttles</object-name>
+	</animation>
 			
 </PropertyList>
 

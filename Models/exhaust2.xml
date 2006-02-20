@@ -1,7 +1,7 @@
 <?xml version = '1.0' ?>
 <PropertyList>
 
-<!-- Exhaust no2 -->
+<!-- Exhaust no1 -->
 
 <path>exhaust.ac</path>
 
@@ -36,6 +36,15 @@
 	</animation>
 
 	<animation>
+	<type>select</type>
+	<object-name>noshadow.Exhaust</object-name>
+	<object-name>noshadow.Exhaust1</object-name>
+		<condition>
+			<property>engines/engine[1]/augmentation</property>
+		</condition>
+	</animation>
+
+	<animation>
 	<type>spin</type>
 	<object-name>noshadow.Exhaust</object-name>
 	<object-name>noshadow.Exhaust1</object-name>
@@ -58,21 +67,26 @@
 	<type>scale</type>
 	<object-name>noshadow.Exhaust</object-name>
 	<object-name>noshadow.Exhaust1</object-name>
-		<property>engines/engine/thrust_lb</property>
+		<property>engines/engine[1]/thrust_lb</property>
 		<interpolation>
 			<entry>
-				<ind>10850</ind>
+				<ind>7000</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>10851</ind>
-				<dep>0.9</dep>
+				<ind>8000</ind>
+				<dep>0.93</dep>
 			</entry>
 			<entry>
 				<ind>13800</ind>
 				<dep>1.0</dep>
 			</entry>
 		</interpolation>
+	</animation>
+	
+	<animation>
+	<type>noshadow</type>
+	<object-name>exhaust</object-name>
 	</animation>
 
 </PropertyList>

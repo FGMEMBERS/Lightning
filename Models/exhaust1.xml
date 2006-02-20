@@ -23,23 +23,32 @@
 		<shader>heat-haze</shader>
 		<object-name>noshadow.Exhaust3</object-name>
 		<factor>0.12</factor>
-		<speed-prop>engines/engine/n1</speed-prop>
+		<speed-prop>engines/engine[0]/n1</speed-prop>
 	</animation>
 
 	<animation>
 	<type>scale</type>
 	<object-name>noshadow.Exhaust3</object-name>
-		<property>engines/engine/n1</property>
+		<property>engines/engine[0]/n1</property>
 		<x-factor>0.001</x-factor>
 		<y-factor>-0.002</y-factor>
 		<z-factor>-0.002</z-factor>
 	</animation>
 
 	<animation>
+	<type>select</type>
+	<object-name>noshadow.Exhaust</object-name>
+	<object-name>noshadow.Exhaust1</object-name>
+		<condition>
+			<property>engines/engine[0]/augmentation</property>
+		</condition>
+	</animation>
+
+	<animation>
 	<type>spin</type>
 	<object-name>noshadow.Exhaust</object-name>
 	<object-name>noshadow.Exhaust1</object-name>
-		<property>engines/engine/n1</property>
+		<property>engines/engine[0]/n1</property>
 		<factor>10</factor>
 		<offset>0.1</offset>
 		<center>
@@ -58,21 +67,26 @@
 	<type>scale</type>
 	<object-name>noshadow.Exhaust</object-name>
 	<object-name>noshadow.Exhaust1</object-name>
-		<property>engines/engine/thrust_lb</property>
+		<property>engines/engine[0]/thrust_lb</property>
 		<interpolation>
 			<entry>
-				<ind>10850</ind>
+				<ind>7000</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>10851</ind>
-				<dep>0.9</dep>
+				<ind>8000</ind>
+				<dep>0.93</dep>
 			</entry>
 			<entry>
 				<ind>13800</ind>
 				<dep>1.0</dep>
 			</entry>
 		</interpolation>
+	</animation>
+	
+	<animation>
+	<type>noshadow</type>
+	<object-name>exhaust</object-name>
 	</animation>
 
 </PropertyList>

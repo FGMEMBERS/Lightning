@@ -182,27 +182,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</binding>
 		</key>
 
-		<!-- Flap controls -->
-		<key n="91">
-			<name>[</name>	
-			<desc>Flaps Up</desc>	
-			<binding>
-				<command>nasal</command>
-				<script>
-					Lightning.flaps(0);
-				</script>
-			</binding>
-		</key>
-		<key n="93">
-			<name>]</name>	
-			<desc>Flaps Down</desc>	
-			<binding>
-				<command>nasal</command>
-				<script>
-					Lightning.flaps(1);
-				</script>
-			</binding>
-		</key>
 		<!-- Airbrake -->
 		<key n="2">
 			<name>Ctrl-B</name>	

@@ -279,6 +279,16 @@
 		</offsets>
 	</model>
 
+	<!-- E2b -->
+	<model>
+		<path>Aircraft/Lightning/Models/e2b.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+
 	<!-- Voltmeter -->
 	<model>
 		<path>Aircraft/Lightning/Models/voltmeter.xml</path>
@@ -1047,6 +1057,23 @@
 		</axis>
 	</animation>
 -->
+
+	<!-- Shadow Removal -->
+	<animation>
+		<type>noshadow</type>
+		<object-name>nose_markings</object-name>
+		<object-name>cockpit</object-name>
+		<object-name>cockpit_rear_bulkhead</object-name>
+		<object-name>uc_fr_well</object-name>
+		<object-name>seat_base</object-name>
+		<object-name>roundels</object-name>
+		<object-name>xm169</object-name>
+		<object-name>tail_flag</object-name>
+		<object-name>tail_letter</object-name>
+		<object-name>warning_triangles</object-name>
+		<object-name>flap_hinges</object-name>
+		<object-name>inner_tailpipe_end</object-name>
+	</animation>
 
 	<!-- Hotspots -->
 

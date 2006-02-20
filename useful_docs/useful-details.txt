@@ -1,10 +1,23 @@
+Some details gathered from all over the place,
+not necessarily F.1A related
+
+Lots of Lightning tales (flying, working on) at 
+http://www.lightning.org.uk/archive/index.php
+especially this one:
+http://www.lightning.org.uk/archive/0403.php
+
+There are a considerable number of British Pathe reels
+of interest, showing Lightnings from the prototypes to
+the F6s in flight, even in-cockpit shots.
+http://www.britishpathe.com
+
 AVPIN - IsoPropylNitrate 1.036 g/cm^3
 
 Lightning held 13.6l / 3.6 usgal or 3 gallons IMP AVPIN
 
 RADAR = Ferranti AI.23 AIRPASS
 
-Cannon - Twin Aden Mk 4 30mm, 130 rounds per gun
+Cannon - None, Twin or Quad Aden Mk 4 30mm, 130 rounds per gun
 
 Dimensions...
 
@@ -18,6 +31,10 @@ Wing:	Sweep=60 degrees
 	Thickness to Chord ratio = 5%
 
 Airfoil Type: ASN/P1/3 (Root and tip)
+
+Some wind tunnel data is available in:
+Mechanics of Flight (10th Edition)
+by A.C. Kermode.
 
 Measured from radome tip
 
