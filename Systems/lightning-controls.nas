@@ -368,10 +368,17 @@ EngineStop = func {
 
 # ================================== Steering ==================================================
 
+controls.applyBrakes = func(v,which=0){
+
+	if (which == 0){setprop("sim/model/lightning/controls/gear/braking", v);}
+	elsif (which < 0) {setprop("/controls/gear/brake-left", v);}
+	elsif (which > 0) {setprop("/controls/gear/brake-right", v);}
+ 
+} # end function
 
 steering = func{
 
-	applied = getprop("sim/model/lightning/controls/gear/braking");
+	applied = cmdarg().getValue();
 	rudder_pos = getprop("controls/flight/rudder");
 
 	if (applied == 0 ) {
