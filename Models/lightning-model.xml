@@ -428,6 +428,75 @@
 			
 	<!-- Model Animations -->
 
+	<!-- Chrome animation, courtesy of Vivian  -->
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>chrome2.rgb</texture>
+		<object-name>uc_fr_door_rear</object-name>
+		<object-name>uc_fr_door_stbd</object-name>
+		<object-name>uc_fr_door_port</object-name>
+		<object-name>uc_rr_leg_cover_stbd</object-name>
+		<object-name>uc_rr_leg_cover_port</object-name>
+		<object-name>uc_rr_leg_cover_stbd_down</object-name>
+		<object-name>uc_rr_leg_cover_port_down</object-name>
+		<object-name>uc_rr_wheel_cover_stbd</object-name>
+		<object-name>uc_rr_wheel_cover_port</object-name>
+	</animation>
+
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>chrome2.rgb</texture>
+		<object-name>ventral_tank</object-name>
+		<object-name>ventral_fin</object-name>
+		<object-name>main_fuselage</object-name>
+		<object-name>wing</object-name>
+		<object-name>elevator_mounting_bulges</object-name>
+		<object-name>radome_mount_lower</object-name>
+		<object-name>radome_mount_upper</object-name>
+		<object-name>intake_duct</object-name>
+		<object-name>intake_ring_internal</object-name>
+		<object-name>intake_ring_external</object-name>
+		<object-name>tailpipe_wedge</object-name>
+		<object-name>uc_rr_well_port</object-name>
+		<object-name>uc_rr_well_stbd</object-name>
+		<object-name>uc_fr_well</object-name>
+		<object-name>pitot_probe</object-name>
+		<object-name>flap_hinges</object-name>
+	</animation>
+
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>chrome2.rgb</texture>
+		<object-name>tailplane_port</object-name>
+		<object-name>tailplane_stbd</object-name>
+	</animation>
+
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>chrome2.rgb</texture>
+		<object-name>aileron_stbd</object-name>
+	</animation>
+
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>chrome2.rgb</texture>
+		<object-name>aileron_port</object-name>
+	</animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>chrome2.rgb</texture>
+    <object-name>flap_stbd</object-name>
+    <object-name>flap_port</object-name>
+  </animation>
+
+
 	<!-- Surface Animations -->
 	<animation>
 		<type>rotate</type>
@@ -501,7 +570,7 @@
 		<type>rotate</type>
 		<object-name>flap_stbd</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>60</factor>
+		<factor>50</factor>
 		<center>
 			<x-m>10.505834</x-m>
 			<y-m>1.742566</y-m>
@@ -1074,7 +1143,6 @@
 		<object-name>flap_hinges</object-name>
 		<object-name>inner_tailpipe_end</object-name>
 	</animation>
-
 	<!-- Hotspots -->
 
 	<!-- Panel hotspots -->

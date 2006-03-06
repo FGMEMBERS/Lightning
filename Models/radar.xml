@@ -77,7 +77,7 @@
 	<object-name>return_2</object-name>
 	<condition>
 		<equals>
-		<property>ai/models/aircraft[0]/radar/in-range</property>
+		<property>ai/models/aircraft[1]/radar/in-range</property>
 		<value type="bool">true</value>
 		</equals>
 	</condition>
@@ -86,7 +86,7 @@
 <animation> 
 	<type>translate</type>
 	<object-name>return_2</object-name>
-	<property>ai/models/aircraft[0]/radar/x-shift</property>
+	<property>ai/models/aircraft[1]/radar/x-shift</property>
 	<interpolation>
 		<entry>
 			<ind>-10</ind>
@@ -106,7 +106,7 @@
 <animation> 
 	<type>translate</type>
 	<object-name>return_2</object-name>
-	<property>ai/models/aircraft[0]/radar/y-shift</property>
+	<property>ai/models/aircraft[1]/radar/y-shift</property>
 	<interpolation>
 		<entry>
 			<ind>0</ind>
@@ -126,7 +126,7 @@
 <animation> 
 	<type>scale</type>
 	<object-name>return_2</object-name>
-	<property>ai/models/aircraft[0]/radar/range-nm</property>
+	<property>ai/models/aircraft[1]/radar/range-nm</property>
 	<interpolation>
 		<entry>
 			<ind>0</ind>
@@ -143,6 +143,216 @@
 	</interpolation>
 </animation>
 <animation> 
+	<type>select</type>
+	<object-name>return_3</object-name>
+	<condition>
+		<equals>
+		<property>ai/models/multiplayer/radar/in-range</property>
+		<value type="bool">true</value>
+		</equals>
+	</condition>
+</animation> 
+	
+<animation> 
+	<type>translate</type>
+	<object-name>return_3</object-name>
+	<property>ai/models/multiplayer/radar/x-shift</property>
+	<interpolation>
+		<entry>
+			<ind>-10</ind>
+			<dep>-0.0381808</dep>
+		</entry>
+		<entry>
+			<ind>10</ind>
+			<dep>0.0381808</dep>
+		</entry>
+	</interpolation>
+	<axis> 
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+</animation>
+<animation> 
+	<type>translate</type>
+	<object-name>return_3</object-name>
+	<property>ai/models/multiplayer/radar/y-shift</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>-0.0326</dep>
+		</entry>
+		<entry>
+			<ind>20</ind>
+			<dep>0.0326</dep>
+		</entry>
+	</interpolation>
+	<axis> 
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+</animation>
+<animation> 
+	<type>scale</type>
+	<object-name>return_3</object-name>
+	<property>ai/models/multiplayer/radar/range-nm</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>0.7</dep>
+		</entry>
+		<entry>
+			<ind>20</ind>
+			<dep>0.3</dep>
+		</entry>
+		<entry>
+			<ind>21</ind>
+			<dep>0</dep>
+		</entry>
+	</interpolation>
+</animation>
+<animation> 
+	<type>select</type>
+	<object-name>return_4</object-name>
+	<condition>
+		<equals>
+		<property>ai/models/multiplayer[1]/radar/in-range</property>
+		<value type="bool">true</value>
+		</equals>
+	</condition>
+</animation> 
+	
+<animation> 
+	<type>translate</type>
+	<object-name>return_4</object-name>
+	<property>ai/models/multiplayer[1]/radar/x-shift</property>
+	<interpolation>
+		<entry>
+			<ind>-10</ind>
+			<dep>-0.0381808</dep>
+		</entry>
+		<entry>
+			<ind>10</ind>
+			<dep>0.0381808</dep>
+		</entry>
+	</interpolation>
+	<axis> 
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+<animation> 
+	<type>translate</type>
+	<object-name>return_4</object-name>
+	<property>ai/models/multiplayer[1]/radar/y-shift</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>-0.0326</dep>
+		</entry>
+		<entry>
+			<ind>20</ind>
+			<dep>0.0326</dep>
+		</entry>
+	</interpolation>
+	<axis> 
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+</animation>
+<animation> 
+	<type>scale</type>
+	<object-name>return_4</object-name>
+	<property>ai/models/multiplayer[1]/radar/range-nm</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>0.7</dep>
+		</entry>
+		<entry>
+			<ind>20</ind>
+			<dep>0.3</dep>
+		</entry>
+		<entry>
+			<ind>21</ind>
+			<dep>0</dep>
+		</entry>
+	</interpolation>
+</animation>
+<animation> 
+	<type>select</type>
+	<object-name>return_5</object-name>
+	<condition>
+		<equals>
+		<property>ai/models/multiplayer[2]/radar/in-range</property>
+		<value type="bool">true</value>
+		</equals>
+	</condition>
+</animation> 
+<animation> 
+	<type>translate</type>
+	<object-name>return_5</object-name>
+	<property>ai/models/multiplayer[2]/radar/x-shift</property>
+	<interpolation>
+		<entry>
+			<ind>-10</ind>
+			<dep>-0.0381808</dep>
+		</entry>
+		<entry>
+			<ind>10</ind>
+			<dep>0.0381808</dep>
+		</entry>
+	</interpolation>
+	<axis> 
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+<animation> 
+	<type>translate</type>
+	<object-name>return_5</object-name>
+	<property>ai/models/multiplayer[2]/radar/y-shift</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>-0.0326</dep>
+		</entry>
+		<entry>
+			<ind>20</ind>
+			<dep>0.0326</dep>
+		</entry>
+	</interpolation>
+	<axis> 
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+</animation>
+<animation> 
+	<type>scale</type>
+	<object-name>return_5</object-name>
+	<property>ai/models/multiplayer[2]/radar/range-nm</property>
+	<interpolation>
+		<entry>
+			<ind>0</ind>
+			<dep>0.7</dep>
+		</entry>
+		<entry>
+			<ind>20</ind>
+			<dep>0.3</dep>
+		</entry>
+		<entry>
+			<ind>21</ind>
+			<dep>0</dep>
+		</entry>
+	</interpolation>
+</animation>
+
+<animation> 
 	<type>material</type>
 	<object-name>scale</object-name>
 	<object-name>radar_screen</object-name>
@@ -157,6 +367,9 @@
 	<type>material</type>
 	<object-name>return_1</object-name>
 	<object-name>return_2</object-name>
+	<object-name>return_3</object-name>
+	<object-name>return_4</object-name>
+	<object-name>return_5</object-name>
 	<emission> 
 		<factor-prop>/systems/electrical/outputs/radar</factor-prop>
 		<red>0.0076</red>
@@ -164,10 +377,18 @@
 		<blue>0</blue>
 	</emission>
 </animation>
-    <!-- *** LoD *** -->
-    <animation> 
-      <type>range</type>
-      <min-m>0</min-m>
-      <max-m>35</max-m>
-    </animation>
-  </PropertyList>
+
+<!-- *** noshadow *** -->
+<animation> 
+	<type>noshadow</type>
+	<object-name>AI23_internals</object-name>
+</animation> 
+
+<!-- *** LoD *** -->
+<animation> 
+	<type>range</type>
+		<min-m>0</min-m>
+		<max-m>35</max-m>
+</animation>
+
+</PropertyList>
