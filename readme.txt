@@ -32,29 +32,7 @@ Not immediately obvious features:
 
 All production Lightning variants had proportional braking controlled not by
 toe brakes, but by the stick mounted brake lever and rudder pedal position.
-This has been implemented in this model, but because fgfs currently lacks a
-sane way to easily map aircraft-specific controls to joysticks, you will need
-to modify your own joystick XML configuration file something like this:
-
-    <button n="0">
-        <desc>Brakes</desc>
-        <binding>
-            <command>property-assign</command>
-                <property>sim/model/lightning/controls/gear/braking</property>
-                <repeatable type="bool">true</repeatable>
-                <value type="int">1</value>
-        </binding>
-        <mod-up>
-            <binding>
-                <command>property-assign</command>
-                <property>sim/model/lightning/controls/gear/braking</property>
-                <value type="int">0</value>
-            </binding>
-        </mod-up>
-
-    </button>
-
-
+This has been implemented in this model - if you have rudder pedals (or a joystick with a twist axis) then you can steer using the rudder controls and braking at the same time, assuming your config uses the controls.applyBrakes wrapper.  Maximum braking effort is applied if the rudder controls are centred.
 
 Credits:
 
@@ -64,8 +42,9 @@ following:
 
 Vivian Meazza	- The Hunter was the main inspiration for this model, and
 				nearly all the instruments were initially (and in one case
-				currently) based on their Hunter counterparts.  Also some of
+				currently) based on their Hunter counterparts.  Some of
 				the Nasal functions began life in the Spitfire and Hurricane.
+				Vivian added the "chrome animation" effect and tidied up the					external model.
 
 Syd Adams		- The electrical system was modified from the Beaver model,
 				and	probably other parts or methods borrowed from some of his

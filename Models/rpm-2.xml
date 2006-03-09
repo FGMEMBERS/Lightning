@@ -29,7 +29,7 @@
  <animation>
   <type>rotate</type>
   <object-name>rpm-Needle2</object-name>
-  <property>engines/engine/n1</property>
+  <property>engines/engine[1]/n1</property>
   <factor>36</factor>
   <center>
    <x-m>0</x-m>
