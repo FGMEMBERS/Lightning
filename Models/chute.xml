@@ -23,18 +23,51 @@
 	</animation>
 
 	<animation>
-	<type>rotate</type>
-	<object-name>parachute</object-name>
-	<property>sim/model/lightning/orientation/chute_pitch</property>
-	<center>
-		<x-m>15.0921</x-m>
-		<y-m>0</y-m>
-		<z-m>0.941944</z-m>
-	</center>
-	<axis>	
-		<x>0</x>
-		<y>1</y>
-		<z>0</z>
-	</axis>	
+		<type>rotate</type>
+		<object-name>parachute</object-name>
+		<property>sim/model/lightning/orientation/chute_pitch</property>
+		<center>
+			<x-m>15.0921</x-m>
+			<y-m>0</y-m>
+			<z-m>0.941944</z-m>
+		</center>
+		<axis>	
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>	
 	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>parachute</object-name>
+		<property>sim/model/lightning/orientation/chute_yaw</property>
+		<center>
+			<x-m>15.0921</x-m>
+			<y-m>0</y-m>
+			<z-m>0.941944</z-m>
+		</center>
+		<axis>	
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>	
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>parachute</object-name>
+		<property>sim/model/lightning/orientation/chute_roll</property>
+		<center>
+			<x-m>15.0921</x-m>
+			<y-m>0</y-m>
+			<z-m>0.941944</z-m>
+		</center>
+		<axis>	
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>	
+	</animation>
+
 </PropertyList>

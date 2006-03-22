@@ -77,39 +77,39 @@
    </location>
  </mass_balance>
 
- <ground_reactions>
+<ground_reactions>
 
   <contact type="BOGEY" name="NOSE">
-   <location unit="IN">
-     <x>  86.19 </x>
-     <y>   0.00 </y>
-     <z> -79.56 </z>
-   </location>
-   <static_friction>  0.80 </static_friction>
-   <dynamic_friction> 0.50 </dynamic_friction>
-   <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">      30501.80 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  5500.00 </damping_coeff>
-   <max_steer unit="DEG"> 360.00 </max_steer>
-   <brake_group>NONE</brake_group>
-   <retractable>1</retractable>
- </contact>
+    <location unit="IN">
+      <x>  86.19 </x>
+      <y>   0.00 </y>
+      <z> -79.56 </z>
+    </location>
+    <static_friction>  0.80 </static_friction>
+    <dynamic_friction> 0.50 </dynamic_friction>
+    <rolling_friction> 0.02 </rolling_friction>
+    <spring_coeff unit="LBS/FT">      30501.80 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  5500.00 </damping_coeff>
+    <max_steer unit="DEG"> 360.00 </max_steer>
+    <brake_group>NONE</brake_group>
+    <retractable>1</retractable>
+  </contact>
 
   <contact type="BOGEY" name="LEFT_MAIN">
-   <location unit="IN">
-     <x> 413.73 </x>
-     <y> -83.71 </y>
-     <z> -79.56 </z>
-   </location>
-   <static_friction>  0.80 </static_friction>
-   <dynamic_friction> 0.50 </dynamic_friction>
-   <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
-   <max_steer unit="DEG">0</max_steer>
-   <brake_group>LEFT</brake_group>
-   <retractable>1</retractable>
- </contact>
+    <location unit="IN">
+      <x> 413.73 </x>
+      <y> -83.71 </y>
+      <z> -79.56 </z>
+    </location>
+    <static_friction>  0.80 </static_friction>
+    <dynamic_friction> 0.50 </dynamic_friction>
+    <rolling_friction> 0.02 </rolling_friction>
+    <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
+    <max_steer unit="DEG">0</max_steer>
+    <brake_group>LEFT</brake_group>
+    <retractable>1</retractable>
+  </contact>
 
   <contact type="BOGEY" name="RIGHT_MAIN">
    <location unit="IN">
@@ -125,7 +125,7 @@
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>
- </contact>
+  </contact>
 
   <contact type="STRUCTURE" name="LEFT_WING">
     <location unit="IN">
@@ -137,7 +137,7 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
- </contact>
+  </contact>
 
   <contact type="STRUCTURE" name="RIGHT_WING">
     <location unit="IN">
@@ -146,10 +146,10 @@
      <z>  -8.53 </z>
     </location>
     <static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
+    <dynamic_friction> 0.50 </dynamic_friction>
     <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
- </contact>
+  </contact>
 
   <contact type="STRUCTURE" name="TAIL_BUMPER">
     <location unit="IN">
@@ -161,7 +161,7 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
- </contact>
+  </contact>
 
   <contact type="STRUCTURE" name="TAIL_FIN">
     <location unit="IN">
@@ -173,7 +173,7 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
- </contact>
+  </contact>
 
   <contact type="STRUCTURE" name="INTAKE">
     <location unit="IN">
@@ -185,7 +185,7 @@
     <dynamic_friction> 0.50 </dynamic_friction>
     <spring_coeff unit="LBS/FT">      35005.99 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  7001.20 </damping_coeff>
- </contact>
+  </contact>
  
 </ground_reactions>
 
@@ -248,7 +248,7 @@
   </engine>
 
   <tank type="FUEL">
-	<!-- Ventral -->
+  <!-- Ventral -->
      <location unit="IN">
        <x> 366.00 </x>
        <y>   0.00 </y>
@@ -259,7 +259,7 @@
   </tank>
 
   <tank type="FUEL">
-	<!-- Port Tanks: torsion box, wing and flap -->
+  <!-- Port Tanks: torsion box, wing and flap -->
      <location unit="IN">
        <x> 248.82 </x>
        <y> -61.02 </y>
@@ -270,7 +270,7 @@
   </tank>
 
   <tank type="FUEL">
-	<!-- Starboard Tanks: torsion box, wing and flap -->
+  <!-- Starboard Tanks: torsion box, wing and flap -->
      <location unit="IN">
        <x> 248.82 </x>
        <y>  61.02 </y>
@@ -284,25 +284,25 @@
 
  <flight_control name="FCS: lightning-f1a">
 
-	<!-- Declare Properties -->
+  <!-- Declare Properties -->
     <property>/accelerations/pilot-g</property>
     <property>/sim/model/lightning/controls/shut_down</property>
-	<!-- <property>/gear/gear/caster-angle-deg</property> -->
+  <!-- <property>/gear/gear/caster-angle-deg</property> -->
 
 <!--
-	<channel name="nosewheel">
+  <channel name="nosewheel">
 
      <pure_gain name="nosewheel caster">
-   	   <input>fcs/steer-pos-deg</input>
-		<gain>1</gain>
-   	   <output>/gear/gear/caster-angle-deg</output>
+       <input>fcs/steer-pos-deg</input>
+       <gain>1</gain>
+       <output>/gear/gear/caster-angle-deg</output>
      </pure_gain>
 
   </channel>
 -->
 
   <channel name="Pitch">
-   <summer name="Pitch Trim Sum">
+    <summer name="Pitch Trim Sum">
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
@@ -310,22 +310,22 @@
         <max>  1 </max>
       </clipto>
       <output>fcs/elevator-pos-norm</output>
-   </summer>
+    </summer>
 
-   <aerosurface_scale name="Elevator Control">
+    <aerosurface_scale name="Elevator Control">
       <input>fcs/pitch-trim-sum</input>
       <range>
         <min> -0.35 </min>
         <max>  0.30 </max>
       </range>
       <output>fcs/elevator-pos-rad</output>
-   </aerosurface_scale>
+    </aerosurface_scale>
 
-	<pure_gain name="g load norm">
-		<input>-accelerations/n-pilot-z-norm</input>
-		<gain>1</gain>
-		<output>/accelerations/pilot-g</output>
-	</pure_gain>
+    <pure_gain name="g load norm">
+      <input>-accelerations/n-pilot-z-norm</input>
+      <gain>1</gain>
+      <output>/accelerations/pilot-g</output>
+    </pure_gain>
   </channel>
 
   <channel name="Roll">
@@ -576,7 +576,7 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <independentVar lookup="column">fcs/flap-pos-norm</independentVar>
-			<!-- From BAC wind tunnel data, greatful thanks to Aerospaceweb.org  -->
+        <!-- From BAC wind tunnel data, greatful thanks to Aerospaceweb.org  -->
             <tableData>
 						0		1
 				0.00	0.0		0.17	
@@ -600,7 +600,7 @@
       </product>
     </function>
 
-	<function name="aero/coefficient/dCLsb">
+    <function name="aero/coefficient/dCLsb">
        <description>Delta_Lift_due_to_speedbrake</description>
        <product>
            <property>aero/qbar-psf</property>
@@ -632,7 +632,7 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <independentVar lookup="column">fcs/flap-pos-norm</independentVar>
-			<!-- From BAC wind tunnel data, greatful thanks to Aerospaceweb.org  -->
+        <!-- From BAC wind tunnel data, greatful thanks to Aerospaceweb.org  -->
             <tableData>
 						0		1
 				0.00	0.020	0.07	
@@ -728,7 +728,7 @@
          <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
-     	   <property>/sim/model/lightning/controls/flight/chute_open</property>
+           <property>/sim/model/lightning/controls/flight/chute_open</property>
            <value>1.035</value>
          </product>
     </function>

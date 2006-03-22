@@ -129,19 +129,31 @@ chuteAngle = func {
 	speed = getprop('velocities/airspeed-kt');
 	aircraftpitch = getprop('orientation/pitch-deg[0]');
 	chutepitch = getprop("sim/model/lightning/orientation/chute_pitch");
-	#aircraftyaw = getprop('orientation/yaw-rate-degps[0]');
-	#chuteyaw = props.globals.getNode("sim/model/lightning/orientation/chute_yaw").getValue();
+	aircraftyaw = getprop('orientation/side-slip-deg');
+	chuteyaw = getprop("sim/model/lightning/orientation/chute_yaw");
+	aircraftroll = getprop('orientation/roll-deg');
+	chuteroll = getprop("sim/model/lightning/orientation/chute_roll");
 
 	if (speed > 210) {
 		setprop("sim/model/lightning/controls/flight/chute_jettisoned", 1); # Model Shear Pin
 		return();
 	}
 
-	if (aircraftpitch < -20) {aircraftpitch = -20;}
-	elsif (aircraftpitch > 20) {aircraftpitch = 20;}
-
+	# Chute Pitch
 	chutepitch = aircraftpitch * -1;
 	setprop("sim/model/lightning/orientation/chute_pitch", chutepitch);
+
+	# Damped yaw from Vivian's A4 work
+	var n = 0.01;
+	if (aircraftyaw == nil) {aircraftyaw = 0;}
+	if (chuteyaw == nil) {chuteyaw = 0;}
+	chuteyaw = ( aircraftyaw * n) + ( chuteyaw * (1 - n));	
+	setprop("sim/model/lightning/orientation/chute_yaw", chuteyaw);
+
+	# Chute Roll - no twisting for now
+	chuteroll = aircraftroll;
+	setprop("sim/model/lightning/orientation/chute_roll", chuteroll);
+
 	return registerTimerControlsNil(chuteAngle);	# Keep watching
 
 } # end function
