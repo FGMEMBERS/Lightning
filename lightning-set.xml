@@ -12,8 +12,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
   <description>English Electric Lightning F.1A</description>
   <author>AJ MacLeod</author>
-  <status>alpha</status>
-  <aircraft-version>0.1</aircraft-version>
+  <status>beta</status>
 
   <flight-model>jsb</flight-model>
   <aero>lightning-f1a</aero>
