@@ -67,18 +67,18 @@
 	<type>scale</type>
 	<object-name>noshadow.Exhaust</object-name>
 	<object-name>noshadow.Exhaust1</object-name>
-		<property>engines/engine[0]/thrust_lb</property>
+		<property>controls/engines/engine[0]/throttle</property>
 		<interpolation>
 			<entry>
-				<ind>7000</ind>
+				<ind>0.88</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>8000</ind>
+				<ind>0.9</ind>
 				<dep>0.93</dep>
 			</entry>
 			<entry>
-				<ind>13800</ind>
+				<ind>1.0</ind>
 				<dep>1.0</dep>
 			</entry>
 		</interpolation>
