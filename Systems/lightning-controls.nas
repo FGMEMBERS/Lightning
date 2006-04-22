@@ -287,38 +287,52 @@ setlistener("sim/model/lightning/controls/flight/ap_glide", autopilot_glide);
 
 
 
+# ================================== Seat Height =================================================
+
+seatRaise = func {
+
+	switchPos = getprop("sim/model/lightning/controls/seat");
+	power = getprop("systems/electrical/outputs/seat"); 
+	y_offset = getprop("sim/current-view/y-offset-m");
+	min = 1.35;
+	max = 1.5;
 	
+	while(switchPos!=0) {
+		y_offset = y_offset + ((power * 0.00000417)*switchPos);
+		if(y_offset > max){y_offset=max};
+		if(y_offset < min){y_offset=min};
+
+		setprop('sim/current-view/y-offset-m', y_offset);
+		setprop('controls/seat/vertical-adjust', 1); # trigger for sound
+		return registerTimerControlsNil(seatRaise);	# continue watching 
+	}
+
+	setprop('controls/seat/vertical-adjust', 0); # reset sound
+
+} # end function
+setlistener("sim/model/lightning/controls/seat", seatRaise);
+
 # ================================== Radar View ==================================================
 
 toggle_radar_view = func {
 
-	original_view = props.globals.getNode("sim/current-view/view-number[0]").getValue();
-	default_x = props.globals.getNode("sim/model/lightning/views/current-x-offset").getValue();
-	default_y = props.globals.getNode("sim/model/lightning/views/current-y-offset").getValue();
-	default_z = props.globals.getNode("sim/model/lightning/views/current-z-offset").getValue();
-	default_fov = props.globals.getNode("sim/model/lightning/views/current-fov").getValue();
-	radar_view_selected = props.globals.getNode("/sim/model/lightning/controls/radarview").getValue();
-	# YASim config values
-	#radar_x = 0.12;
-	#radar_y = 1.77;
-	#radar_z = -4.2;
-	#radar_fov = 12;
 	radar_x = 0.13;
 	radar_y = 1.43;
 	radar_z = -4.2;
 	radar_fov = 12;
+	radar_view_already_selected = props.globals.getNode("/sim/model/lightning/controls/radarview").getValue();
 
-	if (original_view != 0) {
-		setprop('sim/current-view/view-number', 0);
-	}
-	if (radar_view_selected > 0) {
-		setprop('sim/current-view/x-offset-m', default_x);
-		setprop('sim/current-view/y-offset-m', default_y);
-		setprop('sim/current-view/z-offset-m', default_z);
-		setprop('sim/current-view/field-of-view', default_fov);
-		setprop('sim/model/lightning/controls/radarview', 0);
-	}
-	else {
+	if (radar_view_already_selected != 1) {
+		current_x = props.globals.getNode("sim/current-view/x-offset-m").getValue();
+		current_y = props.globals.getNode("sim/current-view/y-offset-m").getValue();
+		current_z = props.globals.getNode("sim/current-view/z-offset-m").getValue();
+		current_fov = props.globals.getNode("sim/current-view/field-of-view").getValue();
+
+		props.globals.getNode("sim/model/lightning/views/stored-x-offset-m",1).setDoubleValue(current_x);
+		props.globals.getNode("sim/model/lightning/views/stored-y-offset-m",1).setDoubleValue(current_y);
+		props.globals.getNode("sim/model/lightning/views/stored-z-offset-m",1).setDoubleValue(current_z);
+		props.globals.getNode("sim/model/lightning/views/stored-field-of-view",1).setValue(current_fov);
+
 		setprop('sim/current-view/x-offset-m', radar_x);
 		setprop('sim/current-view/y-offset-m', radar_y);
 		setprop('sim/current-view/z-offset-m', radar_z);
@@ -326,8 +340,19 @@ toggle_radar_view = func {
 		setprop('sim/current-view/heading-offset-deg[0]', 0);
 		setprop('sim/current-view/pitch-offset-deg[0]', -15);
 		setprop('sim/model/lightning/controls/radarview', 1);
-	}		
+	}
+	else {
+		stored_x = props.globals.getNode("sim/model/lightning/views/stored-x-offset-m").getValue();
+		stored_y = props.globals.getNode("sim/model/lightning/views/stored-y-offset-m").getValue();
+		stored_z = props.globals.getNode("sim/model/lightning/views/stored-z-offset-m").getValue();
+		stored_fov = props.globals.getNode("sim/model/lightning/views/stored-field-of-view").getValue();
 
+		props.globals.getNode("sim/current-view/x-offset-m",1).setDoubleValue(stored_x);
+		props.globals.getNode("sim/current-view/y-offset-m",1).setDoubleValue(stored_y);
+		props.globals.getNode("sim/current-view/z-offset-m",1).setDoubleValue(stored_z);
+		setprop('sim/current-view/field-of-view', stored_fov);
+		setprop('sim/model/lightning/controls/radarview', 0);
+	}		
 
 } #End func
 
@@ -416,5 +441,3 @@ steering = func{
 		
 } # end function
 setlistener("sim/model/lightning/controls/gear/braking", steering);
-
-

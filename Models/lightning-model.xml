@@ -1143,6 +1143,20 @@
 		<object-name>flap_hinges</object-name>
 		<object-name>inner_tailpipe_end</object-name>
 	</animation>
+
+	<!-- Lighting -->
+	<animation> 
+		<type>material</type>
+		<object-name>main_tube</object-name>
+		<object-name>probe_tip</object-name>
+		<emission> 
+		<factor-prop>/controls/lighting/probe</factor-prop>
+			<red>0.90</red>
+			<green>0.90</green>
+			<blue>0.90</blue>
+		</emission>
+	</animation>
+
 	<!-- Hotspots -->
 
 	<!-- Panel hotspots -->

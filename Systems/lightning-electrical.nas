@@ -307,13 +307,19 @@ electrical_28VDC_bus = func() {
 	setprop("systems/electrical/outputs/chute_jett", bus_volts);
     # Camera Controls
    	setprop("systems/electrical/outputs/camera", bus_volts);
+    # Com 1 Power
+    setprop("systems/electrical/outputs/comm[0]", bus_volts);
+    # Com 2 Power
+    setprop("systems/electrical/outputs/comm[1]", bus_volts);
     # Controls and Trim indication
     setprop("systems/electrical/outputs/control_pos_indicator", bus_volts);
-    # Flaps power and indication
-    setprop("systems/electrical/outputs/flaps", bus_volts);
+    # DME Power
+    setprop("systems/electrical/outputs/dme[0]", bus_volts);
     # Engine Start and Relight
 	setprop("systems/electrical/outputs/ignition[0]", bus_volts * start);
 	setprop("systems/electrical/outputs/ignition[1]", bus_volts * start);
+    # Flaps power and indication
+    setprop("systems/electrical/outputs/flaps", bus_volts);
 	# HSI Power
     setprop("systems/electrical/outputs/hsi", bus_volts);
     # Nav Lights
@@ -322,21 +328,13 @@ electrical_28VDC_bus = func() {
 		load +=1;
 	}
 	else {setprop("systems/electrical/outputs/nav_lights",0);}
-    # Turn Co-ordinator
-	setprop("systems/electrical/outputs/turn-coordinator[0]", bus_volts);
     # Nav 1 Power
     setprop("systems/electrical/outputs/nav[0]", bus_volts);
     setprop("systems/electrical/outputs/adf[0]", bus_volts);
     # Nav 2 Power
     setprop("systems/electrical/outputs/nav[1]", bus_volts);
-    # Com 1 Power
-    setprop("systems/electrical/outputs/comm[0]", bus_volts);
-    # Com 2 Power
-    setprop("systems/electrical/outputs/comm[1]", bus_volts);
-    # DME Power
-    setprop("systems/electrical/outputs/dme[0]", bus_volts);
-    # Undercarriage operation and indicators
-    setprop("systems/electrical/outputs/undercarriage[0]", bus_volts);
+    # Seat
+    setprop("systems/electrical/outputs/seat", bus_volts);
     # TACAN
     setprop("systems/electrical/outputs/tacan", bus_volts);
     # Taxi Lights
@@ -345,6 +343,10 @@ electrical_28VDC_bus = func() {
 		load +=3;
 	}
 	else {setprop("systems/electrical/outputs/taxi-lights",0);}
+    # Turn Co-ordinator
+	setprop("systems/electrical/outputs/turn-coordinator[0]", bus_volts);
+    # Undercarriage operation and indicators
+    setprop("systems/electrical/outputs/undercarriage[0]", bus_volts);
 	
 
     # return cumulative load

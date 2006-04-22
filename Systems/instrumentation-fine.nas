@@ -107,18 +107,13 @@ initialize = func {
 	### Initialise electrical stuff ###
     props.globals.getNode("systems/electrical/suppliers/rpm_source", 1).setDoubleValue(1);
     props.globals.getNode("systems/electrical/outputs/standby_instruments", 1).setDoubleValue(0);
-		
+
+	### Initialise Seat stuff ###
+    props.globals.getNode("sim/model/lightning/controls/seat", 0).setIntValue(0);
+
 	### Initialise Radar stuff ###
-    props.globals.getNode("sim/model/lightning/controls/radarview", 1).setValue(0);
-	default_x = props.globals.getNode("sim/view/config/x-offset-m[0]").getValue();
-	default_y = props.globals.getNode("sim/view/config/y-offset-m[0]").getValue();
-	default_z = props.globals.getNode("sim/view/config/z-offset-m[0]").getValue();
-	default_fov = 55;
-	props.globals.getNode("sim/model/lightning/views/current-x-offset", 1).setDoubleValue(default_x);
-	props.globals.getNode("sim/model/lightning/views/current-y-offset", 1).setDoubleValue(default_y);
-	props.globals.getNode("sim/model/lightning/views/current-z-offset", 1).setDoubleValue(default_z);
-	props.globals.getNode("sim/model/lightning/views/current-fov", 1).setDoubleValue(default_fov);
-    
+    props.globals.getNode("sim/model/lightning/controls/radarview", 1).setIntValue(0);
+     
 	### Initialise Chute stuff ###
 	props.globals.getNode("sim/model/lightning/controls/flight/chute_open", 1).setIntValue(0);
 	props.globals.getNode("sim/model/lightning/controls/flight/chute_deployed", 1).setIntValue(0);

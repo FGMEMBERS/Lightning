@@ -267,6 +267,28 @@
    </volume>
   </flap>
 
+  <seat>
+   <name>seat</name>
+   <mode>looped</mode>
+   <path>Aircraft/Lightning/Sounds/motor.wav</path>
+   <condition>
+    <equals>
+     <property>/controls/seat/vertical-adjust</property>
+     <value>1</value>
+    </equals>
+    <greater-than>
+     <property>/systems/electrical/outputs/seat</property>
+     <value>1</value>
+    </greater-than>
+   </condition>
+   <pitch>
+    <property>/systems/electrical/outputs/seat</property>
+    <factor>0.042</factor>
+    <offset>0</offset>
+   </pitch>
+  </seat>
+
+
   <wind>
    <name>wind</name>
    <mode>looped</mode>

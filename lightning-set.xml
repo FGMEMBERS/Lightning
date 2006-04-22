@@ -113,6 +113,10 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
   </help>
 
+<ai>
+	<scenario>refueling_demo_1</scenario>
+</ai>
+
 </sim>
 
 <engines>
@@ -170,7 +174,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</binding>
 		</key>
 
-
 		<!-- instant replay -->
 		 <key n="114">
 			<name>r</name>
@@ -192,15 +195,59 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 				</script>
 			</binding>
 		</key>
-	<!-- Radar View -->
+		<!-- Seat Lower -->
+		<key n="85">
+			<name>U</name>	
+			<desc>Seat Down</desc>	
+			<binding>
+				<command>property-assign</command>
+				<property>/sim/model/lightning/controls/seat</property>
+				<value>-1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/model/lightning/controls/seat</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+		</key>
+		<!-- Seat Raise -->
+		<key n="117">
+			<name>u</name>	
+			<desc>Seat Up</desc>	
+			<binding>
+				<command>property-assign</command>
+				<property>/sim/model/lightning/controls/seat</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/model/lightning/controls/seat</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+		</key>
+		<!-- Radar View -->
 		<key n="82">
 			<name>R</name>	
 			<desc>Radar View</desc>	
+			<condition>
+				<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</condition>
 			<binding>
+				<condition>
+					<equals>
+						<property>/sim/current-view/view-number</property>
+						<value>0</value>
+					</equals>
+				</condition>
 				<command>nasal</command>
-				<script>
-					Lightning.toggle_radar_view(0);
-				</script>
+					<script>Lightning.toggle_radar_view(0);</script>
 			</binding>
 		</key>
 	</keyboard>
