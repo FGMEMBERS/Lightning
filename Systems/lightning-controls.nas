@@ -316,10 +316,11 @@ setlistener("sim/model/lightning/controls/seat", seatRaise);
 
 toggle_radar_view = func {
 
-	radar_x = 0.13;
-	radar_y = 1.43;
-	radar_z = -4.2;
+	radar_x = 0.12;
+	radar_y = 1.37;
+	radar_z = 4.5;
 	radar_fov = 12;
+	radar_pitch = -16;
 	radar_view_already_selected = props.globals.getNode("/sim/model/lightning/controls/radarview").getValue();
 
 	if (radar_view_already_selected != 1) {
@@ -327,18 +328,20 @@ toggle_radar_view = func {
 		current_y = props.globals.getNode("sim/current-view/y-offset-m").getValue();
 		current_z = props.globals.getNode("sim/current-view/z-offset-m").getValue();
 		current_fov = props.globals.getNode("sim/current-view/field-of-view").getValue();
+		current_pitch = props.globals.getNode("sim/current-view/pitch-offset-deg").getValue();
 
 		props.globals.getNode("sim/model/lightning/views/stored-x-offset-m",1).setDoubleValue(current_x);
 		props.globals.getNode("sim/model/lightning/views/stored-y-offset-m",1).setDoubleValue(current_y);
 		props.globals.getNode("sim/model/lightning/views/stored-z-offset-m",1).setDoubleValue(current_z);
 		props.globals.getNode("sim/model/lightning/views/stored-field-of-view",1).setValue(current_fov);
+		props.globals.getNode("sim/model/lightning/views/stored-pitch",1).setValue(current_pitch);
 
 		setprop('sim/current-view/x-offset-m', radar_x);
 		setprop('sim/current-view/y-offset-m', radar_y);
 		setprop('sim/current-view/z-offset-m', radar_z);
 		setprop('sim/current-view/field-of-view', radar_fov);
 		setprop('sim/current-view/heading-offset-deg[0]', 0);
-		setprop('sim/current-view/pitch-offset-deg[0]', -15);
+		setprop('sim/current-view/pitch-offset-deg[0]', -15.5);
 		setprop('sim/model/lightning/controls/radarview', 1);
 	}
 	else {
@@ -346,11 +349,13 @@ toggle_radar_view = func {
 		stored_y = props.globals.getNode("sim/model/lightning/views/stored-y-offset-m").getValue();
 		stored_z = props.globals.getNode("sim/model/lightning/views/stored-z-offset-m").getValue();
 		stored_fov = props.globals.getNode("sim/model/lightning/views/stored-field-of-view").getValue();
+		stored_pitch = props.globals.getNode("sim/model/lightning/views/stored-pitch").getValue();
 
 		props.globals.getNode("sim/current-view/x-offset-m",1).setDoubleValue(stored_x);
 		props.globals.getNode("sim/current-view/y-offset-m",1).setDoubleValue(stored_y);
 		props.globals.getNode("sim/current-view/z-offset-m",1).setDoubleValue(stored_z);
 		setprop('sim/current-view/field-of-view', stored_fov);
+		setprop('sim/current-view/pitch-offset-deg', stored_pitch);
 		setprop('sim/model/lightning/controls/radarview', 0);
 	}		
 

@@ -6,7 +6,7 @@
 
 	<offsets>
 		<!-- move model back  -->
-		<x-m>-7.9</x-m>
+		<x-m>1</x-m>
 		<!-- move model right -->
 		<y-m>0.0</y-m>
 		<!-- move model up (yasim)    -->
@@ -617,7 +617,50 @@
 		</axis>
 	</animation>
 
-
+	<!-- Seat animation -->
+	<animation>
+		<type>translate</type>
+		<object-name>seat_base</object-name>
+		<property>/sim/current-view/y-offset-m</property>
+		<interpolation>
+			<entry>
+				<ind>1.35</ind>
+				<dep>-0.05</dep>
+			</entry>
+			<entry>
+				<ind>1.5</ind>
+				<dep>0.045</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<!-- Canopy animation -->
+<!--
+	<animation>
+		<type>rotate</type>
+		<object-name>canopy</object-name>
+		<property>/sim/current-view/y-offset-m</property>
+		<interpolation>
+			<entry>
+				<ind>1.35</ind>
+				<dep>-0.05</dep>
+			</entry>
+			<entry>
+				<ind>1.5</ind>
+				<dep>0.045</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+-->
 	<!-- Gear Animation -->
 
 	<!-- Rear gear animation -->
@@ -1136,12 +1179,15 @@
 		<object-name>uc_fr_well</object-name>
 		<object-name>seat_base</object-name>
 		<object-name>roundels</object-name>
+		<object-name>roundels_underside</object-name>
 		<object-name>xm169</object-name>
 		<object-name>tail_flag</object-name>
 		<object-name>tail_letter</object-name>
+		<object-name>sqdn_tail_badge</object-name>
 		<object-name>warning_triangles</object-name>
 		<object-name>flap_hinges</object-name>
 		<object-name>inner_tailpipe_end</object-name>
+		<object-name>inner_tailpipe_strakes</object-name>
 	</animation>
 
 	<!-- Lighting -->
@@ -1156,6 +1202,88 @@
 			<blue>0.90</blue>
 		</emission>
 	</animation>
+
+	<!-- Material Animations -->
+	<animation>
+		<type>material</type>
+		<!--global type="bool">true</global-->
+		<object-name>nose_markings</object-name>
+		<property-base>sim/model/livery/material/nose_markings</property-base>
+  		<texture-prop>texture</texture-prop>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<!--global type="bool">true</global-->
+		<object-name>sqdn_tail_badge</object-name>
+		<property-base>sim/model/livery/material/sqdn_tail_badge</property-base>
+  		<texture-prop>texture</texture-prop>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<global type="bool">true</global>
+		<object-name>main_fuselage_spine</object-name>	
+		<object-name>tail</object-name>
+		<property-base>/sim/model/livery/material/tail_color</property-base>
+		<diffuse>
+			<red-prop>diffuse/red</red-prop>
+			<green-prop>diffuse/green</green-prop>
+			<blue-prop>diffuse/blue</blue-prop>
+		</diffuse>
+		<ambient>
+			<red-prop>ambient/red</red-prop>
+			<green-prop>ambient/green</green-prop>
+			<blue-prop>ambient/blue</blue-prop>
+		</ambient>
+		<specular>
+			<red-prop>specular/red</red-prop>
+			<green-prop>specular/green</green-prop>
+			<blue-prop>specular/blue</blue-prop>
+		</specular>
+		<emission>
+			<red-prop>emission/red</red-prop>
+			<green-prop>emission/green</green-prop>
+			<blue-prop>emission/blue</blue-prop>
+		</emission>
+		<transparency>
+			<alpha-prop>transparency/alpha</alpha-prop>
+		</transparency>
+		<shininess-prop>shininess</shininess-prop>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<global type="bool">true</global>
+		<object-name>rudder</object-name>
+		<property-base>/sim/model/livery/material/tail_color</property-base>
+		<diffuse>
+			<red-prop>diffuse/red</red-prop>
+			<green-prop>diffuse/green</green-prop>
+			<blue-prop>diffuse/blue</blue-prop>
+		</diffuse>
+		<ambient>
+			<red-prop>ambient/red</red-prop>
+			<green-prop>ambient/green</green-prop>
+			<blue-prop>ambient/blue</blue-prop>
+		</ambient>
+		<specular>
+			<red-prop>specular/red</red-prop>
+			<green-prop>specular/green</green-prop>
+			<blue-prop>specular/blue</blue-prop>
+		</specular>
+		<emission>
+			<red-prop>emission/red</red-prop>
+			<green-prop>emission/green</green-prop>
+			<blue-prop>emission/blue</blue-prop>
+		</emission>
+		<transparency>
+			<alpha-prop>transparency/alpha</alpha-prop>
+		</transparency>
+		<shininess-prop>shininess</shininess-prop>
+	</animation>
+
+
 
 	<!-- Hotspots -->
 
