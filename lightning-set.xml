@@ -37,18 +37,80 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	 </flight>
 	</controls>
   </lightning>
+  <livery>
+	<variant type="string">chequered </variant>
+
+	<material>
+
+     <nose_markings>
+       <texture>empty.rgb</texture>
+     </nose_markings>
+
+	 <sqdn_tail_badge>
+       <texture>empty.rgb</texture>
+     </sqdn_tail_badge>
+
+	 <tail_color>
+	  <diffuse>
+	   <red>0</red>
+	   <green>0</green>
+	   <blue>0</blue>
+	  </diffuse>
+
+	  <ambient>
+	   <red>0.2</red>
+	   <green>0.2</green>
+	   <blue>0.2</blue>
+	  </ambient>
+
+	  <specular>
+	   <red>0.063</red>
+	   <green>0.063</green>
+	   <blue>0.063</blue>
+	  </specular>
+
+	  <emission>
+	   <red>0.0</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </emission>
+
+	  <transparency>
+	   <alpha>1.0</alpha>
+	  </transparency>
+
+	  <shininess>10</shininess>
+	 </tail_color>
+
+     </material>
+   </livery>
   </model>
 
   <view n="0">
    <internal archive="y">true</internal>
    <config>
-    <!-- Note - relative to COG -->
     <pitch-offset-deg>-20.0</pitch-offset-deg>
     <x-offset-m archive="y">0.0</x-offset-m> <!--Right-->
     <y-offset-m archive="y">1.40</y-offset-m> <!--Up-->
-    <z-offset-m archive="y">-4.2</z-offset-m> <!--Back-->
+    <z-offset-m archive="y">4.8</z-offset-m> <!--Back-->
    </config>
   </view>
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+   </config>
+  </view>
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+   </config>
+  </view>
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+   </config>
+  </view>
+
 
 <systems>
 	<!-- Null Electrical System, use nasal instead -->
@@ -100,7 +162,11 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line></line>
 	<line>Approach speed, with flaps (and airbrakes as necessary) : around 160 kts</line>
 	<line></line>
-	<line>Toggle radar close-up view - "R"</line>
+	<line>Adjust Seat (Requires DC power) - "u/U" keys</line>
+	<line></line>
+	<line>Toggle radar close-up view - "R" key</line>
+	<line></line>
+	<line>Select Squadron Markings - "l" key</line>
 	<line></line>
 	<line>The "Master Camera" switch has been used to trigger an instant replay "marker";</line>
 	<line>simply flick the switch on before your attack/aerobatic maneuver and when you</line>
@@ -108,7 +174,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line>the "camera was turned on"</line>
 	<line></line>
 	<line>See the readme.txt in the Aircraft/Lightning directory for more information</line>
-	<line>in particular how to enable proportional braking</line>
+	<line>in particular how to use the proportional braking</line>
 	<line></line>
 
   </help>
@@ -138,19 +204,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	</gear>
 </controls>
 
-<!--
- <consumables>
-  <fuel>
-   <tank n="0">
-    <level-gal_us archive="y">3000</level-gal_us>
-   </tank>
-   <tank n="1">
-    <level-gal_us archive="y">3000</level-gal_us>
-   </tank>
-  </fuel>
- </consumables>
--->
-
 <nasal>
 	<Lightning>
 		<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
@@ -159,6 +212,9 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 		<file>Aircraft/Lightning/Systems/lightning-lights.nas</file>
 		<file>Aircraft/Lightning/Systems/lightning-main.nas</file>
 	</Lightning>
+	<livery>
+		<file>Aircraft/Lightning/Models/livery.nas</file>
+	</livery>
 </nasal>
 
 <input>
@@ -250,6 +306,15 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 					<script>Lightning.toggle_radar_view(0);</script>
 			</binding>
 		</key>
+		<!-- Livery Box -->
+ 		<key n="108">
+   			<name>l</name>
+   			<desc>Show livery select dialog</desc>
+   			<binding>
+    				<command>nasal</command>
+     				<script>livery.showModelSelectDialog()</script>
+   			</binding>
+ 		</key>
 	</keyboard>
 </input>
 
