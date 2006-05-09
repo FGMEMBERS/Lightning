@@ -287,6 +287,7 @@
   <!-- Declare Properties -->
     <property>/accelerations/pilot-g</property>
     <property>/sim/model/lightning/controls/shut_down</property>
+    <property>/sim/model/lightning/engines/aux_intakes_open</property>
   <!-- <property>/gear/gear/caster-angle-deg</property> -->
 
 <!--
@@ -523,6 +524,21 @@
         fcs/throttle-cmd-norm[1] lt 0.08
         /sim/model/lightning/controls/shut_down == 1
       </test>
+    </switch>
+    <switch name="engine_running">
+      <default value="0"/>
+      <test logic="OR" value="1">
+         propulsion/engine/n1 gt 31
+         propulsion/engine[0]/n1 gt 31
+      </test>
+    </switch>
+    <switch name="aux_intakes_open">
+      <default value="0"/>
+      <test logic="AND" value="1">
+         fcs/engine_running eq 1
+         velocities/ve-kts lt 170 
+      </test>
+      <output>/sim/model/lightning/engines/aux_intakes_open</output>
     </switch>
    </channel>
 

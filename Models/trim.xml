@@ -101,7 +101,7 @@
 
 		<type>rotate</type>
 		<object-name>trim-airbrake</object-name>
-		<property>controls/flight/speedbrake</property>
+		<property>fdm/jsbsim/fcs/speedbrake-pos-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
