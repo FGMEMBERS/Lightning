@@ -215,6 +215,9 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<livery>
 		<file>Aircraft/Lightning/Models/livery.nas</file>
 	</livery>
+	<aar> 
+     <file>Aircraft/KC135/aar.nas</file>
+  </aar>
 </nasal>
 
 <input>
