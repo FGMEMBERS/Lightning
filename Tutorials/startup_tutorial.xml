@@ -1,0 +1,209 @@
+<PropertyList>
+	<tutorial>
+		<name>Engine Start</name>
+		<description>This tutorial teaches the Lightning engine start procedure</description>
+	<init>
+		<set>
+			<prop>/controls/gear/brake-parking</prop>
+			<val>1</val>
+		</set>
+		<set>
+			<prop>/controls/flight/flaps</prop>
+			<val>0.0</val>
+		</set>
+		<set>
+			<prop>/sim/model/lightning/controls/shut_down</prop>
+			<val>1</val>
+		</set>
+		<set>
+			<prop>/systems/electrical/suppliers/external</prop>
+			<val>0</val>
+		</set>
+		<set>
+			<prop>/controls/engines/engine[0]/cutoff</prop>
+			<val>0</val>
+		</set>
+		<set>
+			<prop>/controls/engines/engine[1]/cutoff</prop>
+			<val>0</val>
+		</set>
+		<set>
+			<prop>/controls/engines/engine[0]/throttle</prop>
+			<val>0.0</val>
+		</set>
+		<set>
+			<prop>/controls/engines/engine[1]/throttle</prop>
+			<val>0.0</val>
+		</set>
+		<set>
+			<prop>/engines/engine[0]/running</prop>
+			<val>0</val>
+		</set>
+		<set>
+			<prop>/engines/engine[1]/running</prop>
+			<val>0</val>
+		</set>
+	</init>
+    <step>
+		<instruction>First, ensure ground power is being supplied.  Use the checkbox on the Lightning dialogue (TAB key)</instruction>
+		<error>
+			<check>
+				<prop>/systems/electrical/suppliers/external</prop>
+				<lt>1</lt>
+				<msg>call up the dialogue with the TAB key and select "External Power"</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/systems/electrical/suppliers/external</prop>
+				<gt>0</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>Ensure the engine shutdown control is in the upright position (on LHS of cockpit, on the RH edge of the throttle panel)</instruction>
+		<error>
+			<check>
+				<prop>/sim/model/lightning/controls/shut_down</prop>
+				<gt>0</gt>
+				<msg>Ensure the cutoff switch is off (vertical)</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/sim/model/lightning/controls/shut_down</prop>
+				<lt>1</lt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>Next, turn on the battery switch located on the right hand switch panel</instruction>
+		<error>
+			<check>
+				<prop>/controls/switches/battery</prop>
+				<lt>1</lt>
+				<msg>the battery switch is at the bottom right of the panel, ensure it is on (up)</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/controls/switches/battery</prop>
+				<gt>0</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>turn on the "Engine start master" switch (also on the right hand switch panel)</instruction>
+		<error>
+			<check>
+				<prop>/controls/switches/eng_start_master</prop>
+				<lt>1</lt>
+				<msg>Ensure the "Engine Start Master" switch is on (up)</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/controls/switches/eng_start_master</prop>
+				<gt>0</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>turn on the "Ignition" switch (also on the right hand switch panel)</instruction>
+		<error>
+			<check>
+				<prop>/controls/switches/eng_start_master</prop>
+				<lt>1</lt>
+				<msg>Ensure the "Ignition" switch is on (up)</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/controls/switches/ignition</prop>
+				<gt>0</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>Move the throttles to the first "Open" position</instruction>
+		<error>
+			<check>
+				<prop>/controls/engines/engine[0]/throttle</prop>
+				<lt>0.03</lt>
+				<msg>Open the throttles</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/controls/engines/engine[0]/throttle</prop>
+				<gt>0.03</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>Press and hold the No1 "Engine Start" button for up to two seconds</instruction>
+		<error>
+			<check>
+				<prop>/engines/engine[0]/n1</prop>
+				<lt>2</lt>
+				<msg>The No1 Engine Start button is directly below the "Ignition" switch</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/engines/engine[0]/n1</prop>
+				<gt>30</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>Press and hold the No2 "Engine Start" button for up to two seconds</instruction>
+		<error>
+			<check>
+				<prop>/engines/engine[1]/n1</prop>
+				<lt>2</lt>
+				<msg>The No2 Engine Start button is directly above the "Battery" switch</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/engines/engine[1]/n1</prop>
+				<gt>30</gt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>turn off the "Engine start master" switch</instruction>
+		<error>
+			<check>
+				<prop>/controls/switches/eng_start_master</prop>
+				<gt>0</gt>
+				<msg>Ensure the "Engine Start Master" switch is off (down)</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/controls/switches/eng_start_master</prop>
+				<lt>1</lt>
+			</check>
+		</exit>
+	</step>
+    <step>
+		<instruction>Disconnect external electrical supplies</instruction>
+		<error>
+			<check>
+				<prop>/systems/electrical/suppliers/external</prop>
+				<gt>0</gt>
+				<msg>call up the dialogue with the TAB key and deselect "External Power"</msg>
+			</check>
+		</error>
+		<exit>
+			<check>
+				<prop>/systems/electrical/suppliers/external</prop>
+				<lt>1</lt>
+			</check>
+		</exit>
+	</step>
+	<endtext>Both engines should now be running</endtext>
+	</tutorial>
+</PropertyList>

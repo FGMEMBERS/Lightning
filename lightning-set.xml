@@ -86,6 +86,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
    </livery>
   </model>
 
+  <tutorial include="Tutorials/startup_tutorial.xml"></tutorial>
+
   <view n="0">
    <internal archive="y">true</internal>
    <config>
@@ -148,9 +150,11 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line></line>
 	<line>Startup Procedure</line>
 	<line></line>
+	<line>Step-by-step tutorial available from the help menu ("start tutorial" option)</line>
+	<line></line>
 	<line>Connect external power (ctrl-i to bring up or dismiss the dialogue)</line>
 	<line>Set throttle to first "open" position, ensure cut-off (on the side</line>
-	<line>of the throttle panel) is in the "up" position</line>
+	<line>of the throttle panel) is in the vertical position</line>
 	<line>Switch on Battery, Engine start master and Ignition</line>
 	<line>Press first engine start button for up to 2 seconds and release</line>
 	<line>If engine catches, open throttle to idle position</line>
@@ -161,6 +165,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line>Nosewheel should unstick at around 155kts</line>
 	<line></line>
 	<line>Approach speed, with flaps (and airbrakes as necessary) : around 160 kts</line>
+	<line>After touchdown, lower nose and deploy brake chute using in-cockpit handle</line>
 	<line></line>
 	<line>Adjust Seat (Requires DC power) - "u/U" keys</line>
 	<line></line>
