@@ -115,7 +115,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 
 <systems>
-	<!-- Null Electrical System, use nasal instead -->
     <autopilot>
       <path>Aircraft/Lightning/Systems/Lightning-autopilot-jsbsim.xml</path>
 		<settings>
@@ -133,6 +132,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 		</locks>
 
     </autopilot>
+	<!-- Null Electrical System, use nasal instead -->
     <electrical>
       <path></path>
     </electrical>
@@ -167,12 +167,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line>Approach speed, with flaps (and airbrakes as necessary) : around 160 kts</line>
 	<line>After touchdown, lower nose and deploy brake chute using in-cockpit handle</line>
 	<line></line>
-	<line>Adjust Seat (Requires DC power) - "u/U" keys</line>
-	<line></line>
-	<line>Toggle radar close-up view - "R" key</line>
-	<line></line>
-	<line>Select Squadron Markings - "l" key</line>
-	<line></line>
 	<line>The "Master Camera" switch has been used to trigger an instant replay "marker";</line>
 	<line>simply flick the switch on before your attack/aerobatic maneuver and when you</line>
 	<line>select "Instant Replay" (press "r") the replay should begin from the moment</line>
@@ -181,6 +175,19 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line>See the readme.txt in the Aircraft/Lightning directory for more information</line>
 	<line>in particular how to use the proportional braking</line>
 	<line></line>
+
+	<key>
+		<name>u/U</name>
+		<desc>Adjust Seat (Requires DC power)</desc>
+	</key>
+	<key>
+		<name>R</name>
+		<desc>Toggle radar close-up view</desc>
+	</key>
+	<key>
+		<name>l</name>
+		<desc>Select Squadron Markings</desc>
+	</key>
 
   </help>
 
