@@ -177,16 +177,20 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<line></line>
 
 	<key>
-		<name>u/U</name>
-		<desc>Adjust Seat (Requires DC power)</desc>
+		<name>d</name>
+		<desc>Deploy braking chute</desc>
+	</key>
+	<key>
+		<name>l</name>
+		<desc>Select Squadron Markings</desc>
 	</key>
 	<key>
 		<name>R</name>
 		<desc>Toggle radar close-up view</desc>
 	</key>
 	<key>
-		<name>l</name>
-		<desc>Select Squadron Markings</desc>
+		<name>u/U</name>
+		<desc>Adjust Seat (Requires DC power)</desc>
 	</key>
 
   </help>
@@ -330,6 +334,24 @@ AJ MacLeod (aj@adpetopensource.co.uk)
      				<script>livery.showModelSelectDialog()</script>
    			</binding>
  		</key>
+		<key n="100">
+			<name>d</name>
+			<desc>Deploy braking chute</desc>
+			<binding>
+				<command>property-assign</command>
+				<property>sim/model/lightning/controls/flight/chute_deployed</property>
+				<value type="int">1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>sim/model/lightning/controls/flight/chute_open</property>
+				<value type="int">1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.chuteAngle()</script>
+			</binding>
+		</key>
 	</keyboard>
 </input>
 
