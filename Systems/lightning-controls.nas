@@ -363,19 +363,34 @@ toggle_radar_view = func {
 
 # ============================= Engine Starts  =================================================
 
+AvpinPump = func(number){
+
+	volts = getprop("systems/electrical/outputs/ignition["~number~"]");
+
+	if ( volts > 27){
+		setprop("sim/model/lightning/engines/engine["~number~"]/avpin_flowing",1);
+		settimer(func{Combustion(number);},2);
+	}
+
+} # End Function
+
+Combustion = func(number){
+
+	setprop("sim/model/lightning/engines/engine["~number~"]/avpin_flowing",0);
+	setprop("sim/model/lightning/engines/engine["~number~"]/combustion",1);
+	settimer(func{EngineStart(number);},5);
+
+} # End Function
+		
 EngineStart = func {
 	
 	number = arg[0];
-	switchIsOn = getprop("controls/switches/engine_start_"~ number );
 	volts = getprop("systems/electrical/outputs/ignition["~number~"]");
 	cutoff = getprop("sim/model/lightning/controls/shut_down");
 
-	if (switchIsOn == 0){
-		setprop("controls/engines/engine["~number~"]/cutoff","false");
-		setprop("controls/engines/engine["~number~"]/starter","false");
-	}
-	
-	elsif ( volts > 27 and cutoff == "1"){
+	setprop("sim/model/lightning/engines/engine["~number~"]/combustion",0);
+
+	if ( volts > 27 and cutoff == "1"){
 		setprop("controls/engines/engine["~number~"]/cutoff","false");
 		setprop("controls/engines/engine["~number~"]/starter","true");
 	}
@@ -383,6 +398,10 @@ EngineStart = func {
 	elsif ( volts > 27 and cutoff != "1"){
 		setprop("controls/engines/engine["~number~"]/cutoff","true");
 		setprop("controls/engines/engine["~number~"]/starter","true");
+		setprop("sim/model/lightning/engines/engine["~number~"]/starting",1);
+		settimer(func{
+			setprop("controls/engines/engine["~number~"]/cutoff","false");
+		},1);
 	}
 
 } #End func
@@ -408,7 +427,7 @@ EngineStop = func {
 } #End func
 
 
-# ================================== Steering ==================================================
+# ================================== Steering =================================================
 
 controls.applyBrakes = func(v,which=0){
 
@@ -446,3 +465,57 @@ steering = func{
 		
 } # end function
 setlistener("sim/model/lightning/controls/gear/braking", steering);
+
+# ========================= Ground Fuelling ====================================
+
+refuel = func{
+
+	brakesOn = getprop("/controls/gear/brake-parking");
+	wow = getprop("/gear/gear/wow");
+	fueltanks = props.globals.getNode("consumables/fuel").getChildren("tank");
+
+	if (brakesOn and wow){
+		foreach(tank; fueltanks) {
+			level = tank.getNode("level-gal_us",0);
+			remaining = level.getValue();
+			interpolate(level,400, 30);
+		}
+	}
+} # End function
+
+ventralRefit = func{
+
+	setprop('sim/model/lightning/controls/tank_jettisoned', 0);
+	setprop('sim/model/lightning/controls/tank_jettisoned_lever', 0);
+
+} # end of function
+
+# ========================= Emergency U/C  =====================================
+
+controls.gearDown = func(down){
+
+	emergency = getprop("sim/model/lightning/controls/emergency_uc_selected");
+	if (emergency > 0) { return () };
+
+	power = getprop("systems/electrical/outputs/undercarriage");
+	if (power < 24) { return () };
+
+	airspeed = getprop("velocities/airspeed-kt");
+
+	if (down < 0 and airspeed > 150) {
+		setprop("controls/gear/gear-down", 0);
+	} elsif (down > 0) {
+		setprop("controls/gear/gear-down", 1);
+	} 
+
+} # end of function
+
+emergencyGearDown = func(set){
+
+	if (set < 1){
+		setprop("sim/model/lightning/controls/emergency_uc_selected", 0);
+	} else {
+		setprop("sim/model/lightning/controls/emergency_uc_selected", 1);
+		setprop("controls/gear/gear-down", 1);
+	}
+} # End Func
