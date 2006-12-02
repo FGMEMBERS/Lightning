@@ -85,6 +85,9 @@ AJ MacLeod (aj@adpetopensource.co.uk)
      </material>
    </livery>
   </model>
+  <instrumentation>
+    <path>Aircraft/Lightning/Systems/lightning-instrumentation.xml</path>
+  </instrumentation>
 
   <tutorial include="Tutorials/startup_tutorial.xml"></tutorial>
 
@@ -113,8 +116,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
    </config>
   </view>
 
-
-<systems>
+  <systems>
     <autopilot>
       <path>Aircraft/Lightning/Systems/Lightning-autopilot-jsbsim.xml</path>
 		<settings>
@@ -136,12 +138,12 @@ AJ MacLeod (aj@adpetopensource.co.uk)
     <electrical>
       <path></path>
     </electrical>
-</systems>
+  </systems>
 
-<submodels>
-	<serviceable type="bool">true</serviceable>
-	<path>Aircraft/Lightning/Models/lightning-submodels.xml</path>
-</submodels>
+  <submodels>
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/Lightning/Models/lightning-submodels.xml</path>
+  </submodels>
 
   <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
@@ -195,22 +197,22 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
   </help>
 
-<ai>
+  <ai>
 	<scenario>refueling_demo_1</scenario>
-</ai>
+  </ai>
 
-</sim>
+ </sim>
 
-<engines>
+ <engines>
 	<engine n="0">
 		<running>false</running>
 	</engine>
 	<engine n="1">
 		<running>false</running>
 	</engine>
-</engines>
+ </engines>
 
-<controls>
+ <controls>
 	<flight>
 		<flaps-lever type="double">0</flaps-lever>
 	</flight>
@@ -218,25 +220,26 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 		<brake-parking>1</brake-parking>
 		<tailwheel-lock>false</tailwheel-lock>
 	</gear>
-</controls>
+ </controls>
 
-<nasal>
+ <nasal>
 	<Lightning>
-		<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
-		<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
-		<file>Aircraft/Lightning/Systems/lightning-controls.nas</file>
-		<file>Aircraft/Lightning/Systems/lightning-lights.nas</file>
 		<file>Aircraft/Lightning/Systems/lightning-main.nas</file>
+		<file>Aircraft/Lightning/Systems/lightning-lights.nas</file>
+		<file>Aircraft/Lightning/Systems/lightning-radios.nas</file>
+		<file>Aircraft/Lightning/Systems/lightning-controls.nas</file>
+		<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
+		<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
 	</Lightning>
 	<livery>
 		<file>Aircraft/Lightning/Models/livery.nas</file>
 	</livery>
 	<aar> 
-     <file>Aircraft/Lightning/aar.nas</file>
+     <file>Aircraft/Generic/aar.nas</file>
   </aar>
-</nasal>
+ </nasal>
 
-<input>
+ <input>
 	<keyboard>
 
 		<!-- instant replay -->
@@ -246,6 +249,22 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<binding>
 				<command>nasal</command>
 				<script>Lightning.showDialog()</script>
+			</binding>
+		</key>
+
+		<!-- Ventral Tank Jettison -->
+		<key n="10">
+			<name>Ctrl-J</name>
+			<desc>Ventral tank jettison</desc>
+			<binding>
+				<command>property-assign</command>
+				<property>/sim/model/lightning/controls/tank_jettisoned</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>/sim/model/lightning/controls/tank_jettisoned_lever</property>
+				<value>1</value>
 			</binding>
 		</key>
 
@@ -353,12 +372,11 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</binding>
 		</key>
 	</keyboard>
-</input>
+ </input>
 
-<instrumentation>
-	<radar>
-		<range type="int" archive="y">20</range>
-	</radar>
-</instrumentation>
+ <radar>
+  <range type="int" archive="y">20</range>
+ </radar>
+
 
 </PropertyList>

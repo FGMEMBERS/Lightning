@@ -5,7 +5,7 @@ MATERIAL "ac3dmat1" rgb 0.82 0.827 0.82  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502
 OBJECT world
 kids 5
 OBJECT poly
-name "rect"
+name "face"
 loc 0 7.57247e-10 0
 texture "nozzles.rgb"
 crease 45.000000
@@ -24,7 +24,7 @@ refs 4
 0 1 0
 kids 0
 OBJECT poly
-name "object"
+name "bezelinside"
 loc 2.17624e-05 -6.57216e-05 0.0249202
 crease 45.000000
 numvert 76

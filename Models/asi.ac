@@ -6,7 +6,7 @@ MATERIAL "ac3dmat1" rgb 0.82 0.827 0.82  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502
 OBJECT world
 kids 10
 OBJECT poly
-name "Face"
+name "face"
 loc 0.00317962 -0.000199498 -3.49086e-05
 texture "asi.rgb"
 crease 45.000000

@@ -4,7 +4,7 @@
 <PropertyList>
 
  <name>Main Panel Hotspots</name>
- <background>Aircraft/Lightning/Models/transparent.rgb</background>
+ <background>Aircraft/Generic/Panels/Textures/transparent-bg.rgb</background>
  <x>512</x>
  <y>384</y> 
  <w>1024</w>
@@ -25,7 +25,7 @@
  <layer>
    <name>background</name>
    <texture>
-     <path>Aircraft/Hunter/Models/transparent-bg.rgb</path>
+    <path>Aircraft/Generic/Panels/Textures/transparent-bg.rgb</path>
      <x1>0.0</x1>
      <y1>0.0</y1>
      <x2>1.0</x2>
@@ -99,7 +99,72 @@
       <wrap>false</wrap>
      </binding>
     </action>
-	
+	<!-- HSI -->
+    <action>
+     <button>0</button>
+     <x>108</x>
+     <y>237</y>
+     <w>10</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/heading-indicator/heading-bug-deg</property>
+      <step>-5</step>
+      <min>0</min>
+      <max>360</max>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>118</x>
+     <y>237</y>
+     <w>10</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/heading-indicator/heading-bug-deg</property>
+      <step>5</step>
+      <min>0</min>
+      <max>360</max>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>130</x>
+     <y>230</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>nasal</command>
+      <script>Lightning.propToggle("instrumentation/heading-indicator/heading-source");</script>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>150</x>
+     <y>237</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/master-reference-gyro/spin</property>
+      <step>0.02</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+     <binding>
+      <command>property-adjust</command>
+      <property>sim/model/lightning/controls/syn-knob</property>
+      <step>1</step>
+      <min>0</min>
+      <max>36</max>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+			
 	<!-- Altimeter -->
     <action>
      <button>0</button>
@@ -128,6 +193,233 @@
      </binding>
     </action>
 
+	<!-- Radio Panel -->
+    <action>
+     <button>0</button>
+     <x>-60</x>
+     <y>-180</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+      <step>-10</step>
+      <min>117</min>
+      <max>339</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>-45</x>
+     <y>-180</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+      <step>10</step>
+      <min>117</min>
+      <max>339</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <!-- Middle knob -->
+    <action>
+     <button>0</button>
+     <x>-9</x>
+     <y>-220</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+      <step>-1</step>
+      <min>117</min>
+      <max>339</max>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>8</x>
+     <y>-220</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+      <step>1</step>
+      <min>117</min>
+      <max>339</max>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <!-- Right knob -->
+    <action>
+     <button>0</button>
+     <x>30</x>
+     <y>-180</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+      <mask>decimal</mask>
+      <step>-0.05</step>
+      <min>0</min>
+      <max>1.0</max>
+      <resolution>0.05</resolution>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>45</x>
+     <y>-180</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+      <mask>decimal</mask>
+      <step>0.05</step>
+      <min>0</min>
+      <max>1.0</max>
+      <resolution>0.05</resolution>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <!-- Vol knob -->
+    <action>
+     <button>0</button>
+     <x>-9</x>
+     <y>-300</y>
+     <w>15</w>
+     <h>50</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>/sim/model/lightning/radios/nav[0]/vol</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/comm[0]/volume</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/adf/volume</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>8</x>
+     <y>-300</y>
+     <w>15</w>
+     <h>50</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>/sim/model/lightning/radios/comm[0]/vol</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/comm[0]/volume</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/adf/volume</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+   <!-- Standby comm radio -->
+    <!-- Left knob -->
+    <action>
+     <button>0</button>
+     <x>-65</x>
+     <y>-500</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <step>-1</step>
+      <min>117.50</min>
+      <max>135.95</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>-45</x>
+     <y>-500</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <step>1</step>
+      <min>117.50</min>
+      <max>135.95</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <!-- Right knob -->
+    <action>
+     <button>0</button>
+     <x>30</x>
+     <y>-500</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <mask>decimal</mask>
+      <step>-0.05</step>
+      <min>0</min>
+      <max>1.0</max>
+      <resolution>0.05</resolution>
+      <wrap>true</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>45</x>
+     <y>-500</y>
+     <w>15</w>
+     <h>25</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <mask>decimal</mask>
+      <step>0.05</step>
+      <min>0</min>
+      <max>1.0</max>
+      <resolution>0.05</resolution>
+      <wrap>true</wrap>
+     </binding>
+    </action>
 
     <!-- Port Panel Hotspots -->
     <action>
@@ -223,7 +515,7 @@
 	<!-- Gear up -->
     <action>
      <button>0</button>
-     <x>-270</x>
+     <x>-295</x>
      <y>20</y>
      <w>20</w>
      <h>40</h>
@@ -247,7 +539,7 @@
    	<!-- Gear Down -->
     <action>
      <button>0</button>
-     <x>-270</x>
+     <x>-295</x>
      <y>-50</y>
      <w>20</w>
      <h>40</h>
@@ -256,7 +548,130 @@
       <script>controls.gearDown(1)</script>
      </binding>
     </action>
+    <!-- "Day" setting -->
+    <action>
+     <button>0</button>
+     <x>-280</x>
+     <y>-215</y>
+     <w>15</w>
+     <h>50</h>
+     <binding>
+      <command>property-assign</command>
+      <property>controls/switches/dayNight</property>
+      <value>1</value>
+     </binding>
+    </action>
+    <!-- "Night" setting -->
+    <action>
+     <button>0</button>
+     <x>-245</x>
+     <y>-215</y>
+     <w>15</w>
+     <h>50</h>
+     <binding>
+      <command>property-assign</command>
+      <property>controls/switches/dayNight</property>
+      <value>0</value>
+     </binding>
+    </action>
+    <!-- Change Lamps -->
+    <action>
+     <button>0</button>
+     <x>-265</x>
+     <y>-205</y>
+     <w>15</w>
+     <h>45</h>
+     <binding>
+      <command>property-toggle</command>
+      <property>controls/switches/changeLamps</property>
+     </binding>
+    </action>
+   	<!-- Tank Jett -->
+    <action>
+     <button>0</button>
+     <x>-300</x>
+     <y>-500</y>
+     <w>40</w>
+     <h>80</h>
+     <binding>
+      <command>property-assign</command>
+      <property>sim/model/lightning/controls/tank_jettisoned</property>
+      <value>1</value>
+     </binding>
+     <binding>
+      <command>property-assign</command>
+      <property>sim/model/lightning/controls/tank_jettisoned_lever</property>
+      <value type="int">1</value>
+     </binding>
+     <binding>
+      <command>property-assign</command>
+      <property>consumables/fuel/tank/level-gal_us</property>
+      <value>0</value>
+     </binding>
+    </action>
  <!-- Starboard Panel Hotspots -->
+    <action>
+     <button>0</button>
+     <x>360</x>
+     <y>-65</y>
+     <w>18</w>
+     <h>40</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>controls/switches/instr-lights-port</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>390</x>
+     <y>-65</y>
+     <w>18</w>
+     <h>40</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>controls/switches/instr-lights-port</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
+    <action>
+     <button>0</button>
+     <x>380</x>
+     <y>-140</y>
+     <w>18</w>
+     <h>40</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>controls/switches/instr-lights-stbd</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+    <action>
+     <button>0</button>
+     <x>410</x>
+     <y>-140</y>
+     <w>18</w>
+     <h>40</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>controls/switches/instr-lights-stbd</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+     </binding>
+    </action>
+
     <action>
      <button>0</button>
      <x>275</x>

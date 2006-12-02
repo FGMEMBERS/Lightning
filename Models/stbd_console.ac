@@ -18,7 +18,7 @@ name "cockpit"
 loc 0.455667 0.216722 0.31751
 kids 1
 OBJECT poly
-name "box"
+name "panel_lh"
 loc -4.22369 -0.430334 -0.0338934
 texture "stbd_console_switches.rgb"
 crease 45.000000
@@ -41,7 +41,7 @@ name "cockpit"
 loc 0.455667 0.216722 0.31751
 kids 1
 OBJECT poly
-name "box"
+name "panel_rh"
 loc -4.22369 -0.430334 -0.0338934
 texture "stbd_console_switches.rgb"
 crease 45.000000
@@ -31894,7 +31894,7 @@ numvert 8
 -0.0574834 -0.004987 0.0559253
 0.062248 -0.004987 0.0559253
 0.062248 -0.004987 -0.0479579
-numsurf 6
+numsurf 5
 SURF 0x0
 mat 0
 refs 4
@@ -31930,11 +31930,6 @@ refs 4
 4 0 0
 0 0 0
 3 0 0
-SURF 0x0
-mat 0
-refs 2
-4 0 0
-0 0 0
 kids 0
 OBJECT poly
 name "rect"

@@ -1,11 +1,11 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 0.69 0.69 0.69  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat0" rgb 0.027 0.027 0.02  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat1" rgb 0.82 0.827 0.82  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502 0.502 0.502  shi 17  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502 0.502 0.502  shi 17  trans 0
 OBJECT world
 kids 9
 OBJECT poly
-name "Face"
+name "face"
 loc 0.00317962 -0.000199498 -3.49086e-05
 texture "trim.rgb"
 crease 45.000000

@@ -1,0 +1,30 @@
+<?xml version = '1.0' ?>
+<PropertyList>
+	<!-- Emergency Undercarriage lever -->
+	<path>emergency_uc_lever.ac</path>
+	<animation>
+		<type>select</type>
+		<object-name>emergency_uc_handle</object-name>
+		<condition>
+			<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>emergency_uc_handle</object-name>
+		<property>sim/model/lightning/controls/emergency_uc_selected</property>
+		<factor>15</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>noshadow</type>
+		<object-name>emergency_uc_handle</object-name>
+	</animation>
+</PropertyList>

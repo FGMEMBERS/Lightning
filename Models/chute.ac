@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat1" rgb 0.957 0.957 0.957  amb 0.2 0.2 0.255  emis 0 0 0  spec 0.4 0.4 0.502  shi 10  trans 0.039
-MATERIAL "ac3dmat1" rgb 0.957 0.957 0.957  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0.502
+MATERIAL "ac3dmat1" rgb 0.957 0.957 0.957  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0.02
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.529 0.518 0.463  emis 0 0 0  spec 0.102 0.122 0.161  shi 7  trans 0
 OBJECT world
 kids 1
@@ -21,7 +21,7 @@ numvert 3
 -20.2142 -0.0124127 0.00368876
 -15.4975 2.0063 0.00368876
 -15.4975 -2.03113 0.00368876
-numsurf 16
+numsurf 2
 SURF 0x32
 mat 2
 refs 2
@@ -31,69 +31,7 @@ SURF 0x32
 mat 2
 refs 2
 0 0 1
-1 1 0
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 2
-0 0 1
-1 1 0
-SURF 0x32
-mat 2
-refs 2
-1 1 0
-0 0 1
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 2
-0 0 1
 2 1 0
-SURF 0x32
-mat 2
-refs 2
-2 1 0
-0 0 1
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 2
-2 1 0
-0 0 1
-SURF 0x32
-mat 2
-refs 2
-0 0 1
-2 1 0
-SURF 0x32
-mat 2
-refs 1
-0 0 1
-SURF 0x32
-mat 2
-refs 1
-0 0 1
 kids 0
 OBJECT poly
 name "line"
@@ -105,7 +43,7 @@ numvert 5
 -16.4553 2.4136 -0.555749
 -16.4553 -1.48556 0.483144
 -16.4553 -1.48556 -0.555749
-numsurf 8
+numsurf 4
 SURF 0x32
 mat 2
 refs 2
@@ -113,16 +51,8 @@ refs 2
 1 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 2 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 1
 0 0 0
 SURF 0x32
 mat 2
@@ -131,17 +61,9 @@ refs 2
 0 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 0 0 0
 4 0 0
-SURF 0x32
-mat 2
-refs 1
-0 0 0
 kids 0
 OBJECT poly
 name "line"
@@ -153,7 +75,7 @@ numvert 5
 -15.6213 1.74375 -0.394085
 -15.6213 -1.76378 1.62715
 -15.6213 -1.76378 -0.394085
-numsurf 8
+numsurf 4
 SURF 0x32
 mat 2
 refs 2
@@ -161,16 +83,8 @@ refs 2
 1 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 2 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 1
 0 0 0
 SURF 0x32
 mat 2
@@ -179,17 +93,9 @@ refs 2
 0 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 0 0 0
 4 0 0
-SURF 0x32
-mat 2
-refs 1
-0 0 0
 kids 0
 OBJECT poly
 name "line"
@@ -201,7 +107,7 @@ numvert 5
 -15.6213 1.42523 -0.808958
 -15.6213 -1.44526 2.04202
 -15.6213 -1.44526 -0.808958
-numsurf 8
+numsurf 4
 SURF 0x32
 mat 2
 refs 2
@@ -209,16 +115,8 @@ refs 2
 1 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 2 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 1
 0 0 0
 SURF 0x32
 mat 2
@@ -227,17 +125,9 @@ refs 2
 0 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 0 0 0
 4 0 0
-SURF 0x32
-mat 2
-refs 1
-0 0 0
 kids 0
 OBJECT poly
 name "line"
@@ -249,7 +139,7 @@ numvert 5
 -15.6313 -0.157209 -0.9902
 -15.6313 -2.18272 2.48138
 -15.6313 -2.18272 -0.9902
-numsurf 8
+numsurf 4
 SURF 0x32
 mat 2
 refs 2
@@ -257,16 +147,8 @@ refs 2
 1 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 2 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 1
 0 0 0
 SURF 0x32
 mat 2
@@ -275,17 +157,9 @@ refs 2
 0 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 0 0 0
 4 0 0
-SURF 0x32
-mat 2
-refs 1
-0 0 0
 kids 0
 OBJECT poly
 name "line"
@@ -297,7 +171,7 @@ numvert 5
 -15.6313 0.410256 -1.19295
 -15.6313 -0.651132 2.68413
 -15.6313 -0.651132 -1.19295
-numsurf 8
+numsurf 4
 SURF 0x32
 mat 2
 refs 2
@@ -305,16 +179,8 @@ refs 2
 1 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 2 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 1
 0 0 0
 SURF 0x32
 mat 2
@@ -323,17 +189,9 @@ refs 2
 0 0 0
 SURF 0x32
 mat 2
-refs 1
-0 0 0
-SURF 0x32
-mat 2
 refs 2
 0 0 0
 4 0 0
-SURF 0x32
-mat 2
-refs 1
-0 0 0
 kids 0
 OBJECT poly
 name "line"
@@ -343,42 +201,12 @@ numvert 3
 -20.348 0.727885 0.74559
 -15.6313 0.727885 2.75239
 -15.6313 0.727885 -1.26121
-numsurf 8
+numsurf 2
 SURF 0x32
 mat 2
 refs 2
 0 0 0
 1 0 0
-SURF 0x32
-mat 2
-refs 2
-1 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 2
-2 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 2
-0 0 0
-2 0 0
-SURF 0x32
-mat 2
-refs 2
-1 0 0
-0 0 0
-SURF 0x32
-mat 2
-refs 2
-0 0 0
-1 0 0
-SURF 0x32
-mat 2
-refs 2
-0 0 0
-2 0 0
 SURF 0x32
 mat 2
 refs 2

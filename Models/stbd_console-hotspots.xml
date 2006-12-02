@@ -227,12 +227,7 @@
 						<command>nasal</command>
 						<script>Lightning.propToggle("controls/switches/eng_start_master")</script>
 					</binding>
-					<binding>
-						<command>nasal</command>
-						<script>Lightning.EngineStart(1)</script>
-					</binding>
 				</action>
-
 				<!-- Inverter Normal / Standby toggle -->
 				<action>
 					<button>0</button>
@@ -274,17 +269,13 @@
 					</binding>
 					<binding>
 						<command>nasal</command>
-						<script>Lightning.EngineStart(0)</script>
+						<script>Lightning.AvpinPump(0)</script>
 					</binding>
 					<mod-up>
 						<binding>
 							<command>property-assign</command>
 							<property>controls/switches/engine_start_0</property>
 							<value type="int">0</value>
-						</binding>
-						<binding>
-							<command>nasal</command>
-							<script>Lightning.EngineStart(0)</script>
 						</binding>
 					</mod-up>
 				</action>
@@ -303,17 +294,13 @@
 					</binding>
 					<binding>
 						<command>nasal</command>
-						<script>Lightning.EngineStart(1)</script>
+						<script>Lightning.AvpinPump(1)</script>
 					</binding>
 					<mod-up>
 						<binding>
 							<command>property-assign</command>
 							<property>controls/switches/engine_start_1</property>
 							<value type="int">0</value>
-						</binding>
-						<binding>
-							<command>nasal</command>
-							<script>Lightning.EngineStart(1)</script>
 						</binding>
 					</mod-up>
 				</action>
@@ -404,12 +391,7 @@
 						<script>Lightning.propToggle("controls/switches/autopilot")</script>
 					</binding>
 				</action>
-
-
-
-
 			</actions>
-
 		</instrument>
 	</instruments>
 

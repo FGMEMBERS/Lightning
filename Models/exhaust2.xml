@@ -40,7 +40,13 @@
 	<object-name>noshadow.Exhaust</object-name>
 	<object-name>noshadow.Exhaust1</object-name>
 		<condition>
-			<property>engines/engine[1]/augmentation</property>
+			<and>
+				<property>engines/engine[1]/augmentation</property>
+				<greater-than>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</greater-than>
+			</and>
 		</condition>
 	</animation>
 

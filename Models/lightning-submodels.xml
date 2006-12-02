@@ -59,4 +59,20 @@
 		<eda>250</eda>
 		<weight>50</weight>
 	</submodel>
+	<!-- Ventral Tank -->
+	<submodel>
+		<name>Ventral Tank</name>
+		<model>Aircraft/Lightning/Models/ventral_tank.ac</model>
+		<trigger>sim/model/lightning/controls/tank_jettisoned</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<x-offset>9.12957</x-offset>
+		<y-offset>1.11488</y-offset>
+		<z-offset>0</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>0</pitch-offset>
+		<eda>2</eda>
+		<weight>200</weight>
+	</submodel>
 </PropertyList>

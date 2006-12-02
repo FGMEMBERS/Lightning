@@ -27,6 +27,16 @@
     
 </panel>
 
+<!-- Included instruments -->
+	<model>
+		<path>Aircraft/Lightning/Models/nozzles.xml</path>
+		<offsets>
+			<x-m>3.15</x-m>
+			<y-m>0.375</y-m>
+			<z-m>0.54</z-m>
+			<pitch-deg>-90</pitch-deg>
+		</offsets>
+	</model>
 
 <!-- Switch Animations -->
 
@@ -610,6 +620,19 @@
 	</emission>
 
 	</animation>
+
+	<!-- Panel Lighting -->
+	<animation> 
+		<type>material</type>
+		<object-name>panel_rh</object-name>
+		<object-name>panel_lh</object-name>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
+			<red>0.0045</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+		</emission>
+    </animation>
 
 <!-- Disable Shadows -->
 

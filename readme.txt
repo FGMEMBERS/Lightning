@@ -13,10 +13,10 @@ Requests (in addition to the general one above)
 Pilot's Notes - I have the F.6 Notes and FRCs.  Notes for the F.1 or F.1A
 would be wonderful...
 
-We really need better sounds.  Any genuine Lightning sound recordings would
-be good - particularly engine startup, various cockpit warnings etc.  There
-are still several around in at least ground running condition so this 
-shouldn't be impossible to get.
+Better sounds.  Paul's engine startup sounds have been a big improvement,
+but any genuine Lightning sound recordings would still be welcomed -
+particularly various cockpit warnings etc.  There are still several around
+in at least ground running condition so this shouldn't be impossible to get.
 
 Wind Tunnel Data!  Anyone who can lay hands on wind tunnel data for any mark
 of Lightning is hereby pleaded with to send me a copy, or better still add
@@ -32,9 +32,15 @@ Not immediately obvious features:
 
 All production Lightning variants had proportional braking controlled not by
 toe brakes, but by the stick mounted brake lever and rudder pedal position.
-This has been implemented in this model - if you have rudder pedals (or a joystick with a twist axis) then you can steer using the rudder controls and braking at the same time, assuming your config uses the controls.applyBrakes wrapper.  Maximum braking effort is applied if the rudder controls are centred.
+This has been implemented in this model - if you have rudder pedals (or a 
+joystick with a twist axis) then you can steer using the rudder controls and 
+braking at the same time, assuming your config uses the controls.applyBrakes 
+wrapper.  Maximum braking effort is applied if the rudder controls are centred.
 
-The squadron markings can be very easily modified - look in the Models/Liveries subdirectory to see examples.  Each scheme is defined by a simple XML file - please feel free to generate new ones and post them either to me or one of the mailing lists...
+The squadron markings can be very easily modified - look in the Models/Liveries
+ subdirectory to see examples.  Each scheme is defined by a simple XML file - 
+please feel free to generate new ones and post them either to me or one of the 
+mailing lists...
 
 Credits:
 
@@ -43,10 +49,11 @@ from many other FG models as a starting point.  Credit belongs to at least the
 following:
 
 Vivian Meazza	- The Hunter was the main inspiration for this model, and
-				nearly all the instruments were initially (and in one case
-				currently) based on their Hunter counterparts.  Some of
-				the Nasal functions began life in the Spitfire and Hurricane.
-				Vivian added the "chrome animation" effect and tidied up the					external model.
+				nearly all the instruments were initially based on their Hunter
+				counterparts.  Some of the Nasal functions began life in the 
+				Spitfire and Hurricane.
+				Vivian added the "chrome animation" effect and tidied up the
+				model.
 
 Julien Pierru	- Developed and added the XML and Nasal based squadron markings
 				 switching process.
@@ -55,6 +62,9 @@ Syd Adams		- The electrical system was modified from the Beaver model,
 				and	probably other parts or methods borrowed from some of his
 				cockpits.
 
-Thanks to Vivian, Melchoir Franz and Andy Ross (and others) for their
+Paul(youtube user lightning1975) - Permission to use sound clips from his lightning
+				startup	videos at youtube.
+
+Thanks to Vivian, Melchoir Franz, Andy Ross and others for their
 assistance via IRC on various items over a considerable period of time.
 

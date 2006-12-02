@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<!--
+**********************************************************************
+This file selects the instrumentation modules that should be available.
+**********************************************************************
+-->
+
+<PropertyList>
+  <adf>
+    <name>adf</name>
+    <number>0</number>
+    <min-voltage>23</min-voltage>
+  </adf>
+
+  <airspeed-indicator>
+    <name>airspeed-indicator</name>
+    <number>0</number>
+    <pitot-port>/systems/pitot</pitot-port>
+    <static-port>/systems/static</static-port>
+  </airspeed-indicator>
+
+  <altimeter>
+    <name>altimeter</name>
+    <number>0</number>
+    <static-port>/systems/static</static-port>
+  </altimeter>
+
+  <attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>0</number>
+    <vacuum-system>/systems/vacuum</vacuum-system>
+  </attitude-indicator>
+  <attitude-indicator>
+    <name>attitude-indicator</name>
+    <number>1</number>
+    <vacuum-system>/systems/vacuum</vacuum-system>
+  </attitude-indicator>
+<!--
+  <clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock>
+-->
+
+  <dme>
+    <name>dme</name>
+    <number>0</number>
+  </dme>
+
+  <heading-indicator>
+    <name>heading-indicator</name>
+    <number>0</number>
+    <vacuum-system>/systems/vacuum</vacuum-system>
+  </heading-indicator>
+
+  <heading-indicator-dg>
+    <name>heading-indicator-dg</name>
+    <number>0</number>
+  </heading-indicator-dg>
+
+  <magnetic-compass>
+    <name>magnetic-compass</name>
+    <number>0</number>
+  </magnetic-compass>
+
+  <nav-radio>
+	<name>nav</name>
+    <number>0</number>
+  </nav-radio>
+
+  <nav-radio>
+    <name>nav</name>
+    <number>1</number>
+  </nav-radio>
+
+  <slip-skid-ball>
+    <name>slip-skid-ball</name>
+    <number>0</number>
+  </slip-skid-ball>
+
+  <transponder>
+    <name>transponder</name>
+    <number>0</number>
+    <encoder>/instrumentation/encoder</encoder>
+  </transponder>
+
+  <turn-indicator>
+    <name>turn-indicator</name>
+    <number>0</number>
+  </turn-indicator>
+
+  <vertical-speed-indicator>
+    <name>vertical-speed-indicator</name>
+    <number>0</number>
+    <static-port>/systems/static</static-port>
+  </vertical-speed-indicator>
+
+  <tacan>
+    <name>tacan</name>
+    <number>0</number>
+  </tacan>
+
+  <master-reference-gyro>
+    <name>master-reference-gyro</name>
+    <number>0</number>
+  </master-reference-gyro>
+
+</PropertyList>

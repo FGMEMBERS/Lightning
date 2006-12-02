@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+	<name>Lighting control hotspots</name>
+	<background>Aircraft/Lightning/Models/transparent.rgb</background>
+	<w>1024</w>
+	<h>768</h>
+	<x-offset>0</x-offset>
+	<y-offset>0</y-offset>
+	<instruments>
+		<instrument>
+			<x>512</x>
+			<y>385</y>
+			<w>1024</w>
+			<h>768</h>
+			<w-base>1024</w-base>
+			<h-base>1024</h-base>
+			<layers>
+				<layer>
+					<name>background</name>
+					<texture>
+						<!--<path>Aircraft/Lightning/Models/transparent.rgb</path>-->
+						<path>Aircraft/Lightning/Models/hotspotgrid.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+			</layers>
+			<actions>
+				<!-- Port down -->
+				<action>
+					<button>0</button>
+					<x>25</x>
+					<y>25</y>
+					<w>25</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/instr-lights-port</property>
+						<step>-0.1</step>
+						<max>1</max>
+						<min>0</min>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<!-- Port up -->
+				<action>
+					<button>0</button>
+					<x>26</x>
+					<y>35</y>
+					<w>5</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/instr-lights-port</property>
+						<step>0.1</step>
+						<min>0</min>
+						<max>1</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<!-- Stbd down -->
+				<action>
+					<button>0</button>
+					<x>21</x>
+					<y>05</y>
+					<w>5</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/instr-lights-stbd</property>
+						<step>-0.1</step>
+						<max>1</max>
+						<min>0</min>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<!-- stbd up -->
+				<action>
+					<button>0</button>
+					<x>30</x>
+					<y>05</y>
+					<w>5</w>
+					<h>25</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/instr-lights-stbd</property>
+						<step>0.1</step>
+						<min>0</min>
+						<max>1</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+			</actions>
+		</instrument>
+	</instruments>
+
+</PropertyList>
+

@@ -147,8 +147,8 @@
 		<path>Aircraft/Lightning/Models/trim.xml</path>
 		<offsets>
 			<x-m>3.04</x-m>
-			<y-m>-0.22</y-m>
-			<z-m>0.80</z-m>
+			<y-m>-0.26</y-m>
+			<z-m>0.78</z-m>
 			<pitch-deg>-20</pitch-deg>
 		</offsets>
 	</model>
@@ -157,21 +157,44 @@
 		<path>Aircraft/Lightning/Models/undercarriage-up-down.xml</path>
 		<offsets>
 			<x-m>3.04</x-m>
-			<y-m>-0.28</y-m>
+			<y-m>-0.31</y-m>
 			<z-m>0.78</z-m>
 			<pitch-deg>-20</pitch-deg>
 		</offsets>
 	</model>
 
 	<model>
+		<path>Aircraft/Lightning/Models/gear.xml</path>
+		<offsets>
+			<x-m>3.08</x-m>
+			<y-m>-0.27</y-m>
+			<z-m>0.69</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+	</model>
+
+
+	<model>
 		<path>Aircraft/Lightning/Models/flaps.xml</path>
 		<offsets>
-			<x-m>3.12</x-m>
-			<y-m>-0.30</y-m>
+			<x-m>3.11</x-m>
+			<y-m>-0.29</y-m>
 			<z-m>0.60</z-m>
 			<pitch-deg>-20</pitch-deg>
 		</offsets>
 	</model>
+
+		<!-- Centre Console -->
+	<model>
+		<path>Aircraft/Lightning/Models/radio.xml</path>
+		<offsets>
+			<x-m>3.10</x-m>
+			<y-m>0</y-m>
+			<z-m>0.61</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+
 
 	<!-- Starboard Panel -->
 	<model>
@@ -241,8 +264,9 @@
 		<path>Aircraft/Lightning/Models/throttles.xml</path>
 		<offsets>
 			<x-m>0.0</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
+			<y-m>-0.12</y-m>
+			<z-m>-0.05</z-m>
+			<roll-deg>-10</roll-deg>
 		</offsets>
 	</model>
 
@@ -253,18 +277,9 @@
 		<path>Aircraft/Lightning/Models/stbd_console.xml</path>
 		<offsets>
 			<x-m>0.0</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/Lightning/Models/nozzles.xml</path>
-		<offsets>
-			<x-m>3.15</x-m>
-			<y-m>0.375</y-m>
-			<z-m>0.54</z-m>
-			<pitch-deg>-90</pitch-deg>
+			<y-m>0.18</y-m>
+			<z-m>-0.05</z-m>
+			<roll-deg>20</roll-deg>
 		</offsets>
 	</model>
 
@@ -279,6 +294,16 @@
 		</offsets>
 	</model>
 
+	<!-- Pedals -->
+	<model>
+		<path>Aircraft/Lightning/Models/pedals.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+
 	<!-- E2b -->
 	<model>
 		<path>Aircraft/Lightning/Models/e2b.xml</path>
@@ -286,6 +311,17 @@
 			<x-m>0</x-m>
 			<y-m>0</y-m>
 			<z-m>0</z-m>
+		</offsets>
+	</model>
+
+	<!-- Lighting controls -->
+	<model>
+		<path>Aircraft/Lightning/Models/lightcontrols.xml</path>
+		<offsets>
+			<x-m>3.10</x-m>
+			<y-m>0.405</y-m>
+			<z-m>0.76</z-m>
+			<pitch-deg>-15</pitch-deg>
 		</offsets>
 	</model>
 
@@ -350,6 +386,28 @@
 			<z>0.00501657</z>
 		</axis>
 	</animation>
+
+	<!-- Tank Jettison -->
+	<model>
+		<path>Aircraft/Lightning/Models/jettison_handle.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Emergency U/C -->
+	<model>
+		<path>Aircraft/Lightning/Models/emergency_uc_handle.xml</path>
+		<offsets>
+			<x-m>3.44</x-m>
+			<y-m>-0.29</y-m>
+			<z-m>0.257</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
 
 	<!-- Brake Chute -->
 	<model>
@@ -658,6 +716,20 @@
 			</less-than>
 		</condition>
 	</animation>
+	<!-- Ventral Tank -->
+	<animation>
+		<type>select</type>
+		<object-name>ventral_tank</object-name>
+		<object-name>ventral_fin</object-name>
+		<condition>
+			<less-than>
+				<property>sim/model/lightning/controls/tank_jettisoned</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+	</animation>
+
+
 	<!-- Airbrakes -->
 	<animation>
 		<type>rotate</type>
@@ -1129,7 +1201,6 @@
 			<z-m>-0.9449</z-m>
 		</center>
 	</animation>
-
 	<!-- Caster -->
 	<animation>
 		<type>rotate</type>
@@ -1264,6 +1335,7 @@
 		<object-name>cockpit</object-name>
 		<object-name>cockpit_rear_bulkhead</object-name>
 		<object-name>uc_fr_well</object-name>
+		<object-name>chute_pull_outer</object-name>
 		<object-name>seat_base</object-name>
 		<object-name>roundels</object-name>
 		<object-name>roundels_underside</object-name>
@@ -1276,6 +1348,8 @@
 		<object-name>inner_tailpipe_end</object-name>
 		<object-name>inner_tailpipe_strakes</object-name>
 		<object-name>inner_tailpipe_strakes</object-name>
+		<object-name>burner1</object-name>
+		<object-name>burner2</object-name>
 		<object-name>airbrake_recess</object-name>
 	</animation>
 
@@ -1289,6 +1363,28 @@
 			<red>0.90</red>
 			<green>0.90</green>
 			<blue>0.90</blue>
+		</emission>
+	</animation>
+
+	<!-- Tailpipes -->
+	<animation> 
+		<type>material</type>
+		<object-name>burner1</object-name>
+		<emission> 
+		<factor-prop>engines/engine[0]/egt_degf</factor-prop>
+			<red>0.0001</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+		</emission>
+	</animation>
+	<animation> 
+		<type>material</type>
+		<object-name>burner2</object-name>
+		<emission> 
+		<factor-prop>engines/engine[1]/egt_degf</factor-prop>
+			<red>0.0001</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
 		</emission>
 	</animation>
 
@@ -1372,8 +1468,6 @@
 		<shininess-prop>shininess</shininess-prop>
 	</animation>
 
-
-
 	<!-- Hotspots -->
 
 	<!-- Panel hotspots -->
@@ -1397,6 +1491,25 @@
 		<offsets>
 			<pitch-deg>-20</pitch-deg>
 		</offsets>
+	</panel>
+	<!-- Port floor hotspots -->
+	<panel>
+		<path>Aircraft/Lightning/Models/port-floor-hotspots.xml</path>
+		<bottom-left>
+			<x-m>3.67</x-m>
+			<y-m>-0.33</y-m>
+			<z-m>0.40</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>3.67</x-m>
+			<y-m>-0.25</y-m>
+			<z-m>0.40</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>3.13</x-m>
+			<y-m>-0.33</y-m>
+			<z-m>0.45</z-m>
+		</top-left>
 	</panel>
 
 </PropertyList>

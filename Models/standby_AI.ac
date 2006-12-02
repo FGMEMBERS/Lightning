@@ -1278,7 +1278,7 @@ refs 4
 3 0.539062 0.652344
 kids 0
 OBJECT poly
-name "screw"
+name "adjuster"
 loc 0.00097244 -2.54872e-05 -3.12378e-05
 texture "ai_adjuster.rgb"
 crease 45.000000

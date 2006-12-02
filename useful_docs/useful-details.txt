@@ -48,8 +48,8 @@ Viewpoint 3.54 back, 1.21 up
 Burned approx 100 lb /min on low cruise
 
 POWER RATING  	% RPM  	MAXIMUM JPT 	TIME LIMIT(PER FLIGHT)
-MAXIMUM  	104 	800 		15 minutes combined duration
-INTERMEDIATE 	98 	755 		30 minutes
-MAX CONTINUOUS 	97 	720 		Unrestricted
+MAXIMUM  		104 	800 			15 minutes combined duration
+INTERMEDIATE 	98 		755 			30 minutes
+MAX CONTINUOUS 	97 		720 			Unrestricted
 
 Refuelling rate - 150 Gal/min

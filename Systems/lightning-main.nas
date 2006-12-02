@@ -66,16 +66,46 @@ showDialog = func {
 
 	# Braking Chute
 	group = dialog.addChild("group");
-	group.set("layout", "hbox");
+	group.set("layout", "vbox");
 	group.addChild("empty").set("pref-width", 4);
 
 	w = group.addChild("button");
 	w.set("halign", "center");
 	w.set("legend", "Repack Chute");
-	w.set("pref-width", 120);
+	w.set("pref-width", 130);
 	w.set("pref-height", 24);
 	w.prop().getNode("binding[0]/command", 1).setValue("nasal");
 	w.prop().getNode("binding[0]/script", 1).setValue("Lightning.chuteRepack()");
+
+	# Fuel
+	w = group.addChild("button");
+	w.set("halign", "center");
+	w.set("legend", "Refit ventral tank");
+	w.set("pref-width", 130);
+	w.set("pref-height", 24);
+	w.prop().getNode("binding[0]/command", 1).setValue("nasal");
+	w.prop().getNode("binding[0]/script", 1).setValue("Lightning.ventralRefit()");
+
+	w = group.addChild("button");
+	w.set("halign", "center");
+	w.set("legend", "Refill Tanks");
+	w.set("pref-width", 130);
+	w.set("pref-height", 24);
+	w.prop().getNode("binding[0]/command", 1).setValue("nasal");
+	w.prop().getNode("binding[0]/script", 1).setValue("Lightning.refuel()");
+
+	# Undercarriage reset
+	w = group.addChild("button");
+	w.set("halign", "center");
+	w.set("legend", "Emergency u/c reset");
+	w.set("pref-width", 130);
+	w.set("pref-height", 24);
+	w.prop().getNode("binding[0]/command", 1).setValue("nasal");
+	w.prop().getNode("binding[0]/script", 1).setValue("Lightning.emergencyGearDown(0)");
+
+	group = dialog.addChild("group");
+	group.set("layout", "vbox");
+	group.addChild("empty").set("pref-width", 4);
 
 #	w = group.addChild("text");
 #	w.set("halign", "left");

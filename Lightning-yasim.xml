@@ -98,14 +98,14 @@
 <!-- RR Avon Mk210 turbojets, 11250lbs sea level thrust, 14430 Reheat. The Avon is a single shaft,
 axial flow engine -->
 
-<jet x="-4.98" y="0" z="-0.45" mass="2550" thrust="11250" afterburner="1430" n1-idle="32" n1-max="106" spool-time="1" tsfc="0.95">
+<jet x="-4.98" y="0" z="-0.45" mass="2550" thrust="11250" afterburner="14430" n1-idle="32" n1-max="106" spool-time="1" tsfc="0.95">
 	<actionpt x="-15" y="0" z="-0.45"/>
 	<control-input axis="/controls/engines/engine[0]/throttle" src0="0.0" dst0="0.0" src1="0.88" dst1="1.0" control="THROTTLE"/>
 	<control-input axis="/controls/engines/engine[0]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>
 	<control-output control="REHEAT" prop="engines/engine[0]/afterburner" />
 </jet>
 
-<jet x="-6.1" y="0" z="0.45" mass="2550" thrust="11250" afterburner="1430" n1-idle="32" n1-max="106" spool-time="1" tsfc="0.95">
+<jet x="-6.1" y="0" z="0.45" mass="2550" thrust="11250" afterburner="14430" n1-idle="32" n1-max="106" spool-time="1" tsfc="0.95">
 	<actionpt x="-15" y="0" z="0.45"/>
 	<control-input axis="/controls/engines/engine[1]/throttle" src0="0.0" dst0="0.0" src1="0.88" dst1="1.0" control="THROTTLE"/>
 	<control-input axis="/controls/engines/engine[1]/throttle" src0="0.88" dst0="0.0" src1="1.0" dst1="1.0" control="REHEAT"/>

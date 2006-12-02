@@ -27,6 +27,12 @@ init_electrical = func {
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
 
+    props.globals.getNode("systems/electrical/suppliers/rpm_source", 1).setDoubleValue(1);
+    props.globals.getNode("systems/electrical/outputs/standby_instruments", 1).setDoubleValue(0);
+	props.globals.getNode("systems/electrical/outputs/annunciators", 1).setDoubleValue(0);
+    props.globals.getNode("controls/switches/dayNight", 1).setBoolValue(1);
+    props.globals.getNode("controls/switches/changeLamps", 1).setBoolValue(0);
+
     setprop("controls/electric/engine/generator", "true");
     setprop("controls/switches/autopilot", "0");
     setprop("controls/switches/battery", "0");
@@ -41,17 +47,20 @@ init_electrical = func {
     setprop("controls/switches/instrument_master", 1);
     setprop("controls/switches/inverter_normal", 1);
     setprop("controls/switches/rain_dispersal", 0);
-    setprop("controls/switches/taxi-lights", "0");
+    setprop("controls/switches/taxi-lights", 0);
     setprop("controls/switches/nav_lights", 0);
     setprop("controls/anti-ice/pitot_heater", 0);
     setprop("controls/anti-ice/standby_pitot_heat", 0);
-    setprop("controls/switches/instr-lights", 0);
+    setprop("controls/switches/instr-lights-port", 0);
+    setprop("controls/switches/instr-lights-stbd", 0);
     setprop("controls/switches/wscreen_front", 0);
     setprop("controls/switches/wscreen_side", 0);
 
 	setprop("systems/electrical/suppliers/gen_online", 0);
 	setprop("systems/electrical/suppliers/external", 0);
-	setprop("controls/electric/external-power", "1");
+	setprop("controls/electric/external-power", 1);
+
+	setprop("sim/model/lightning/electrical-initialized", "true");
 
     # Request that the update fuction be called next frame
     settimer(update_electrical, 0);
@@ -291,6 +300,8 @@ electrical_28VDC_bus = func() {
     engSw = (getprop("controls/switches/eng_start_master"));
     ignSw = (getprop("controls/switches/ignition"));
 	start = engSw * ignSw;
+    portlightSw = getprop("controls/switches/instr-lights-port");
+    stbdlightSw = getprop("controls/switches/instr-lights-stbd");
 
 	bus_volts = vbus_volts ;
 	load = 0.0;
@@ -322,6 +333,10 @@ electrical_28VDC_bus = func() {
     setprop("systems/electrical/outputs/flaps", bus_volts);
 	# HSI Power
     setprop("systems/electrical/outputs/hsi", bus_volts);
+    # Instruments Lights-Port
+	setprop("systems/electrical/outputs/instr-lights-port", bus_volts * portlightSw);
+    # Instruments Lights-Stbd
+	setprop("systems/electrical/outputs/instr-lights-stbd", bus_volts * stbdlightSw);
     # Nav Lights
     if( getprop("controls/switches/nav_lights") != "0"){
     	setprop("systems/electrical/outputs/nav_lights", bus_volts);
@@ -330,7 +345,7 @@ electrical_28VDC_bus = func() {
 	else {setprop("systems/electrical/outputs/nav_lights",0);}
     # Nav 1 Power
     setprop("systems/electrical/outputs/nav[0]", bus_volts);
-    setprop("systems/electrical/outputs/adf[0]", bus_volts);
+    setprop("systems/electrical/outputs/adf", bus_volts);
     # Nav 2 Power
     setprop("systems/electrical/outputs/nav[1]", bus_volts);
     # Seat
@@ -346,7 +361,7 @@ electrical_28VDC_bus = func() {
     # Turn Co-ordinator
 	setprop("systems/electrical/outputs/turn-coordinator[0]", bus_volts);
     # Undercarriage operation and indicators
-    setprop("systems/electrical/outputs/undercarriage[0]", bus_volts);
+    setprop("systems/electrical/outputs/undercarriage", bus_volts);
 	
 
     # return cumulative load
@@ -458,4 +473,5 @@ electrical_28VAC1phase_bus = func() {
 }
 # Setup a timer based call to initialized the electrical system as
 # soon as possible.
-settimer(init_electrical, 0);
+#settimer(init_electrical, 0);
+setlistener("/sim/signals/fdm-initialized",init_electrical);
