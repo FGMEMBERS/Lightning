@@ -199,6 +199,7 @@ initialize = func {
 	### Initialise Dialogue stuff ###
 	Lightning.showDialog();
 		
+	registerTimer();
 	# Finished Initialising
     initialized = 1;
 
@@ -206,4 +207,3 @@ initialize = func {
 
 ######################### Fire it up ############################################
 setlistener("/sim/model/lightning/electrical-initialized",initialize);
-registerTimer();

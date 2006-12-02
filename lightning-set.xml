@@ -226,7 +226,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 	<Lightning>
 		<file>Aircraft/Lightning/Systems/lightning-main.nas</file>
 		<file>Aircraft/Lightning/Systems/lightning-lights.nas</file>
-		<file>Aircraft/Lightning/Systems/lightning-radios.nas</file>
+		<!--file>Aircraft/Lightning/Systems/lightning-radios.nas</file-->
 		<file>Aircraft/Lightning/Systems/lightning-controls.nas</file>
 		<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
 		<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
