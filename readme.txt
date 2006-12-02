@@ -65,6 +65,6 @@ Syd Adams		- The electrical system was modified from the Beaver model,
 Paul(youtube user lightning1975) - Permission to use sound clips from his lightning
 				startup	videos at youtube.
 
-Thanks to Vivian, Melchoir Franz, Andy Ross and others for their
+Thanks to Vivian, Melchior Franz, Andy Ross and others for their
 assistance via IRC on various items over a considerable period of time.
 
