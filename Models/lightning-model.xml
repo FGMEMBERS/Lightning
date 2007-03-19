@@ -16,6 +16,12 @@
 		<pitch-deg>-1</pitch-deg>
 	</offsets>
 
+	<!-- tutorial marker -->
+
+	<model>
+		<path>Models/Aircraft/marker.xml</path>
+	</model>
+
 	<!-- Main Panel Top Row -->
 
 	<model>
