@@ -62,6 +62,7 @@ showDialog = func {
 	# External Power
 	w = checkbox("External Power");
 	w.set("property", "systems/electrical/suppliers/external");
+	w.set("live", 1);
 	w.prop().getNode("binding[0]/command", 1).setValue("dialog-apply");
 
 	# Braking Chute
