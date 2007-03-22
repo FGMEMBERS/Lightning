@@ -55,6 +55,11 @@
 				First, ensure ground power is being supplied.
 				Use the checkbox on the Lightning dialogue (TAB key)
 			</message>
+			<view>
+				<heading-offset-deg>340</heading-offset-deg>
+				<pitch-offset-deg>-22</pitch-offset-deg>
+				<field-of-view>40</field-of-view>
+			</view>
 			<error>
 				<message>call up the dialogue with the TAB key and select "External Power"</message>
 				<condition>
@@ -82,6 +87,7 @@
 			<view>
 				<heading-offset-deg>27.7</heading-offset-deg>
 				<pitch-offset-deg>-48</pitch-offset-deg>
+				<field-of-view>55</field-of-view>
 			</view>
 			<marker>
 				<x>3.484</x>
