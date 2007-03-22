@@ -5,6 +5,10 @@
 
 		<init>
 			<set>
+				<property>/sim/current-view/view-number</property>
+				<value>0</value>
+			</set>
+			<set>
 				<property>/controls/gear/brake-parking</property>
 				<value>1</value>
 			</set>
@@ -75,6 +79,10 @@
 				Ensure the engine shutdown control is in the upright position
 				(on LHS of cockpit, on the RH edge of the throttle panel)
 			</message>
+			<view>
+				<heading-offset-deg>27.7</heading-offset-deg>
+				<pitch-offset-deg>-48</pitch-offset-deg>
+			</view>
 			<marker>
 				<x>3.484</x>
 				<y>-0.323</y>
@@ -101,8 +109,13 @@
 
 		<step>
 			<message>Next, turn on the battery switch located on the right hand switch panel</message>
+			<view>
+				<heading-offset-deg>320.5</heading-offset-deg>
+				<pitch-offset-deg>-39.3</pitch-offset-deg>
+				<field-of-view>35</field-of-view>
+			</view>
 			<marker>
-				<x>3.509</x>
+				<x>3.507</x>
 				<y>0.468</y>
 				<z>0.632</z>
 			</marker>
@@ -128,7 +141,7 @@
 		<step>
 			<message>turn on the "Engine start master" switch (also on the right hand switch panel)</message>
 			<marker>
-				<x>3.4053</x>
+				<x>3.4051</x>
 				<y>0.4453</y>
 				<z>0.6231</z>
 			</marker>
@@ -154,7 +167,7 @@
 		<step>
 			<message>turn on the "Ignition" switch (also on the right hand switch panel)</message>
 			<marker>
-				<x>3.441</x>
+				<x>3.438</x>
 				<y>0.445</y>
 				<z>0.623</z>
 			</marker>
@@ -179,11 +192,16 @@
 
 		<step>
 			<message>Move the throttles to the first "Open" position</message>
+			<view>
+				<heading-offset-deg>27.7</heading-offset-deg>
+				<pitch-offset-deg>-48</pitch-offset-deg>
+				<field-of-view>55</field-of-view>
+			</view>
 			<marker>
 				<x>3.436</x>
 				<y>-0.358</y>
 				<z>0.594</z>
-				<scale>5</scale>
+				<scale>3.5</scale>
 			</marker>
 			<error>
 				<message>Open the throttles</message>
@@ -210,6 +228,10 @@
 				You should hear the AVPIN pump running, then the combustion of the AVPIN,
 				followed by the engine spooling up
 			</message>
+			<view>
+				<heading-offset-deg>320.5</heading-offset-deg>
+				<pitch-offset-deg>-39.3</pitch-offset-deg>
+			</view>
 			<marker>
 				<x>3.475</x>
 				<y>0.442</y>
@@ -309,6 +331,10 @@
 
 		<end>
 			<message>Both engines should now be running</message>
+			<view>
+				<heading-offset-deg>0</heading-offset-deg>
+				<pitch-offset-deg>-20</pitch-offset-deg>
+			</view>
 		</end>
 	</tutorial>
 </PropertyList>
