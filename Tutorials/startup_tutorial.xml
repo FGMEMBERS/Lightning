@@ -89,9 +89,9 @@
 				<field-of-view>55</field-of-view>
 			</view>
 			<marker>
-				<x>3.484</x>
-				<y>-0.323</y>
-				<z>0.559</z>
+				<x-m>3.484</x-m>
+				<y-m>-0.323</y-m>
+				<z-m>0.559</z-m>
 			</marker>
 			<error>
 				<message>Ensure the cutoff switch is vertical{|.}</message>
@@ -120,9 +120,9 @@
 				<field-of-view>35</field-of-view>
 			</view>
 			<marker>
-				<x>3.507</x>
-				<y>0.468</y>
-				<z>0.632</z>
+				<x-m>3.507</x-m>
+				<y-m>0.468</y-m>
+				<z-m>0.632</z-m>
 			</marker>
 			<error>
 				<message>Ensure the battery switch is on{ (up)|.}</message>
@@ -146,9 +146,9 @@
 		<step>
 			<message>Turn on the "Engine Start Master"{ |-}switch{|.}</message>
 			<marker>
-				<x>3.4051</x>
-				<y>0.4453</y>
-				<z>0.6231</z>
+				<x-m>3.4051</x-m>
+				<y-m>0.4453</y-m>
+				<z-m>0.6231</z-m>
 			</marker>
 			<error>
 				<message>Ensure the "Engine Start Master"{ |-}switch is on{ (up)|.}</message>
@@ -172,9 +172,9 @@
 		<step>
 			<message>Turn on the "Ignition"{ |-}switch{|.}</message>
 			<marker>
-				<x>3.438</x>
-				<y>0.445</y>
-				<z>0.623</z>
+				<x-m>3.438</x-m>
+				<y-m>0.445</y-m>
+				<z-m>0.623</z-m>
 			</marker>
 			<error>
 				<message>Ensure the "Ignition"{ |-}switch is on{ (up)|.}</message>
@@ -203,9 +203,9 @@
 				<field-of-view>55</field-of-view>
 			</view>
 			<marker>
-				<x>3.436</x>
-				<y>-0.358</y>
-				<z>0.594</z>
+				<x-m>3.436</x-m>
+				<y-m>-0.358</y-m>
+				<z-m>0.594</z-m>
 				<scale>3.5</scale>
 			</marker>
 			<error>
@@ -238,9 +238,9 @@
 				<pitch-offset-deg>-39.3</pitch-offset-deg>
 			</view>
 			<marker>
-				<x>3.475</x>
-				<y>0.442</y>
-				<z>0.630</z>
+				<x-m>3.475</x-m>
+				<y-m>0.442</y-m>
+				<z-m>0.630</z-m>
 			</marker>
 			<error>
 				<message>Press the {No1|number-one} "Engine Start"{ |-}button for a few seconds{|.}</message>
@@ -264,9 +264,9 @@
 		<step>
 			<message>Press and hold the {No2|number-two} "Engine Start"{ |-}button for up to two seconds{|.}</message>
 			<marker>
-				<x>3.475</x>
-				<y>0.465</y>
-				<z>0.639</z>
+				<x-m>3.475</x-m>
+				<y-m>0.465</y-m>
+				<z-m>0.639</z-m>
 			</marker>
 			<error>
 				<message>Press the {No2|number-two} "Engine Start"{ |-}button for a few seconds{|.}</message>
@@ -290,9 +290,9 @@
 		<step>
 			<message>Turn off the "Engine start master"{ |-}switch{|.}</message>
 			<marker>
-				<x>3.4053</x>
-				<y>0.4453</y>
-				<z>0.6231</z>
+				<x-m>3.4053</x-m>
+				<y-m>0.4453</y-m>
+				<z-m>0.6231</z-m>
 			</marker>
 			<error>
 				<message>Ensure the "Engine Start Master"{ |-}switch is off{ (down)|.}</message>
