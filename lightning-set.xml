@@ -89,7 +89,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
     <path>Aircraft/Lightning/Systems/lightning-instrumentation.xml</path>
   </instrumentation>
 
-  <tutorial include="Tutorials/startup_tutorial.xml"></tutorial>
+  <tutorials include="Tutorials/startup_tutorial.xml"/>
 
   <view n="0">
    <internal archive="y">true</internal>
