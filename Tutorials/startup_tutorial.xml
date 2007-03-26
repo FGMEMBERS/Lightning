@@ -60,6 +60,9 @@
 				<pitch-offset-deg>-22</pitch-offset-deg>
 				<field-of-view>40</field-of-view>
 			</view>
+			<nasal>
+				<script>Lightning.dialog.open()</script>
+			</nasal>
 			<error>
 				<message>Call up the dialogue with the TAB key and select "External Power"{|.}</message>
 				<condition>
@@ -93,6 +96,9 @@
 				<y-m>-0.323</y-m>
 				<z-m>0.559</z-m>
 			</marker>
+			<nasal>
+				<script>Lightning.dialog.close()</script>
+			</nasal>
 			<error>
 				<message>Ensure the cutoff switch is vertical{|.}</message>
 				<condition>
@@ -315,6 +321,9 @@
 
 		<step>
 			<message>Disconnect external electrical supplies{|.}</message>
+			<nasal>
+				<script>Lightning.dialog.open()</script>
+			</nasal>
 			<error>
 				<message>Call up the dialogue with the TAB key if necessary and deselect "External Power"{|.}</message>
 				<condition>
@@ -340,6 +349,9 @@
 				<heading-offset-deg>0</heading-offset-deg>
 				<pitch-offset-deg>-20</pitch-offset-deg>
 			</view>
+			<nasal>
+				<script>Lightning.dialog.close()</script>
+			</nasal>
 		</end>
 	</tutorial>
 </PropertyList>
