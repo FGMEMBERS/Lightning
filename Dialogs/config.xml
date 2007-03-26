@@ -39,7 +39,7 @@
 
 		<checkbox>
 			<halign>left</halign>
-			<label>External Power</label>
+			<label>External power</label>
 			<property>systems/electrical/suppliers/external</property>
 			<live>1</live>
 			<binding>
@@ -56,7 +56,7 @@
 
 		<button>
 			<halign>center</halign>
-			<legend>Repack Chute</legend>
+			<legend>Repack chute</legend>
 			<pref-width>130</pref-width>
 			<pref-height>24</pref-height>
 			<binding>
@@ -78,7 +78,7 @@
 
 		<button>
 			<halign>center</halign>
-			<legend>Refill Tanks</legend>
+			<legend>Refill tanks</legend>
 			<pref-width>130</pref-width>
 			<pref-height>24</pref-height>
 			<binding>
