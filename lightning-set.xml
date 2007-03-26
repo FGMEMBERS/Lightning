@@ -253,7 +253,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<desc>Show configuration dialog</desc>
 			<binding>
 				<command>nasal</command>
-				<script>Lightning.showDialog()</script>
+				<script>Lightning.dialog.toggle()</script>
 			</binding>
 		</key>
 

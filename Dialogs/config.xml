@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>lightning-config</name>
+	<layout>vbox</layout>
+	<x>-40</x>
+	<y>-40</y>
+
+	<group>
+		<layout>hbox</layout>
+		<empty><stretch>1</stretch></empty>
+
+		<text>
+			<label>Lightning configuration</label>
+		</text>
+
+		<empty><stretch>1</stretch></empty>
+
+		<button>
+			<pref-width>16</pref-width>
+			<pref-height>16</pref-height>
+			<legend></legend>
+			<default>1</default>
+			<keynum>27</keynum>
+			<border>2</border>
+
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.dialog.close()</script>
+			</binding>
+		</button>
+	</group>
+
+	<hrule/>
+
+	<group>
+		<layout>hbox</layout>
+		<empty><pref-width>4</pref-width></empty>
+
+		<checkbox>
+			<halign>left</halign>
+			<label>External Power</label>
+			<property>systems/electrical/suppliers/external</property>
+			<live>1</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+
+		<empty><stretch>1</stretch></empty>
+	</group>
+
+	<group>
+		<layout>vbox</layout>
+		<empty><pref-width>4</pref-width></empty>
+
+		<button>
+			<halign>center</halign>
+			<legend>Repack Chute</legend>
+			<pref-width>130</pref-width>
+			<pref-height>24</pref-height>
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.chuteRepack()</script>
+			</binding>
+		</button>
+
+		<button>
+			<halign>center</halign>
+			<legend>Refit ventral tank</legend>
+			<pref-width>130</pref-width>
+			<pref-height>24</pref-height>
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.ventralRefit()</script>
+			</binding>
+		</button>
+
+		<button>
+			<halign>center</halign>
+			<legend>Refill Tanks</legend>
+			<pref-width>130</pref-width>
+			<pref-height>24</pref-height>
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.refuel()</script>
+			</binding>
+		</button>
+
+		<button>
+			<halign>center</halign>
+			<legend>Emergency u/c reset</legend>
+			<pref-width>130</pref-width>
+			<pref-height>24</pref-height>
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.emergencyGearDown(0)</script>
+			</binding>
+		</button>
+	</group>
+
+	<empty><pref-height>3</pref-height></empty>
+</PropertyList>

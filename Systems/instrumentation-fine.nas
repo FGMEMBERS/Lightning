@@ -197,7 +197,7 @@ initialize = func {
 	props.globals.getNode("sim/model/lightning/controls/camera-start-time", 1).setIntValue(0);
 
 	### Initialise Dialogue stuff ###
-	Lightning.showDialog();
+	Lightning.dialog.open();
 		
 	registerTimer();
 	# Finished Initialising
