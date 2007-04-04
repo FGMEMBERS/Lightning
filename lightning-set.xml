@@ -88,7 +88,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 		<tutorials>
 			<tutorial include="Tutorials/startup_tutorial.xml"/>
-			<tutorial include="Tutorials/takeoff_tutorial.xml"/>
+			<!--tutorial include="Tutorials/takeoff_tutorial.xml"/-->
 		</tutorials>
 
 		<view n="0">
