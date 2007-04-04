@@ -297,6 +297,22 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 					</script>
 				</binding>
 			</key>
+
+			<key n="32">
+				<name>SPACE</name>
+				<desc>Radar View</desc>
+				<binding>
+					<command>nasal</command>
+					<script>dynamic_view.lookat(0, -15, 0, 0.124, 1.3, 4.2, 0.5, 38)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>dynamic_view.resume()</script>
+					</binding>
+				</mod-up>
+			</key>
+
 			<!-- Seat Lower -->
 			<key n="85">
 				<name>U</name>	
