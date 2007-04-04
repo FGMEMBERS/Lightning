@@ -8,380 +8,388 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 <PropertyList>
 
- <sim>
+	<sim>
 
-  <description>English Electric Lightning F.1A</description>
-  <author>AJ MacLeod</author>
-  <status>beta</status>
+		<description>English Electric Lightning F.1A</description>
+		<author>AJ MacLeod</author>
+		<status>early-production</status>
 
-  <flight-model>jsb</flight-model>
-  <aero>lightning-f1a</aero>
-  
-  <startup>
-   <splash-texture>Aircraft/Lightning/lightning-splash.rgb</splash-texture>
-  </startup>
+		<flight-model>jsb</flight-model>
+		<aero>lightning-f1a</aero>
 
-  <sound>
-   <path>Aircraft/Lightning/Sounds/Lightning-sound.xml</path>
-  </sound>
+		<allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+		<virtual-cockpit archive="y">true</virtual-cockpit>
 
-  <virtual-cockpit archive="y">true</virtual-cockpit>
-  <allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+		<startup>
+			<splash-texture>Aircraft/Lightning/lightning-splash.rgb</splash-texture>
+		</startup>
 
-  <model>
-  <path>Aircraft/Lightning/Models/lightning-model.xml</path>
-  <lightning>
+		<sound>
+			<path>Aircraft/Lightning/Sounds/Lightning-sound.xml</path>
+		</sound>
+
+		<instrumentation>
+			<path>Aircraft/Lightning/Systems/lightning-instrumentation.xml</path>
+		</instrumentation>
+
+		<model>
+			<path>Aircraft/Lightning/Models/lightning-model.xml</path>
+			<lightning>
+				<controls>
+					<flight>
+						<chute_open>0</chute_open>
+					</flight>
+				</controls>
+			</lightning>
+
+			<livery>
+				<variant type="string">chequered </variant>
+
+				<material>
+					<nose_markings>
+						<texture>empty.rgb</texture>
+					</nose_markings>
+
+					<sqdn_tail_badge>
+						<texture>empty.rgb</texture>
+					</sqdn_tail_badge>
+
+					<tail_color>
+						<diffuse>
+							<red>0</red>
+							<green>0</green>
+							<blue>0</blue>
+						</diffuse>
+						<ambient>
+							<red>0.2</red>
+							<green>0.2</green>
+							<blue>0.2</blue>
+						</ambient>
+						<specular>
+							<red>0.063</red>
+							<green>0.063</green>
+							<blue>0.063</blue>
+						</specular>
+						<emission>
+							<red>0.0</red>
+							<green>0.0</green>
+							<blue>0.0</blue>
+						</emission>
+						<transparency>
+							<alpha>1.0</alpha>
+						</transparency>
+						<shininess>10</shininess>
+					</tail_color>
+
+				</material>
+			</livery>
+		</model>
+
+		<tutorials>
+			<tutorial include="Tutorials/startup_tutorial.xml"/>
+			<tutorial include="Tutorials/takeoff_tutorial.xml"/>
+		</tutorials>
+
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<pitch-offset-deg>-20.0</pitch-offset-deg>
+				<x-offset-m archive="y">0.0</x-offset-m> <!--Right-->
+				<y-offset-m archive="y">1.40</y-offset-m> <!--Up-->
+				<z-offset-m archive="y">4.8</z-offset-m> <!--Back-->
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+			</config>
+		</view>
+		<view n="2">
+			<config>
+				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+			</config>
+		</view>
+		<view n="3">
+			<config>
+				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+			</config>
+		</view>
+		<view n="4">
+			<config>
+				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+			</config>
+		</view>
+
+		<systems>
+
+			<autopilot>
+				<path>Aircraft/Lightning/Systems/Lightning-autopilot-jsbsim.xml</path>
+				<settings>
+					<target-pitch-deg type="float">10</target-pitch-deg>
+					<target-altitude-ft type="float">25000</target-altitude-ft>	
+					<target-climb-rate-fps type="float">0</target-climb-rate-fps>
+					<target-speed-kt type="float">350.0</target-speed-kt>
+					<target-mach type="float">0.86</target-mach>
+				</settings>
+				<locks>
+					<auto-take-off type="string">Disabled</auto-take-off>
+					<rudder-control type="string">Initialised</rudder-control>
+					<auto-flap-control type="string">Manual</auto-flap-control>
+				</locks>
+			</autopilot>
+
+			<!-- Null Electrical System, use nasal instead -->
+			<electrical>
+				<path></path>
+			</electrical>
+
+		</systems>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/Lightning/Models/lightning-submodels.xml</path>
+		</submodels>
+
+		<help>
+			<line>Approx Max. level speed: Mach 2.1</line>
+			<line></line>
+			<line>Startup Procedure</line>
+			<line></line>
+			<line>Step-by-step tutorial available from the help menu ("start tutorial" option)</line>
+			<line></line>
+			<line>Connect external power (ctrl-i to bring up or dismiss the dialogue)</line>
+			<line>Set throttle to first "open" position, ensure cut-off (on the side</line>
+			<line>of the throttle panel) is in the vertical position</line>
+			<line>Switch on Battery, Engine start master and Ignition</line>
+			<line>Press first engine start button for up to 2 seconds and release</line>
+			<line>If engine catches, open throttle to idle position</line>
+			<line>Repeat for second engine; external power can be disconnected if generator</line>
+			<line>is brought online by first engine(increase rpm, watch voltmeter for indication)</line>
+			<line></line>
+			<line>Take off configuration - use flaps, raise flaps and gear before 250 kts</line>
+			<line>Nosewheel should unstick at around 155kts</line>
+			<line></line>
+			<line>Approach speed, with flaps (and airbrakes as necessary) : around 160 kts</line>
+			<line>After touchdown, lower nose and deploy brake chute using in-cockpit handle</line>
+			<line></line>
+			<line>The "Master Camera" switch has been used to trigger an instant replay "marker";</line>
+			<line>simply flick the switch on before your attack/aerobatic maneuver and when you</line>
+			<line>select "Instant Replay" (press "r") the replay should begin from the moment</line>
+			<line>the "camera was turned on"</line>
+			<line></line>
+			<line>See the readme.txt in the Aircraft/Lightning directory for more information</line>
+			<line>in particular how to use the proportional braking</line>
+			<line></line>
+
+			<key>
+				<name>d</name>
+				<desc>Deploy braking chute</desc>
+			</key>
+			<key>
+				<name>Ctrl-j</name>
+				<desc>Jettison ventral tank</desc>
+			</key>
+			<key>
+				<name>l</name>
+				<desc>Select squadron markings</desc>
+			</key>
+			<key>
+				<name>R</name>
+				<desc>Toggle radar close-up view</desc>
+			</key>
+			<key>
+				<name>u/U</name>
+				<desc>Adjust seat (Requires DC power)</desc>
+			</key>
+
+		</help>
+
+		<ai>
+			<scenario>refueling_demo_1</scenario>
+		</ai>
+
+	</sim>
+
+	<engines>
+		<engine n="0">
+			<running>false</running>
+		</engine>
+		<engine n="1">
+			<running>false</running>
+		</engine>
+	</engines>
+
 	<controls>
-	 <flight>
-	  <chute_open>0</chute_open>
-	 </flight>
+		<flight>
+			<flaps-lever type="double">0</flaps-lever>
+		</flight>
+		<gear>
+			<brake-parking>1</brake-parking>
+		</gear>
 	</controls>
-  </lightning>
-  <livery>
-	<variant type="string">chequered </variant>
 
-	<material>
+	<nasal>
+		<Lightning>
+			<file>Aircraft/Lightning/Systems/lightning-main.nas</file>
+			<file>Aircraft/Lightning/Systems/lightning-lights.nas</file>
+			<file>Aircraft/Lightning/Systems/lightning-controls.nas</file>
+			<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
+			<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
+		</Lightning>
+		<livery>
+			<file>Aircraft/Lightning/Models/livery.nas</file>
+		</livery>
+		<aar> 
+			<file>Aircraft/Generic/aar.nas</file>
+		</aar>
+		<failures>
+			<file>Aircraft/Generic/limits.nas</file>
+		</failures>
+	</nasal>
 
-     <nose_markings>
-       <texture>empty.rgb</texture>
-     </nose_markings>
+	<input>
+		<keyboard>
+			<!-- instant replay -->
+			<key n="9">
+				<name>Ctrl-I</name>
+				<desc>Show configuration dialog</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Lightning.dialog.toggle()</script>
+				</binding>
+			</key>
 
-	 <sqdn_tail_badge>
-       <texture>empty.rgb</texture>
-     </sqdn_tail_badge>
+			<!-- Ventral Tank Jettison -->
+			<key n="10">
+				<name>Ctrl-J</name>
+				<desc>Ventral tank jettison</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/model/lightning/controls/tank_jettisoned</property>
+					<value>1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/model/lightning/controls/tank_jettisoned_lever</property>
+					<value>1</value>
+				</binding>
+			</key>
 
-	 <tail_color>
-	  <diffuse>
-	   <red>0</red>
-	   <green>0</green>
-	   <blue>0</blue>
-	  </diffuse>
+			<!-- instant replay -->
+			 <key n="114">
+				<name>r</name>
+				<desc>Activate the instant replay system.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>Lightning.doReplay();</script>
+				</binding>
+			</key>
 
-	  <ambient>
-	   <red>0.2</red>
-	   <green>0.2</green>
-	   <blue>0.2</blue>
-	  </ambient>
-
-	  <specular>
-	   <red>0.063</red>
-	   <green>0.063</green>
-	   <blue>0.063</blue>
-	  </specular>
-
-	  <emission>
-	   <red>0.0</red>
-	   <green>0.0</green>
-	   <blue>0.0</blue>
-	  </emission>
-
-	  <transparency>
-	   <alpha>1.0</alpha>
-	  </transparency>
-
-	  <shininess>10</shininess>
-	 </tail_color>
-
-     </material>
-   </livery>
-  </model>
-  <instrumentation>
-    <path>Aircraft/Lightning/Systems/lightning-instrumentation.xml</path>
-  </instrumentation>
-
-  <tutorials include="Tutorials/startup_tutorial.xml"/>
-
-  <view n="0">
-   <internal archive="y">true</internal>
-   <config>
-    <pitch-offset-deg>-20.0</pitch-offset-deg>
-    <x-offset-m archive="y">0.0</x-offset-m> <!--Right-->
-    <y-offset-m archive="y">1.40</y-offset-m> <!--Up-->
-    <z-offset-m archive="y">4.8</z-offset-m> <!--Back-->
-   </config>
-  </view>
-  <view n="1">
-   <config>
-    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
-   </config>
-  </view>
-  <view n="2">
-   <config>
-    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
-   </config>
-  </view>
-  <view n="3">
-   <config>
-    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
-   </config>
-  </view>
-  <view n="5">
-   <config>
-    <target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
-   </config>
-  </view>
-
-  <systems>
-    <autopilot>
-      <path>Aircraft/Lightning/Systems/Lightning-autopilot-jsbsim.xml</path>
-		<settings>
-			<target-pitch-deg type="float">10</target-pitch-deg>
-			<target-altitude-ft type="float">25000</target-altitude-ft>	
-			<target-climb-rate-fps type="float">0</target-climb-rate-fps>
-			<target-speed-kt type="float">350.0</target-speed-kt>
-			<target-mach type="float">0.86</target-mach>
-		</settings>
-
-		<locks>
-			<auto-take-off type="string">Disabled</auto-take-off>
-			<rudder-control type="string">Initialised</rudder-control>
-			<auto-flap-control type="string">Manual</auto-flap-control>
-		</locks>
-
-    </autopilot>
-	<!-- Null Electrical System, use nasal instead -->
-    <electrical>
-      <path></path>
-    </electrical>
-  </systems>
-
-  <submodels>
-    <serviceable type="bool">true</serviceable>
-    <path>Aircraft/Lightning/Models/lightning-submodels.xml</path>
-  </submodels>
-
-  <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
-
-  <help>
-	<line>Approx Max. level speed: Mach 2.1</line>
-	<line></line>
-	<line>Startup Procedure</line>
-	<line></line>
-	<line>Step-by-step tutorial available from the help menu ("start tutorial" option)</line>
-	<line></line>
-	<line>Connect external power (ctrl-i to bring up or dismiss the dialogue)</line>
-	<line>Set throttle to first "open" position, ensure cut-off (on the side</line>
-	<line>of the throttle panel) is in the vertical position</line>
-	<line>Switch on Battery, Engine start master and Ignition</line>
-	<line>Press first engine start button for up to 2 seconds and release</line>
-	<line>If engine catches, open throttle to idle position</line>
-	<line>Repeat for second engine; external power can be disconnected if generator</line>
-	<line>is brought online by first engine(increase rpm, watch voltmeter for indication)</line>
-	<line></line>
-	<line>Take off configuration - use flaps, raise flaps and gear before 250 kts</line>
-	<line>Nosewheel should unstick at around 155kts</line>
-	<line></line>
-	<line>Approach speed, with flaps (and airbrakes as necessary) : around 160 kts</line>
-	<line>After touchdown, lower nose and deploy brake chute using in-cockpit handle</line>
-	<line></line>
-	<line>The "Master Camera" switch has been used to trigger an instant replay "marker";</line>
-	<line>simply flick the switch on before your attack/aerobatic maneuver and when you</line>
-	<line>select "Instant Replay" (press "r") the replay should begin from the moment</line>
-	<line>the "camera was turned on"</line>
-	<line></line>
-	<line>See the readme.txt in the Aircraft/Lightning directory for more information</line>
-	<line>in particular how to use the proportional braking</line>
-	<line></line>
-
-	<key>
-		<name>d</name>
-		<desc>Deploy braking chute</desc>
-	</key>
-	<key>
-		<name>l</name>
-		<desc>Select Squadron Markings</desc>
-	</key>
-	<key>
-		<name>R</name>
-		<desc>Toggle radar close-up view</desc>
-	</key>
-	<key>
-		<name>u/U</name>
-		<desc>Adjust Seat (Requires DC power)</desc>
-	</key>
-
-  </help>
-
-  <ai>
-	<scenario>refueling_demo_1</scenario>
-  </ai>
-
- </sim>
-
- <engines>
-	<engine n="0">
-		<running>false</running>
-	</engine>
-	<engine n="1">
-		<running>false</running>
-	</engine>
- </engines>
-
- <controls>
-	<flight>
-		<flaps-lever type="double">0</flaps-lever>
-	</flight>
-	<gear>
-		<brake-parking>1</brake-parking>
-		<tailwheel-lock>false</tailwheel-lock>
-	</gear>
- </controls>
-
- <nasal>
-	<Lightning>
-		<file>Aircraft/Lightning/Systems/lightning-main.nas</file>
-		<file>Aircraft/Lightning/Systems/lightning-lights.nas</file>
-		<!--file>Aircraft/Lightning/Systems/lightning-radios.nas</file-->
-		<file>Aircraft/Lightning/Systems/lightning-controls.nas</file>
-		<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
-		<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
-	</Lightning>
-	<livery>
-		<file>Aircraft/Lightning/Models/livery.nas</file>
-	</livery>
-	<aar> 
-     <file>Aircraft/Generic/aar.nas</file>
-  </aar>
- </nasal>
-
- <input>
-	<keyboard>
-
-		<!-- instant replay -->
-		<key n="9">
-			<name>Ctrl-I</name>
-			<desc>Show configuration dialog</desc>
-			<binding>
-				<command>nasal</command>
-				<script>Lightning.dialog.toggle()</script>
-			</binding>
-		</key>
-
-		<!-- Ventral Tank Jettison -->
-		<key n="10">
-			<name>Ctrl-J</name>
-			<desc>Ventral tank jettison</desc>
-			<binding>
-				<command>property-assign</command>
-				<property>/sim/model/lightning/controls/tank_jettisoned</property>
-				<value>1</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>/sim/model/lightning/controls/tank_jettisoned_lever</property>
-				<value>1</value>
-			</binding>
-		</key>
-
-		<!-- instant replay -->
-		 <key n="114">
-			<name>r</name>
-			<desc>Activate the instant replay system.</desc>
-			<binding>
-				<command>nasal</command>
-				<script>Lightning.doReplay();</script>
-			</binding>
-		</key>
-
-		<!-- Airbrake -->
-		<key n="2">
-			<name>Ctrl-B</name>	
-			<desc>Airbrakes</desc>	
-			<binding>
-				<command>nasal</command>
-				<script>
-					Lightning.airbrakes();
-				</script>
-			</binding>
-		</key>
-		<!-- Seat Lower -->
-		<key n="85">
-			<name>U</name>	
-			<desc>Seat Down</desc>	
-			<binding>
-				<command>property-assign</command>
-				<property>/sim/model/lightning/controls/seat</property>
-				<value>-1</value>
-			</binding>
-			<mod-up>
+			<!-- Airbrake -->
+			<key n="2">
+				<name>Ctrl-B</name>	
+				<desc>Airbrakes</desc>	
+				<binding>
+					<command>nasal</command>
+					<script>
+						Lightning.airbrakes();
+					</script>
+				</binding>
+			</key>
+			<!-- Seat Lower -->
+			<key n="85">
+				<name>U</name>	
+				<desc>Seat Down</desc>	
 				<binding>
 					<command>property-assign</command>
 					<property>/sim/model/lightning/controls/seat</property>
-					<value>0</value>
+					<value>-1</value>
 				</binding>
-			</mod-up>
-		</key>
-		<!-- Seat Raise -->
-		<key n="117">
-			<name>u</name>	
-			<desc>Seat Up</desc>	
-			<binding>
-				<command>property-assign</command>
-				<property>/sim/model/lightning/controls/seat</property>
-				<value>1</value>
-			</binding>
-			<mod-up>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>/sim/model/lightning/controls/seat</property>
+						<value>0</value>
+					</binding>
+				</mod-up>
+			</key>
+			<!-- Seat Raise -->
+			<key n="117">
+				<name>u</name>	
+				<desc>Seat Up</desc>	
 				<binding>
 					<command>property-assign</command>
 					<property>/sim/model/lightning/controls/seat</property>
-					<value>0</value>
+					<value>1</value>
 				</binding>
-			</mod-up>
-		</key>
-		<!-- Radar View -->
-		<key n="82">
-			<name>R</name>	
-			<desc>Radar View</desc>	
-			<condition>
-				<equals>
-					<property>/sim/current-view/view-number</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>/sim/model/lightning/controls/seat</property>
+						<value>0</value>
+					</binding>
+				</mod-up>
+			</key>
+			<!-- Radar View -->
+			<key n="82">
+				<name>R</name>	
+				<desc>Radar View</desc>	
 				<condition>
 					<equals>
 						<property>/sim/current-view/view-number</property>
 						<value>0</value>
 					</equals>
 				</condition>
-				<command>nasal</command>
-					<script>Lightning.toggle_radar_view(0);</script>
-			</binding>
-		</key>
-		<!-- Livery Box -->
- 		<key n="108">
-   			<name>l</name>
-   			<desc>Show livery select dialog</desc>
-   			<binding>
-    				<command>nasal</command>
-     				<script>livery.showModelSelectDialog()</script>
-   			</binding>
- 		</key>
-		<key n="100">
-			<name>d</name>
-			<desc>Deploy braking chute</desc>
-			<binding>
-				<command>property-assign</command>
-				<property>sim/model/lightning/controls/flight/chute_deployed</property>
-				<value type="int">1</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>sim/model/lightning/controls/flight/chute_open</property>
-				<value type="int">1</value>
-			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>Lightning.chuteAngle()</script>
-			</binding>
-		</key>
-	</keyboard>
- </input>
+				<binding>
+					<condition>
+						<equals>
+							<property>/sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>nasal</command>
+						<script>Lightning.toggle_radar_view(0);</script>
+				</binding>
+			</key>
+			<!-- Livery Box -->
+			<key n="108">
+				<name>l</name>
+				<desc>Show livery select dialog</desc>
+				<binding>
+						<command>nasal</command>
+						<script>livery.showModelSelectDialog()</script>
+				</binding>
+			</key>
+			<key n="100">
+				<name>d</name>
+				<desc>Deploy braking chute</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/lightning/controls/flight/chute_deployed</property>
+					<value type="int">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/lightning/controls/flight/chute_open</property>
+					<value type="int">1</value>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>Lightning.chuteAngle()</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
 
- <radar>
-  <range type="int" archive="y">20</range>
- </radar>
+	<instrumentation>
+		<radar>
+			<range type="int" archive="y">20</range>
+		</radar>
+	</instrumentation>
 
+	<limits>
+		<max-gear-extension-speed>280</max-gear-extension-speed>
+	</limits>
 
 </PropertyList>
