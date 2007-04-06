@@ -6,6 +6,19 @@
 
  <path>rmi.ac</path>
 
+ <!-- Panel Lighting -->
+ <animation>
+  <type>material</type>
+  <object-name>bezelinside</object-name>
+  <object-name>outer_face</object-name>
+  <emission>
+   <factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
+   <red>0.03125</red>
+   <green>0.0089</green>
+   <blue>0.0089</blue>
+  </emission>
+ </animation>
+
  <animation>
   <type>rotate</type>
   <object-name>outer_face</object-name>
@@ -23,7 +36,18 @@
    <z>0</z>
   </axis>
  </animation>
- 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>adfNeedle</object-name>
+  <property>orientation/heading-deg</property>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
  <animation>
   <type>rotate</type>
   <object-name>adfNeedle</object-name>
@@ -38,7 +62,7 @@
    <z>0</z>
   </axis>
  </animation>
- 
+
  <animation>
   <type>rotate</type>
   <object-name>vorNeedle</object-name>
@@ -54,25 +78,12 @@
   </axis>
  </animation>
 
- <!-- Panel Lighting -->
- <animation> 
-  <type>material</type>
-  <object-name>bezelinside</object-name>
-  <object-name>outer_face</object-name>
-  <emission> 
-   <factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
-   <red>0.03125</red>
-   <green>0.0089</green>
-   <blue>0.0089</blue>
-  </emission>
- </animation>
- 
  <!-- *** LoD *** -->
  <animation>
   <type>range</type>
   <min-m>0</min-m>
   <max-m>5</max-m>
- </animation>  
- </PropertyList>
+ </animation>
+</PropertyList>
 
 
