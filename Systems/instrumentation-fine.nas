@@ -10,12 +10,12 @@ UPDATE_PERIOD = 0;
 
 registerTimer = func {
 
-    settimer(gmeterUpdate, UPDATE_PERIOD);
-    settimer(setRPM, UPDATE_PERIOD);
-    settimer(icewarn, UPDATE_PERIOD);
-    settimer(gearLights, UPDATE_PERIOD);
-    settimer(navdisplay("comm"), UPDATE_PERIOD);
-    settimer(navdisplay("nav"), UPDATE_PERIOD);
+	settimer(gmeterUpdate, UPDATE_PERIOD);
+	settimer(setRPM, UPDATE_PERIOD);
+	settimer(icewarn, UPDATE_PERIOD);
+	settimer(gearLights, UPDATE_PERIOD);
+	settimer(navdisplay("comm"), UPDATE_PERIOD);
+	settimer(navdisplay("nav"), UPDATE_PERIOD);
 
 }
 
@@ -25,14 +25,14 @@ registerTimer = func {
 
 gmeterUpdate = func {
 
-    GCurrent = props.globals.getNode("/accelerations/pilot-g[0]").getValue();
-    GMin = props.globals.getNode("/accelerations/pilot-gmin[0]").getValue();
-    GMax = props.globals.getNode("/accelerations/pilot-gmax[0]").getValue();
+	GCurrent = props.globals.getNode("/accelerations/pilot-g[0]").getValue();
+	GMin = props.globals.getNode("/accelerations/pilot-gmin[0]").getValue();
+	GMax = props.globals.getNode("/accelerations/pilot-gmax[0]").getValue();
 
-    if(GCurrent < 1 and GCurrent < GMin){setprop("/accelerations/pilot-gmin[0]", GCurrent);}
-    else {if(GCurrent > GMax){setprop("/accelerations/pilot-gmax[0]", GCurrent);}}
-    
-    registerTimer();
+	if(GCurrent < 1 and GCurrent < GMin){setprop("/accelerations/pilot-gmin[0]", GCurrent);}
+	else {if(GCurrent > GMax){setprop("/accelerations/pilot-gmax[0]", GCurrent);}}
+
+registerTimer();
 
 }
 
@@ -64,6 +64,23 @@ icewarn = func {
 	
 } # End func
 
+#### Reheat-induced fire ####
+
+OverTempFire = func(engine) {
+
+	enginetemp = getprop("engines/engine[~engine~]/egt_degf");
+	overtempStart = getprop("sim/model/lightning/engines/engine[~engine~]/overtempStart");
+	if (enginetemp > 1472){
+		currentTime = getprop("/sim/time/elapsed-sec");
+		if (overtempStart < 1) {
+			setprop("sim/model/lightning/engines/engine[~engine~]/overtempStart", currentTime);
+		}
+		if ( (currentTime - overtempStart) > 1020 ){
+			setprop("sim/model/lightning/engines/engine[~engine~]/onFire",1);
+		}
+	}
+} #end func
+
 # ==================== Undercarriage Indicator Lights =======================
 
 gearLights = func {
@@ -73,8 +90,8 @@ gearLights = func {
 	if (volts > 1) {power = 1}
 		else {power = 0}
 
-	dayNight = getprop("controls/switches/dayNight");	
-	changeLamps = getprop("controls/switches/changeLamps");	
+	dayNight = getprop("controls/switches/dayNight");
+	changeLamps = getprop("controls/switches/changeLamps");
 	port = getprop("gear/gear[0]/position-norm");
 	nose = getprop("gear/gear[1]/position-norm");
 	stbd = getprop("gear/gear[2]/position-norm");
@@ -146,36 +163,36 @@ navdisplay = func(radio) {
 
 initialize = func {
 
-    ### Initialise gmeter stuff ###
-    props.globals.getNode("accelerations/pilot-g[0]", 1).setDoubleValue(1.01);
-    props.globals.getNode("accelerations/pilot-gmin[0]", 1).setDoubleValue(1);
-    props.globals.getNode("accelerations/pilot-gmax[0]", 1).setDoubleValue(1);
+	### Initialise gmeter stuff ###
+	props.globals.getNode("accelerations/pilot-g[0]", 1).setDoubleValue(1.01);
+	props.globals.getNode("accelerations/pilot-gmin[0]", 1).setDoubleValue(1);
+	props.globals.getNode("accelerations/pilot-gmax[0]", 1).setDoubleValue(1);
 
-    ### Initialise Gear ###
-    props.globals.getNode("sim/lightning/controls/gear", 1).setIntValue(1);
+	### Initialise Gear ###
+	props.globals.getNode("sim/lightning/controls/gear", 1).setIntValue(1);
 
 	### Initialise fuel stuff ###
-    props.globals.getNode("instrumentation/fuel/bingo[0]", 1).setIntValue(0);
-    props.globals.getNode("instrumentation/fuel/bingo[1]", 1).setIntValue(0);
-   
-    ### Initialise RPM (Vacuum) stuff ###
-    props.globals.getNode("engines/engine[0]/rpm", 1).setIntValue(0);
+	props.globals.getNode("instrumentation/fuel/bingo[0]", 1).setIntValue(0);
+	props.globals.getNode("instrumentation/fuel/bingo[1]", 1).setIntValue(0);
+
+	### Initialise RPM (Vacuum) stuff ###
+	props.globals.getNode("engines/engine[0]/rpm", 1).setIntValue(0);
 
 	### Initialise Ice Warning stuff ###
 	props.globals.getNode("sim/model/lightning/lights/ice_warn", 1).setIntValue(0);
 
 	### Initialise Seat stuff ###
-    props.globals.getNode("sim/model/lightning/controls/seat", 0).setIntValue(0);
+	props.globals.getNode("sim/model/lightning/controls/seat", 0).setIntValue(0);
 
 	### Initialise Instrumentation stuff ###
-    props.globals.getNode("sim/model/lightning/controls/radarview", 1).setIntValue(0);
-    props.globals.getNode("sim/model/lightning/controls/syn-knob", 1).setIntValue(0);
-    props.globals.getNode("instrumentation/heading-indicator/heading-source", 1).setBoolValue(0);
-     
+	props.globals.getNode("sim/model/lightning/controls/radarview", 1).setIntValue(0);
+	props.globals.getNode("sim/model/lightning/controls/syn-knob", 1).setIntValue(0);
+	props.globals.getNode("instrumentation/heading-indicator/heading-source", 1).setBoolValue(0);
+
 	### Initialise Radio stuff ###
-    props.globals.getNode("sim/model/lightning/radios/nav[0]/vol", 1).setDoubleValue(0.5);
-    props.globals.getNode("sim/model/lightning/radios/comm[0]/vol", 1).setDoubleValue(0.5);
-     
+	props.globals.getNode("sim/model/lightning/radios/nav[0]/vol", 1).setDoubleValue(0.5);
+	props.globals.getNode("sim/model/lightning/radios/comm[0]/vol", 1).setDoubleValue(0.5);
+
 	### Initialise Chute stuff ###
 	props.globals.getNode("sim/model/lightning/controls/flight/chute_open", 1).setIntValue(0);
 	props.globals.getNode("sim/model/lightning/controls/flight/chute_deployed", 1).setIntValue(0);
@@ -198,10 +215,13 @@ initialize = func {
 
 	### Initialise Dialogue stuff ###
 	Lightning.dialog.open();
+
+	### Initialise Steering stuff ###
+	aircraft.steering.init();
 		
 	registerTimer();
 	# Finished Initialising
-    initialized = 1;
+	initialized = 1;
 
 } #end func
 
