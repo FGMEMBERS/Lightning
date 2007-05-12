@@ -14,8 +14,8 @@ registerTimer = func {
 	settimer(setRPM, UPDATE_PERIOD);
 	settimer(icewarn, UPDATE_PERIOD);
 	settimer(gearLights, UPDATE_PERIOD);
-	settimer(navdisplay("comm"), UPDATE_PERIOD);
-	settimer(navdisplay("nav"), UPDATE_PERIOD);
+	settimer(func {navdisplay("comm")}, UPDATE_PERIOD);
+	settimer(func {navdisplay("nav")}, UPDATE_PERIOD);
 
 }
 
