@@ -1,22 +1,22 @@
 <?xml version = '1.0' ?>
 <PropertyList>
 
-<!-- Exhaust no1 -->
+	<!-- Exhaust no1 -->
 
-<path>exhaust.ac</path>
+	<path>exhaust.ac</path>
 
-<animation>
-	<type>select</type>
-	<object-name>noshadow.Exhaust</object-name>
-	<object-name>noshadow.Exhaust1</object-name>
-	<object-name>noshadow.Exhaust3</object-name>
-	<condition>
-		<greater-than>
-			<property>engines/engine[0]/n1</property>
-			<value>1</value>
-		</greater-than>
-	</condition>
-</animation>
+	<animation>
+		<type>select</type>
+		<object-name>noshadow.Exhaust</object-name>
+		<object-name>noshadow.Exhaust1</object-name>
+		<object-name>noshadow.Exhaust3</object-name>
+		<condition>
+			<greater-than>
+				<property>engines/engine[0]/n1</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
 
 	<animation>
 		<type>shader</type>
@@ -27,8 +27,8 @@
 	</animation>
 
 	<animation>
-	<type>scale</type>
-	<object-name>noshadow.Exhaust3</object-name>
+		<type>scale</type>
+		<object-name>noshadow.Exhaust3</object-name>
 		<property>engines/engine[0]/n1</property>
 		<x-factor>0.001</x-factor>
 		<y-factor>-0.002</y-factor>
@@ -36,9 +36,9 @@
 	</animation>
 
 	<animation>
-	<type>select</type>
-	<object-name>noshadow.Exhaust</object-name>
-	<object-name>noshadow.Exhaust1</object-name>
+		<type>select</type>
+		<object-name>noshadow.Exhaust</object-name>
+		<object-name>noshadow.Exhaust1</object-name>
 		<condition>
 			<and>
 				<property>engines/engine[0]/augmentation</property>
@@ -51,9 +51,8 @@
 	</animation>
 
 	<animation>
-	<type>spin</type>
-	<object-name>noshadow.Exhaust</object-name>
-	<object-name>noshadow.Exhaust1</object-name>
+		<type>spin</type>
+		<object-name>exhaust</object-name>
 		<property>engines/engine[0]/n1</property>
 		<factor>10</factor>
 		<offset>0.1</offset>
@@ -70,9 +69,9 @@
 	</animation>
 
 	<animation>
-	<type>scale</type>
-	<object-name>noshadow.Exhaust</object-name>
-	<object-name>noshadow.Exhaust1</object-name>
+		<type>scale</type>
+		<object-name>noshadow.Exhaust</object-name>
+		<object-name>noshadow.Exhaust1</object-name>
 		<property>controls/engines/engine[0]/throttle</property>
 		<interpolation>
 			<entry>
@@ -89,10 +88,10 @@
 			</entry>
 		</interpolation>
 	</animation>
-	
+
 	<animation>
-	<type>noshadow</type>
-	<object-name>exhaust</object-name>
+		<type>noshadow</type>
+		<object-name>exhaust</object-name>
 	</animation>
 
 </PropertyList>
