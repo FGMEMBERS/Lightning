@@ -436,6 +436,7 @@ electrical_115VAC3phase_without_standby_inverter_bus = func() {
     
 	# MRG (Master Reference Gyro) - feeds AI (and NAV display on F.6)
     setprop("/systems/electrical/outputs/MRG", bus_volts);
+    setprop("/systems/electrical/outputs/DG", bus_volts);
 
 	# JPT Control 
     setprop("/systems/electrical/outputs/JPT", bus_volts);
