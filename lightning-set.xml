@@ -247,9 +247,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<file>Aircraft/Lightning/Systems/instrumentation-fine.nas</file>
 			<file>Aircraft/Lightning/Systems/lightning-electrical.nas</file>
 		</Lightning>
-		<livery>
-			<file>Aircraft/Lightning/Models/livery.nas</file>
-		</livery>
 		<aar>
 			<file>Aircraft/Generic/aar.nas</file>
 		</aar>
@@ -384,7 +381,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 				<desc>Show livery select dialog</desc>
 				<binding>
 					<command>nasal</command>
-					<script>livery.dialog.toggle()</script>
+					<script>aircraft.livery.dialog.toggle()</script>
 				</binding>
 			</key>
 			<key n="100">

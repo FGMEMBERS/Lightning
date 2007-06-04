@@ -14,3 +14,6 @@ setlistener("sim/signals/reinit", crashReset);
 var dialog = gui.Dialog.new("/sim/gui/dialogs/lightning/config/dialog",
 		"Aircraft/Lightning/Dialogs/config.xml");
 
+aircraft.livery.init("Aircraft/Lightning/Models/Liveries",
+		"sim/model/livery/variant");
+
