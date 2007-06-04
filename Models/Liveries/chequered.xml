@@ -4,7 +4,7 @@
   <sim>
     <model>
       <livery>
-        <variant type="string">chequered</variant>
+        <variant type="string">Chequered</variant>
 
 	<material>
          <nose_markings>
