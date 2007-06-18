@@ -16,4 +16,3 @@ var dialog = gui.Dialog.new("/sim/gui/dialogs/lightning/config/dialog",
 
 aircraft.livery.init("Aircraft/Lightning/Models/Liveries",
 		"sim/model/livery/variant");
-

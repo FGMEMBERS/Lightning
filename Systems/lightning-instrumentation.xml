@@ -10,7 +10,6 @@ This file selects the instrumentation modules that should be available.
   <adf>
     <name>adf</name>
     <number>0</number>
-    <min-voltage>23</min-voltage>
   </adf>
 
   <airspeed-indicator>

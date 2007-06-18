@@ -30,6 +30,9 @@
 		<type>scale</type>
 		<object-name>noshadow.Exhaust3</object-name>
 		<property>engines/engine[1]/n1</property>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 		<x-factor>0.001</x-factor>
 		<y-factor>-0.002</y-factor>
 		<z-factor>-0.002</z-factor>
@@ -55,7 +58,9 @@
 		<object-name>exhaust</object-name>
 		<property>engines/engine[1]/n1</property>
 		<factor>10</factor>
-		<offset>0.1</offset>
+		<x-offset>0</x-offset>
+		<y-offset>0</y-offset>
+		<z-offset>0</z-offset>
 		<center>
 			<x-m>16.2709</x-m>
 			<y-m>0</y-m>
