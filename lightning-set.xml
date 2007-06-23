@@ -272,14 +272,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 				<name>Ctrl-J</name>
 				<desc>Ventral tank jettison</desc>
 				<binding>
-					<command>property-assign</command>
-					<property>/sim/model/lightning/controls/tank_jettisoned</property>
-					<value>1</value>
-				</binding>
-				<binding>
-					<command>property-assign</command>
-					<property>/sim/model/lightning/controls/tank_jettisoned_lever</property>
-					<value>1</value>
+					<command>nasal</command>
+					<script>Lightning.ventralJettison(1);</script>
 				</binding>
 			</key>
 

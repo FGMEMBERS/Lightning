@@ -4,7 +4,7 @@ OBJECT world
 kids 1
 OBJECT poly
 name "ventral_tank"
-loc 9.15857 -1.31174 4.95911e-05
+loc 0 -5.96046e-07 3.63798e-11
 crease 45.000000
 numvert 113
 0.640808 -0.130033 -0.0101257

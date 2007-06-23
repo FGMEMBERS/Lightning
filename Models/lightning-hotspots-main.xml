@@ -594,19 +594,8 @@
      <w>40</w>
      <h>80</h>
      <binding>
-      <command>property-assign</command>
-      <property>sim/model/lightning/controls/tank_jettisoned</property>
-      <value>1</value>
-     </binding>
-     <binding>
-      <command>property-assign</command>
-      <property>sim/model/lightning/controls/tank_jettisoned_lever</property>
-      <value type="int">1</value>
-     </binding>
-     <binding>
-      <command>property-assign</command>
-      <property>consumables/fuel/tank/level-gal_us</property>
-      <value>0</value>
+      <command>nasal</command>
+      <script>Lightning.ventralJettison(1)</script>
      </binding>
     </action>
  <!-- Starboard Panel Hotspots -->

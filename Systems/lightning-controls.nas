@@ -428,12 +428,17 @@ refuel = func{
 	}
 } # End function
 
-ventralRefit = func{
+ventralJettison = func(jettison){
 
-	setprop('sim/model/lightning/controls/tank_jettisoned', 0);
-	setprop('sim/model/lightning/controls/tank_jettisoned_lever', 0);
+	setprop("/sim/model/lightning/controls/tank_jettisoned", jettison);
+	setprop("/sim/model/lightning/controls/tank_jettisoned_lever", jettison);
 
-} # end of function
+	if(jettison > 0){
+		setprop("consumables/fuel/tank[0]/level-gal_us", 0);
+		}
+	else{setprop("consumables/fuel/tank[0]/level-gal_us", 265);}
+
+} # End function
 
 # ========================= Emergency U/C  =====================================
 
