@@ -29,6 +29,10 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<path>Aircraft/Lightning/Sounds/Lightning-sound.xml</path>
 		</sound>
 
+		<panel>
+			<visibility archive="y">false</visibility>
+		</panel>
+
 		<instrumentation>
 			<path>Aircraft/Lightning/Systems/lightning-instrumentation.xml</path>
 		</instrumentation>
@@ -401,7 +405,29 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 	<instrumentation>
 		<radar>
-			<range type="int" archive="y">20</range>
+			<switch type="string"
+							archive="y">ON</switch>
+			<mode-control type="int"
+										archive="y">3</mode-control>
+			<display-controls>
+				<WX type="bool"
+						archive="y">false</WX>
+				<data type="bool"
+							archive="y">false</data>
+				<pos type="bool"
+						 archive="y">true</pos>
+			</display-controls>
+			<serviceable type="bool">true</serviceable>
+			<range type="int"
+						 archive="y">20</range>
+			<mode type="string"
+						archive="y">WX</mode>
+			<lightning type="bool"
+								 archive="y">false</lightning>
+			<display-mode type="string"
+										archive="y">plan</display-mode>
+			<minimized type="bool"
+								 archive="y">false</minimized>
 		</radar>
 	</instrumentation>
 
