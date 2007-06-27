@@ -95,7 +95,12 @@ This file selects the instrumentation modules that should be available.
     <static-pressure>/systems/static/pressure-inhg</static-pressure>
   </vertical-speed-indicator>
 
-  <tacan>
+	<radar>
+		<name>radar</name>
+		<number>0</number>
+	</radar>
+
+	<tacan>
     <name>tacan</name>
     <number>0</number>
   </tacan>
