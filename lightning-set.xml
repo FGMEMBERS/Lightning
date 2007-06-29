@@ -438,6 +438,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 										>arc</display-mode>
 			<minimized type="bool"
 								 archive="y">false</minimized>
+			<heading-marker type="bool">false</heading-marker>
 			<echo-texture-path type="string"
 												 archive="y">Aircraft/Instruments/Textures/wxecho-orange.rgb</echo-texture-path>
 		</radar>
