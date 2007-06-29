@@ -18,7 +18,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 		<aero>lightning-f1a</aero>
 
 		<allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
-		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+		<chase-distance-m type="double"
+											archive="y">-30.0</chase-distance-m>
 		<virtual-cockpit archive="y">true</virtual-cockpit>
 
 		<startup>
@@ -99,39 +100,48 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<internal archive="y">true</internal>
 			<config>
 				<pitch-offset-deg>-20.0</pitch-offset-deg>
-				<x-offset-m archive="y">0.0</x-offset-m> <!--Right-->
-				<y-offset-m archive="y">1.40</y-offset-m> <!--Up-->
-				<z-offset-m archive="y">4.8</z-offset-m> <!--Back-->
+				<x-offset-m archive="y">0.0</x-offset-m>
+				<!--Right-->
+				<y-offset-m archive="y">1.40</y-offset-m>
+				<!--Up-->
+				<z-offset-m archive="y">4.8</z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 		<view n="1">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 		<view n="2">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 		<view n="3">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 		<view n="4">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 		<view n="5">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 		<view n="6">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m> <!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m>
+				<!--Back-->
 			</config>
 		</view>
 
@@ -141,7 +151,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 				<path>Aircraft/Lightning/Systems/Lightning-autopilot-jsbsim.xml</path>
 				<settings>
 					<target-pitch-deg type="float">10</target-pitch-deg>
-					<target-altitude-ft type="float">25000</target-altitude-ft>	
+					<target-altitude-ft type="float">25000</target-altitude-ft>
 					<target-climb-rate-fps type="float">0</target-climb-rate-fps>
 					<target-speed-kt type="float">350.0</target-speed-kt>
 					<target-mach type="float">0.86</target-mach>
@@ -282,7 +292,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</key>
 
 			<!-- instant replay -->
-			 <key n="114">
+			<key n="114">
 				<name>r</name>
 				<desc>Activate the instant replay system.</desc>
 				<binding>
@@ -293,8 +303,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 			<!-- Airbrake -->
 			<key n="2">
-				<name>Ctrl-B</name>	
-				<desc>Airbrakes</desc>	
+				<name>Ctrl-B</name>
+				<desc>Airbrakes</desc>
 				<binding>
 					<command>nasal</command>
 					<script>
@@ -320,8 +330,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 			<!-- Seat Lower -->
 			<key n="85">
-				<name>U</name>	
-				<desc>Seat Down</desc>	
+				<name>U</name>
+				<desc>Seat Down</desc>
 				<binding>
 					<command>property-assign</command>
 					<property>/sim/model/lightning/controls/seat</property>
@@ -337,8 +347,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</key>
 			<!-- Seat Raise -->
 			<key n="117">
-				<name>u</name>	
-				<desc>Seat Up</desc>	
+				<name>u</name>
+				<desc>Seat Up</desc>
 				<binding>
 					<command>property-assign</command>
 					<property>/sim/model/lightning/controls/seat</property>
@@ -354,8 +364,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</key>
 			<!-- Radar View -->
 			<key n="82">
-				<name>R</name>	
-				<desc>Radar View</desc>	
+				<name>R</name>
+				<desc>Radar View</desc>
 				<condition>
 					<equals>
 						<property>/sim/current-view/view-number</property>
@@ -370,7 +380,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 						</equals>
 					</condition>
 					<command>nasal</command>
-						<script>Lightning.toggle_radar_view(0);</script>
+					<script>Lightning.toggle_radar_view(0);</script>
 				</binding>
 			</key>
 			<!-- Livery Box -->
@@ -419,15 +429,17 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</display-controls>
 			<serviceable type="bool">true</serviceable>
 			<range type="int"
-						 archive="y">20</range>
+						 archive="y">10</range>
 			<mode type="string"
 						archive="y">WX</mode>
 			<lightning type="bool"
 								 archive="y">false</lightning>
 			<display-mode type="string"
-										archive="y">plan</display-mode>
+										>arc</display-mode>
 			<minimized type="bool"
 								 archive="y">false</minimized>
+			<echo-texture-path type="string"
+												 archive="y">Aircraft/Instruments/Textures/wxecho-orange.rgb</echo-texture-path>
 		</radar>
 	</instrumentation>
 
