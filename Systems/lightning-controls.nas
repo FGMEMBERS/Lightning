@@ -328,6 +328,7 @@ toggle_radar_view = func {
 		setprop('sim/current-view/heading-offset-deg[0]', 0);
 		setprop('sim/current-view/pitch-offset-deg[0]', -15.5);
 		setprop('sim/model/lightning/controls/radarview', 1);
+		setprop('instrumentation/radar/minimized', 1);
 	}
 	else {
 		stored_x = props.globals.getNode("sim/model/lightning/views/stored-x-offset-m").getValue();
@@ -342,6 +343,7 @@ toggle_radar_view = func {
 		setprop('sim/current-view/field-of-view', stored_fov);
 		setprop('sim/current-view/pitch-offset-deg', stored_pitch);
 		setprop('sim/model/lightning/controls/radarview', 0);
+		setprop('instrumentation/radar/minimized', 0);
 	}		
 
 } #End func
