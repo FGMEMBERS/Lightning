@@ -421,7 +421,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 										archive="y">3</mode-control>
 			<display-controls>
 				<WX type="bool"
-						archive="y">false</WX>
+						archive="y">true</WX>
 				<data type="bool"
 							archive="y">false</data>
 				<pos type="bool"
@@ -439,6 +439,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<minimized type="bool"
 								 archive="y">false</minimized>
 			<heading-marker type="bool">false</heading-marker>
+			<limit-deg type ="double">80</limit-deg>
 			<echo-texture-path type="string"
 												 archive="y">Aircraft/Instruments/Textures/wxecho-orange.rgb</echo-texture-path>
 		</radar>
