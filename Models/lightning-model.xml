@@ -23,9 +23,16 @@
 	</model>
 
 	<!-- Main Panel Top Row -->
-	
+
 	<panel>
 		<path>Aircraft/Lightning/Panels/radar-panel.xml</path>
+		<name>Radar</name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/minimized</property>
+				<value>false</value>
+			</equals>
+		</condition>
 		<bottom-left>
 			<x-m>2.5</x-m>
 			<y-m>0.12</y-m>
@@ -42,7 +49,18 @@
 			<z-m>1.225</z-m>
 		</top-left>
 	</panel>
-	
+
+	<animation>
+		<type>select</type>
+		<object-name>Radar</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/minimized</property>
+				<value>false</value>
+			</equals>
+		</condition>
+	</animation>
+
 	<model>
 		<path>Aircraft/Lightning/Models/asi.xml</path>
 		<offsets>
@@ -209,7 +227,7 @@
 		</offsets>
 	</model>
 
-		<!-- Centre Console -->
+	<!-- Centre Console -->
 	<model>
 		<path>Aircraft/Lightning/Models/radio.xml</path>
 		<offsets>
@@ -507,7 +525,7 @@
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model>
-			
+
 	<!-- Model Animations -->
 
 	<!-- Chrome animation, courtesy of Vivian  -->
@@ -576,13 +594,13 @@
 		<object-name>aileron_port</object-name>
 	</animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>chrome2.rgb</texture>
-    <object-name>flap_stbd</object-name>
-    <object-name>flap_port</object-name>
-  </animation>
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>chrome2.rgb</texture>
+		<object-name>flap_stbd</object-name>
+		<object-name>flap_port</object-name>
+	</animation>
 
 
 	<!-- Surface Animations -->
@@ -822,7 +840,7 @@
 	</animation>
 
 	<!-- Canopy animation -->
-<!--
+	<!--
 	<animation>
 		<type>rotate</type>
 		<object-name>canopy</object-name>
@@ -1378,12 +1396,12 @@
 	</animation>
 
 	<!-- Lighting -->
-	<animation> 
+	<animation>
 		<type>material</type>
 		<object-name>main_tube</object-name>
 		<object-name>probe_tip</object-name>
-		<emission> 
-		<factor-prop>/controls/lighting/probe</factor-prop>
+		<emission>
+			<factor-prop>/controls/lighting/probe</factor-prop>
 			<red>0.90</red>
 			<green>0.90</green>
 			<blue>0.90</blue>
@@ -1391,21 +1409,21 @@
 	</animation>
 
 	<!-- Tailpipes -->
-	<animation> 
+	<animation>
 		<type>material</type>
 		<object-name>burner1</object-name>
-		<emission> 
-		<factor-prop>engines/engine[0]/egt_degf</factor-prop>
+		<emission>
+			<factor-prop>engines/engine[0]/egt_degf</factor-prop>
 			<red>0.0001</red>
 			<green>0.0</green>
 			<blue>0.0</blue>
 		</emission>
 	</animation>
-	<animation> 
+	<animation>
 		<type>material</type>
 		<object-name>burner2</object-name>
-		<emission> 
-		<factor-prop>engines/engine[1]/egt_degf</factor-prop>
+		<emission>
+			<factor-prop>engines/engine[1]/egt_degf</factor-prop>
 			<red>0.0001</red>
 			<green>0.0</green>
 			<blue>0.0</blue>
@@ -1418,21 +1436,21 @@
 		<!--global type="bool">true</global-->
 		<object-name>nose_markings</object-name>
 		<property-base>sim/model/livery/material/nose_markings</property-base>
-  		<texture-prop>texture</texture-prop>
+		<texture-prop>texture</texture-prop>
 	</animation>
-	
+
 	<animation>
 		<type>material</type>
 		<!--global type="bool">true</global-->
 		<object-name>sqdn_tail_badge</object-name>
 		<property-base>sim/model/livery/material/sqdn_tail_badge</property-base>
-  		<texture-prop>texture</texture-prop>
+		<texture-prop>texture</texture-prop>
 	</animation>
 
 	<animation>
 		<type>material</type>
 		<global type="bool">true</global>
-		<object-name>main_fuselage_spine</object-name>	
+		<object-name>main_fuselage_spine</object-name>
 		<object-name>tail</object-name>
 		<property-base>/sim/model/livery/material/tail_color</property-base>
 		<diffuse>

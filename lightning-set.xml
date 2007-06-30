@@ -437,7 +437,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<display-mode type="string"
 										>arc</display-mode>
 			<minimized type="bool"
-								 archive="y">false</minimized>
+								 archive="y">true</minimized>
 			<heading-marker type="bool">false</heading-marker>
 			<limit-deg type ="double">80</limit-deg>
 			<echo-texture-path type="string"
