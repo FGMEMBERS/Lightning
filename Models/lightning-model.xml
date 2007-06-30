@@ -34,19 +34,19 @@
 			</equals>
 		</condition>
 		<bottom-left>
-			<x-m>2.5</x-m>
-			<y-m>0.12</y-m>
-			<z-m>0.925</z-m>
+			<x-m>2.46</x-m>
+			<y-m>0.11</y-m>
+			<z-m>0.905</z-m>
 		</bottom-left>
 		<bottom-right>
-			<x-m>2.5</x-m>
-			<y-m>0.42</y-m>
-			<z-m>0.925</z-m>
+			<x-m>2.46</x-m>
+			<y-m>0.41</y-m>
+			<z-m>0.905</z-m>
 		</bottom-right>
 		<top-left>
-			<x-m>2.5</x-m>
-			<y-m>0.12</y-m>
-			<z-m>1.225</z-m>
+			<x-m>2.45</x-m>
+			<y-m>0.11</y-m>
+			<z-m>1.205</z-m>
 		</top-left>
 	</panel>
 
@@ -92,15 +92,15 @@
 		</offsets>
 	</model>
 
-	<!--<model>
-		<path>Aircraft/Lightning/Panels/radar-panel.xml</path>
+	<model>
+		<path>Aircraft/Lightning/Models/radar.xml</path>
 		<offsets>
 			<x-m>3.1</x-m>
-			<y-m>0</y-m>
+			<y-m>0.12</y-m>
 			<z-m>1.075</z-m>
-			<pitch-deg>0</pitch-deg>
+			<pitch-deg>-15</pitch-deg>
 		</offsets>
-	</model>-->
+	</model>
 
 
 	<!-- Main Panel Bottom Row -->
