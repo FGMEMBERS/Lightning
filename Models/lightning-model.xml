@@ -56,7 +56,7 @@
 		<condition>
 			<equals>
 				<property>instrumentation/radar/minimized</property>
-				<value>false</value>
+				<value>true</value>
 			</equals>
 		</condition>
 	</animation>
