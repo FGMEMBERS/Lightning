@@ -100,48 +100,39 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<internal archive="y">true</internal>
 			<config>
 				<pitch-offset-deg>-20.0</pitch-offset-deg>
-				<x-offset-m archive="y">0.0</x-offset-m>
-				<!--Right-->
-				<y-offset-m archive="y">1.40</y-offset-m>
-				<!--Up-->
-				<z-offset-m archive="y">4.8</z-offset-m>
-				<!--Back-->
+				<x-offset-m archive="y">0.0</x-offset-m><!--Right-->
+				<y-offset-m archive="y">1.40</y-offset-m><!--Up-->
+				<z-offset-m archive="y">4.8</z-offset-m><!--Back-->
 			</config>
 		</view>
 		<view n="1">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m>
-				<!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m><!--Back-->
 			</config>
 		</view>
 		<view n="2">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m>
-				<!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m><!--Back-->
 			</config>
 		</view>
 		<view n="3">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m>
-				<!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m><!--Back-->
 			</config>
 		</view>
 		<view n="4">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m>
-				<!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m><!--Back-->
 			</config>
 		</view>
 		<view n="5">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m>
-				<!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m><!--Back-->
 			</config>
 		</view>
 		<view n="6">
 			<config>
-				<target-z-offset-m archive="y">10</target-z-offset-m>
-				<!--Back-->
+				<target-z-offset-m archive="y">10</target-z-offset-m><!--Back-->
 			</config>
 		</view>
 
@@ -194,8 +185,8 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<line>Take off configuration - use flaps, raise flaps and gear before 250 kts</line>
 			<line>Nosewheel should unstick at around 155kts</line>
 			<line></line>
-			<line>Approach speed, with flaps (and airbrakes as necessary) : around 160 kts</line>
-			<line>After touchdown, lower nose and deploy brake chute using in-cockpit handle</line>
+			<line>Approach speed, with flaps (and airbrakes as necessary) : around 180 kts</line>
+			<line>After touchdown (around 160kts), lower nose and deploy brake chute using in-cockpit handle</line>
 			<line></line>
 			<line>The "Master Camera" switch has been used to trigger an instant replay "marker";</line>
 			<line>simply flick the switch on before your attack/aerobatic maneuver and when you</line>
@@ -415,33 +406,22 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 
 	<instrumentation>
 		<radar>
-			<switch type="string"
-							archive="y">ON</switch>
-			<mode-control type="int"
-										archive="y">3</mode-control>
+			<serviceable type="bool" archive="y">true</serviceable>
+			<switch type="string" archive="y">off</switch>
+			<mode-control type="int" archive="y">3</mode-control>
+			<range type="int" archive="y">20</range>
+			<mode type="string"	archive="y">WX</mode>
+			<heading-marker type="bool"	archive="y">false</heading-marker>
+			<lightning type="bool" archive="y">false</lightning>
+			<display-mode type="string">arc</display-mode>
+			<minimized type="bool" archive="y">false</minimized>
+			<radar-texture-path type="string" archive="y">Aircraft/Lightning/Models/radar.rgb</radar-texture-path>
+			<echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho-orange.rgb</echo-texture-path>
 			<display-controls>
-				<WX type="bool"
-						archive="y">true</WX>
-				<data type="bool"
-							archive="y">false</data>
-				<pos type="bool"
-						 archive="y">true</pos>
+				<WX type="bool" archive="y">false</WX>
+				<data type="bool" archive="y">false</data>
+				<pos type="bool" archive="y">true</pos>
 			</display-controls>
-			<serviceable type="bool">true</serviceable>
-			<range type="int"
-						 archive="y">10</range>
-			<mode type="string"
-						archive="y">WX</mode>
-			<lightning type="bool"
-								 archive="y">false</lightning>
-			<display-mode type="string"
-										>arc</display-mode>
-			<minimized type="bool"
-								 archive="y">false</minimized>
-			<heading-marker type="bool">false</heading-marker>
-			<limit-deg type ="double">80</limit-deg>
-			<echo-texture-path type="string"
-												 archive="y">Aircraft/Instruments/Textures/wxecho-orange.rgb</echo-texture-path>
 		</radar>
 	</instrumentation>
 

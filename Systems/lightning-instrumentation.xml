@@ -7,93 +7,89 @@ This file selects the instrumentation modules that should be available.
 -->
 
 <PropertyList>
-  <adf>
-    <name>adf</name>
-    <number>0</number>
-  </adf>
 
-  <airspeed-indicator>
-    <name>airspeed-indicator</name>
-    <number>0</number>
-    <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
-    <static-pressure>/systems/static/pressure-inhg</static-pressure>
-  </airspeed-indicator>
+	<adf>
+		<name>adf</name>
+		<number>0</number>
+	</adf>
 
-  <altimeter>
-    <name>altimeter</name>
-    <number>0</number>
-    <static-pressure>/systems/static/pressure-inhg</static-pressure>
-  </altimeter>
+	<airspeed-indicator>
+		<name>airspeed-indicator</name>
+		<number>0</number>
+		<total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
+	</airspeed-indicator>
 
-  <attitude-indicator>
-    <name>attitude-indicator</name>
-    <number>0</number>
-    <suction>/systems/vacuum/suction-inhg</suction>
-  </attitude-indicator>
-  <attitude-indicator>
-    <name>attitude-indicator</name>
-    <number>1</number>
-    <suction>/systems/vacuum/suction-inhg</suction>
-  </attitude-indicator>
-<!--
-  <clock>
-    <name>clock</name>
-    <number>0</number>
-  </clock>
--->
+	<altimeter>
+		<name>altimeter</name>
+		<number>0</number>
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
+	</altimeter>
 
-  <dme>
-    <name>dme</name>
-    <number>0</number>
-  </dme>
+	<attitude-indicator>
+		<name>attitude-indicator</name>
+		<number>0</number>
+		<suction>/systems/vacuum/suction-inhg</suction>
+	</attitude-indicator>
 
-  <heading-indicator>
-    <name>heading-indicator</name>
-    <number>0</number>
-    <suction>/systems/vacuum/suction-inhg</suction>
-  </heading-indicator>
+	<attitude-indicator>
+		<name>attitude-indicator</name>
+		<number>1</number>
+		<suction>/systems/vacuum/suction-inhg</suction>
+	</attitude-indicator>
 
-  <heading-indicator-dg>
-    <name>heading-indicator-dg</name>
-    <number>0</number>
-  </heading-indicator-dg>
+	<dme>
+		<name>dme</name>
+		<number>0</number>
+	</dme>
 
-  <magnetic-compass>
-    <name>magnetic-compass</name>
-    <number>0</number>
-  </magnetic-compass>
+	<heading-indicator>
+		<name>heading-indicator</name>
+		<number>0</number>
+		<suction>/systems/vacuum/suction-inhg</suction>
+	</heading-indicator>
 
-  <nav-radio>
-    <name>nav</name>
-    <number>0</number>
-  </nav-radio>
+	<heading-indicator-dg>
+		<name>heading-indicator-dg</name>
+		<number>0</number>
+	</heading-indicator-dg>
 
-  <nav-radio>
-    <name>nav</name>
-    <number>1</number>
-  </nav-radio>
+	<magnetic-compass>
+		<name>magnetic-compass</name>
+		<number>0</number>
+	</magnetic-compass>
 
-  <slip-skid-ball>
-    <name>slip-skid-ball</name>
-    <number>0</number>
-  </slip-skid-ball>
+	<nav-radio>
+		<name>nav</name>
+		<number>0</number>
+	</nav-radio>
 
-  <transponder>
-    <name>transponder</name>
-    <number>0</number>
-    <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
-  </transponder>
+	<nav-radio>
+		<name>nav</name>
+		<number>1</number>
+	</nav-radio>
 
-  <turn-indicator>
-    <name>turn-indicator</name>
-    <number>0</number>
-  </turn-indicator>
+	<slip-skid-ball>
+		<name>slip-skid-ball</name>
+		<number>0</number>
+	</slip-skid-ball>
 
-  <vertical-speed-indicator>
-    <name>vertical-speed-indicator</name>
-    <number>0</number>
-    <static-pressure>/systems/static/pressure-inhg</static-pressure>
-  </vertical-speed-indicator>
+	<transponder>
+		<name>transponder</name>
+		<number>0</number>
+		<mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+	</transponder>
+
+	<turn-indicator>
+		<name>turn-indicator</name>
+		<number>0</number>
+	</turn-indicator>
+
+	<vertical-speed-indicator>
+		<name>vertical-speed-indicator</name>
+		<number>0</number>
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
+	</vertical-speed-indicator>
 
 	<radar>
 		<name>radar</name>
@@ -101,13 +97,13 @@ This file selects the instrumentation modules that should be available.
 	</radar>
 
 	<tacan>
-    <name>tacan</name>
-    <number>0</number>
-  </tacan>
+		<name>tacan</name>
+		<number>0</number>
+	</tacan>
 
-  <master-reference-gyro>
-    <name>master-reference-gyro</name>
-    <number>0</number>
-  </master-reference-gyro>
+	<master-reference-gyro>
+		<name>master-reference-gyro</name>
+		<number>0</number>
+	</master-reference-gyro>
 
 </PropertyList>

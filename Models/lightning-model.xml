@@ -24,43 +24,6 @@
 
 	<!-- Main Panel Top Row -->
 
-	<panel>
-		<path>Aircraft/Lightning/Panels/radar-panel.xml</path>
-		<name>Radar</name>
-		<condition>
-			<equals>
-				<property>instrumentation/radar/minimized</property>
-				<value>false</value>
-			</equals>
-		</condition>
-		<bottom-left>
-			<x-m>2.46</x-m>
-			<y-m>0.11</y-m>
-			<z-m>0.905</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>2.46</x-m>
-			<y-m>0.41</y-m>
-			<z-m>0.905</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.45</x-m>
-			<y-m>0.11</y-m>
-			<z-m>1.205</z-m>
-		</top-left>
-	</panel>
-
-	<animation>
-		<type>select</type>
-		<object-name>Radar</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/radar/minimized</property>
-				<value>true</value>
-			</equals>
-		</condition>
-	</animation>
-
 	<model>
 		<path>Aircraft/Lightning/Models/asi.xml</path>
 		<offsets>

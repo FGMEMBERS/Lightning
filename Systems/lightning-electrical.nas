@@ -375,6 +375,8 @@ electrical_115VAC3phase_unswitched_bus = func() {
 
     # A.I. 23B Radar
     setprop("systems/electrical/outputs/radar", bus_volts);
+	if(bus_volts > 114){setprop("instrumentation/radar/switch","on" );}
+	else{setprop("instrumentation/radar/switch","off");}
     # G.W. Supply
     setprop("systems/electrical/outputs/gw", bus_volts);
     # Ventral Pack Fuel Pump

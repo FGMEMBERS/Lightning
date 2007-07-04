@@ -2,6 +2,17 @@
 <PropertyList> 
 	<path>ai23.ac</path>
 
+	<animation> 
+		<type>material</type>
+		<object-name>tube_surface</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/radar</factor-prop>
+			<red>0.00869565</red>
+			<green>0.00443478</green>
+			<blue>0.0</blue>
+		</emission>
+	</animation> 
+
 	<!-- *** LoD *** -->
 	<animation> 
 		<type>range</type>
