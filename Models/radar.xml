@@ -12,6 +12,16 @@
 			<blue>0.0</blue>
 		</emission>
 	</animation> 
+	<animation> 
+		<type>material</type>
+		<object-name>radar_screen</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/radar</factor-prop>
+			<red>0.008696</red>
+			<green>0.008696</green>
+			<blue>0.008696</blue>
+		</emission>
+	</animation> 
 
 	<!-- *** LoD *** -->
 	<animation> 
