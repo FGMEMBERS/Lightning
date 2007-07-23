@@ -136,6 +136,21 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			</config>
 		</view>
 
+		<view n="100">
+			<name>Gun Camera View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<default-field-of-view-deg type="double">86.0</default-field-of-view-deg>
+				<pitch-offset-deg>0.0</pitch-offset-deg>
+				<x-offset-m archive="y">0.0</x-offset-m><!--Right-->
+				<y-offset-m archive="y">-0.3</y-offset-m><!--Up-->
+				<z-offset-m archive="y">1.843</z-offset-m><!--Back-->
+			</config>
+		</view>
+
 		<systems>
 
 			<autopilot>
@@ -414,7 +429,6 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<heading-marker type="bool"	archive="y">false</heading-marker>
 			<lightning type="bool" archive="y">false</lightning>
 			<display-mode type="string">arc</display-mode>
-			<minimized type="bool" archive="y">false</minimized>
 			<radar-texture-path type="string" archive="y">Aircraft/Lightning/Models/radar.rgb</radar-texture-path>
 			<echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho-orange.rgb</echo-texture-path>
 			<display-controls>
