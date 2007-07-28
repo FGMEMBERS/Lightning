@@ -595,6 +595,7 @@
         <!-- From BAC wind tunnel data, greatful thanks to Aerospaceweb.org  -->
             <tableData>
 						0		1
+				-0.03	-0.08	-0.27
 				0.00	0.0		0.17	
 				0.03	0.08	0.27
 				0.07	0.17	0.37
@@ -865,11 +866,33 @@
     <function name="aero/coefficient/Cmalpha">
        <description>Pitch_moment_due_to_alpha</description>
        <product>
-           <property>aero/qbar-psf</property>
-           <property>metrics/Sw-sqft</property>
-           <property>metrics/cbarw-ft</property>
-           <property>aero/alpha-rad</property>
-           <value>-0.3</value>
+         <property>aero/qbar-psf</property>
+         <property>metrics/Sw-sqft</property>
+         <property>metrics/cbarw-ft</property>
+         <table>
+           <independentVar lookup="row">aero/alpha-rad</independentVar>
+           <independentVar lookup="column">fcs/flap-pos-norm</independentVar>
+           <!-- From BAC wind tunnel data, greatful thanks to Aerospaceweb.org  -->
+           <tableData>
+						0		1
+				0	-0.017	-0.072
+				2	-0.013	-0.068
+				4	-0.008	-0.062
+				6	-0.006	-0.060
+				8	0.005	-0.053
+				10	0.010	-0.040
+				12	0.016	-0.032
+				14	0.026	-0.025
+				16	0.040	-0.015
+				18	0.055	0.005
+				20	0.070	0.013
+				22	0.088	0.020
+				24	0.108	0.037
+				26	0.124	0.045
+				28	0.132	0.074
+				30	0.140	0.074
+           </tableData>
+         </table>
        </product>
     </function>
 
