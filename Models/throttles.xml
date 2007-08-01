@@ -6,9 +6,9 @@
 
 	<path>throttles.ac</path>
 
-<!-- Throttle Panel Hotspots -->
-<panel>
-	<path>Aircraft/Lightning/Models/throttle_panel-hotspots.xml</path>
+	<!-- Throttle Panel Hotspots -->
+	<panel>
+		<path>Aircraft/Lightning/Models/throttle_panel-hotspots.xml</path>
 		<top-left>
 			<x-m>3.465</x-m>
 			<y-m>-0.317011</y-m>
@@ -23,11 +23,10 @@
 			<x-m>3.4925</x-m>
 			<y-m>-0.302559</y-m>
 			<z-m>0.559812</z-m>
-    </bottom-right>
-    
-</panel>
+		</bottom-right>
+	</panel>
 
-<!-- Main Animation -->
+	<!-- Main Animation -->
 	<!-- Throttle No1 -->
 	<animation>
 		<type>translate</type>
@@ -128,11 +127,41 @@
 		</axis>
 	</animation>
 
-	<!-- disable shadows -->
+	<!-- Auto-throttle control -->	
+	<animation>
+		<type>rotate</type>
+		<object-name>throttle_servo_knob</object-name>
+		<property>controls/switches/autothrottle</property>
+		<factor>90</factor>
+		<center>
+			<x-m>3.36733</x-m>
+			<y-m>-0.281208</y-m>
+			<z-m>0.431478</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>throttle_servo_knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/autothrottle</property>
+			</binding>
+		</action>
+	</animation>
 
+	<!-- disable shadows -->
 	<animation>
 		<type>noshadow</type>
 		<object-name>throttles</object-name>
+		<object-name>auto-throttle</object-name>
 	</animation>
 			
 </PropertyList>

@@ -186,6 +186,24 @@ doReplay = func{
 
 # ================================== Autopilot ==============================================
 
+# Autothrottle Engage
+
+autothrottleWatch = func{
+
+	var lever = getprop("controls/switches/autothrottle");
+	var power = getprop("systems/electrical/outputs/autothrottle");
+
+	if ( power > 100 and lever ) {
+		setprop("autopilot/settings/target-speed-kt", 180);
+		setprop("autopilot/locks/speed","speed-with-throttle");
+		return registerTimerControls(autothrottleWatch);
+	}
+	else { setprop("autopilot/locks/speed", " ");
+		setprop("controls/switches/autothrottle",0);
+	}
+}
+
+setlistener("controls/switches/autothrottle", autothrottleWatch);
 
 # Pitch Hold / Off
 
@@ -195,14 +213,14 @@ autopilot_pitch = func {
 	aircraftpitch = getprop('orientation/pitch-deg[0]');
 
 	if ( on != '1' ) {
-		setprop("autopilot/locks/altitude[0]", "");
-		setprop("autopilot/gui/alt-active[0]", "false");
+		setprop("autopilot/locks/altitude[0]", 0);
+		setprop("autopilot/gui/alt-active[0]", 0);
 		#print("turning off")
 	}
 	else {
 		setprop("autopilot/settings/target-pitch-deg[0]", aircraftpitch);
 		setprop("autopilot/locks/altitude[0]", "pitch-hold");
-		setprop("autopilot/gui/alt-active[0]", "true");
+		setprop("autopilot/gui/alt-active[0]", 1);
 		#print("turning on")
 	}
 } # end function
@@ -441,6 +459,14 @@ ventralJettison = func(jettison){
 	else{setprop("consumables/fuel/tank[0]/level-gal_us", 265);}
 
 } # End function
+
+ventralRefit = func{
+
+	setprop('sim/model/lightning/controls/tank_jettisoned', 0);
+	setprop('sim/model/lightning/controls/tank_jettisoned_lever', 0);
+
+} # end of function
+
 
 # ========================= Emergency U/C  =====================================
 

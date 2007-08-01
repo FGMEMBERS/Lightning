@@ -427,6 +427,9 @@ electrical_115VAC3phase_without_standby_inverter_bus = func() {
 		setprop("systems/electrical/outputs/autopilot", bus_volts);}
 	else {setprop("systems/electrical/outputs/autopilot",0);}
 
+    # Autothrottle Servos (Don't require main AP to be switched on)
+    setprop("/systems/electrical/outputs/autothrottle", bus_volts);
+
     # Main AI and HSI - Automatic Failover to 28VDC on loss of AC
 	#if( bus_volts < 113 )
 	#if( gen_online < 1) {

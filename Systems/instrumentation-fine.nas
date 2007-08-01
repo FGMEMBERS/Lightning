@@ -182,7 +182,7 @@ initialize = func {
 	props.globals.getNode("sim/model/lightning/lights/ice_warn", 1).setIntValue(0);
 
 	### Initialise Seat stuff ###
-	props.globals.getNode("sim/model/lightning/controls/seat", 0).setIntValue(0);
+	props.globals.getNode("sim/model/lightning/controls/seat", 1).setIntValue(0);
 
 	### Initialise Instrumentation stuff ###
 	props.globals.getNode("sim/model/lightning/controls/radarview", 1).setIntValue(0);

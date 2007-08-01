@@ -44,6 +44,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 				<controls>
 					<flight>
 						<chute_open>0</chute_open>
+						<autothrottle type="bool">0</autothrottle>
 					</flight>
 				</controls>
 			</lightning>
@@ -143,6 +144,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.03</ground-level-nearplane-m>
 				<default-field-of-view-deg type="double">86.0</default-field-of-view-deg>
 				<pitch-offset-deg>0.0</pitch-offset-deg>
 				<x-offset-m archive="y">0.0</x-offset-m><!--Right-->
@@ -154,18 +156,18 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 		<systems>
 
 			<autopilot>
-				<path>Aircraft/Lightning/Systems/Lightning-autopilot-jsbsim.xml</path>
+				<path>Aircraft/Lightning/Systems/Lightning-autopilot.xml</path>
 				<settings>
 					<target-pitch-deg type="float">10</target-pitch-deg>
 					<target-altitude-ft type="float">25000</target-altitude-ft>
 					<target-climb-rate-fps type="float">0</target-climb-rate-fps>
-					<target-speed-kt type="float">350.0</target-speed-kt>
-					<target-mach type="float">0.86</target-mach>
+					<target-speed-kt type="float">180.0</target-speed-kt>
 				</settings>
 				<locks>
 					<auto-take-off type="string">Disabled</auto-take-off>
 					<rudder-control type="string">Initialised</rudder-control>
 					<auto-flap-control type="string">Manual</auto-flap-control>
+					<speed type="string">0</speed>
 				</locks>
 			</autopilot>
 
@@ -215,6 +217,14 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 			<key>
 				<name>d</name>
 				<desc>Deploy braking chute</desc>
+			</key>
+			<key>
+				<name>ctrl-b</name>
+				<desc>Toggle airbrakes</desc>
+			</key>
+			<key>
+				<name>ctrl-s</name>
+				<desc>Toggle autothrottle</desc>
 			</key>
 			<key>
 				<name>Ctrl-j</name>
@@ -319,6 +329,17 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 				</binding>
 			</key>
 
+			<!-- Autothrottle -->
+			<key n="19">
+				<name>ctrl-s</name>
+				<desc>toggle autothrottle</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/autothrottle</property>
+				</binding>
+			</key>
+
+			<!-- Radar View -->
 			<key n="32">
 				<name>SPACE</name>
 				<desc>Radar View</desc>

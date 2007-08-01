@@ -428,23 +428,40 @@
     ==============
 -->
 
-<!-- Simple Auto throttle -->
+<!-- Simple Auto throttle, Engine no1 -->
  <pid-controller>
     <name>Auto Throttle</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/speed</prop>
+      <!--
+      <condition>
+        <and>
+          <equals>
+            <prop>autopilot/locks/speed</prop>
+            <value type="string">speed-with-throttle</value>
+          </equals>
+          <greater-than>
+            <prop>velocities/airspeed-kt</prop>
+            <value>162</value>
+          </greater-than>
+          <less-than>
+            <prop>velocities/airspeed-kt</prop>
+            <value>188</value>
+          </less-than>
+        </and>
+      </condition>
+      -->
+      <prop>autopilot/locks/speed</prop>
       <value>speed-with-throttle</value>
     </enable>
     <input>
-      <prop>/velocities/airspeed-kt</prop>
+      <prop>velocities/airspeed-kt</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
+      <prop>autopilot/settings/target-speed-kt</prop>
     </reference>
     <output>
-      <prop>/controls/engines/engine[0]/throttle</prop>
-      <prop>/controls/engines/engine[1]/throttle</prop>
+      <prop>controls/engines/engine[0]/throttle</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -455,8 +472,39 @@
                           <!-- unfiltered derivative error -->
       <Ti>20.0</Ti>       <!-- integrator time -->
       <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>0.0</u_min>  <!-- minimum output clamp -->
-      <u_max>1.0</u_max>  <!-- maximum output clamp -->
+      <u_min>0.1</u_min>  <!-- minimum output clamp -->
+      <u_max>0.85</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+<!-- Simple Auto throttle, Engine no2 -->
+ <pid-controller>
+    <name>Auto Throttle2</name>
+    <debug>false</debug>
+    <enable>
+      <prop>autopilot/locks/speed</prop>
+      <value>speed-with-throttle</value>
+    </enable>
+    <input>
+      <prop>velocities/airspeed-kt</prop>
+    </input>
+    <reference>
+      <prop>autopilot/settings/target-speed-kt</prop>
+    </reference>
+    <output>
+      <prop>controls/engines/engine[1]/throttle</prop>
+    </output>
+    <config>
+      <Ts>0.02</Ts>
+      <Kp>0.02</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>20.0</Ti>       <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
+      <u_min>0.58</u_min>  <!-- minimum output clamp -->
+      <u_max>0.85</u_max>  <!-- maximum output clamp -->
     </config>
   </pid-controller>
 
