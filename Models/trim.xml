@@ -24,7 +24,7 @@
 		<type>rotate</type>
 		<object-name>trim-rud</object-name>
 		<property>controls/flight/rudder-trim</property>
-		<factor>50</factor>
+		<factor>-50</factor>
 		<center>
 			<x-m>0.00627251</x-m>
 			<y-m>0.0</y-m>

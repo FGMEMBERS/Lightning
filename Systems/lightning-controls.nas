@@ -192,8 +192,9 @@ autothrottleWatch = func{
 
 	var lever = getprop("controls/switches/autothrottle");
 	var power = getprop("systems/electrical/outputs/autothrottle");
+	var airspeed = getprop("velocities/airspeed-kt");
 
-	if ( power > 100 and lever ) {
+	if ( power > 100 and lever and airspeed > 162 and airspeed < 275) {
 		setprop("autopilot/settings/target-speed-kt", 180);
 		setprop("autopilot/locks/speed","speed-with-throttle");
 		return registerTimerControls(autothrottleWatch);
@@ -498,3 +499,9 @@ emergencyGearDown = func(set){
 	}
 } # End Func
 
+# ========================= Rudder Trim  =====================================
+controls.rudderTrim = func(direction){
+	var volts = getprop("systems/electrical/outputs/control_pos_indicator");
+	setprop("sim/model/lightning/controls/flight/rudder-trim", direction);
+	controls.slewProp("controls/flight/rudder-trim", direction * 0.6 * (volts/28));
+} # end 

@@ -157,11 +157,70 @@
 		</action>
 	</animation>
 
+	<!-- Rudder Trim -->	
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder_trim_bar</object-name>
+		<property>sim/model/lightning/controls/flight/rudder-trim</property>
+		<factor>30</factor>
+		<center>
+			<x-m>3.53147</x-m>
+			<y-m>-0.328154</y-m>
+			<z-m>0.547087</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>rudder_trim_left</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.rudderTrim(-1)</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/lightning/controls/flight/rudder-trim</property>
+					<value type="int">0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>rudder_trim_right</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.rudderTrim(1)</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/lightning/controls/flight/rudder-trim</property>
+					<value type="int">0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
 	<!-- disable shadows -->
 	<animation>
 		<type>noshadow</type>
 		<object-name>throttles</object-name>
 		<object-name>auto-throttle</object-name>
+		<object-name>rudder_trim</object-name>
 	</animation>
 			
 </PropertyList>
