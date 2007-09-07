@@ -246,7 +246,7 @@ AJ MacLeod (aj@adpetopensource.co.uk)
 		</help>
 
 		<ai>
-			<scenario>refueling_demo_1</scenario>
+			<scenario n="100">refueling_demo_1</scenario>
 		</ai>
 
 	</sim>
