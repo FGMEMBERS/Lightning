@@ -40,10 +40,14 @@
 			<z-m>-0.0213747</z-m>
 		</center>
 	</animation>
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
 	<!-- *** LoD *** -->
 	<animation>
-	<type>range</type>
-	<min-m>0</min-m>
-	<max-m>5</max-m>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
 	</animation>
 </PropertyList>

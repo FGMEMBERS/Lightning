@@ -181,10 +181,10 @@
 			<z>1</z>
 		</axis>
 	</animation>
+
 	<!-- *** Lighting *** -->
 	<animation> 
 		<type>material</type>
-		<object-name>lit_parts</object-name>
 		<emission> 
 			<factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
 			<red>0.03125</red>
@@ -192,6 +192,12 @@
 			<blue>0.0089</blue>
 		</emission>
 	</animation>
+
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
+
 	<!-- *** LoD *** -->
 	<animation> 
 		<type>range</type>

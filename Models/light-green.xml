@@ -26,6 +26,11 @@
         </greater-than>
       </condition>
     </animation>
+
+    <!-- Noshadow -->
+    <animation>
+      <type>noshadow</type>
+    </animation>
     
 	<!--    *** LoD *** 
     <animation> 
@@ -35,4 +40,4 @@
       <max-m>5000</max-m>
     </animation>-->
   
-  </PropertyList>
+</PropertyList>

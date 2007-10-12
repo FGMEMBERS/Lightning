@@ -4,7 +4,7 @@
 
 <PropertyList>
 
- <path>undercarriage-up-down.ac</path>
+<path>undercarriage-up-down.ac</path>
 
 <!-- **************** gear-up **************** -->
 
@@ -56,18 +56,9 @@
   </axis>
  </animation>
  
-<animation> 
-	<type>material</type>
-	<object-name>mount</object-name>
-	<emission> 
-		<factor-prop>/controls/lighting/panel-norm</factor-prop>
-			<red>0.075</red>
-			<green>0.025</green>
-			<blue>0.025</blue>
-	</emission>
+<animation>
+  <type>noshadow</type>
 </animation>
- 
- 
  
 <!-- *** LoD *** -->
  <animation>

@@ -126,14 +126,17 @@
 
 	<animation> 
 	<type>material</type>
-		<object-name>face</object-name>
-		<object-name>bezelinside</object-name>
 		<emission> 
 			<factor-prop>systems/electrical/outputs/instr-lights-port</factor-prop>
    			<red>0.03125</red>
  			<green>0.0089</green>
 			<blue>0.0089</blue>
 		</emission>
+	</animation>
+
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
 	</animation>
 
     <!-- *** LoD *** -->

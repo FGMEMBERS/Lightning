@@ -139,7 +139,11 @@
   </axis>
  </animation>
 
-<!-- *** LoD *** -->
+ <animation>
+  <type>noshadow</type>
+ </animation>
+
+ <!-- *** LoD *** -->
  <animation>
   <type>range</type>
   <min-m>0</min-m>

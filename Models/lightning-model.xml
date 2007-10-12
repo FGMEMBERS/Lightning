@@ -201,7 +201,6 @@
 		</offsets>
 	</model>
 
-
 	<!-- Starboard Panel -->
 	<model>
 		<path>Aircraft/Lightning/Models/rpm-1.xml</path>
@@ -1337,14 +1336,28 @@
 	<animation>
 		<type>noshadow</type>
 		<object-name>nose_markings</object-name>
+		<object-name>intake_duct</object-name>
+		<object-name>intake_ring_internal</object-name>
+		<object-name>radome_mount</object-name>
 		<object-name>cockpit</object-name>
+		<object-name>canopy_lever</object-name>
+		<object-name>canopy_control_rod</object-name>
+		<object-name>radio_control_box</object-name>
 		<object-name>cockpit_rear_bulkhead</object-name>
+		<object-name>cockpit_rear_bulkhead_top</object-name>
+		<object-name>uc_f_link</object-name>
+		<object-name>uc_f_hub</object-name>
 		<object-name>uc_fr_well</object-name>
+		<object-name>uc_rr_well_port</object-name>
+		<object-name>uc_rr_well_stbd</object-name>
 		<object-name>chute_pull_outer</object-name>
 		<object-name>seat_base</object-name>
 		<object-name>roundels</object-name>
 		<object-name>roundels_underside</object-name>
 		<object-name>xm169</object-name>
+		<object-name>elevator_mounting_bulges</object-name>
+		<object-name>nav_light_port</object-name>
+		<object-name>nav_light_stbd</object-name>
 		<object-name>tail_flag</object-name>
 		<object-name>tail_letter</object-name>
 		<object-name>sqdn_tail_badge</object-name>
@@ -1353,9 +1366,11 @@
 		<object-name>inner_tailpipe_end</object-name>
 		<object-name>inner_tailpipe_strakes</object-name>
 		<object-name>inner_tailpipe_strakes</object-name>
+		<object-name>tailpipe_inners</object-name>
 		<object-name>burner1</object-name>
 		<object-name>burner2</object-name>
 		<object-name>airbrake_recess</object-name>
+		<object-name>chute_anchor</object-name>
 	</animation>
 
 	<!-- Lighting -->

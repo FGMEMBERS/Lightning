@@ -11,28 +11,6 @@
 		<object-name>Face-m</object-name>
 		<object-name>Needle1-m</object-name>
 		<property>instrumentation/master-reference-gyro/indicated-hdg-deg</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>90</ind>
-				<dep>90</dep>
-			</entry>
-			<entry>
-				<ind>180</ind>
-				<dep>180</dep>
-			</entry>
-			<entry>
-				<ind>270</ind>
-				<dep>270</dep>
-			</entry>
-			<entry>
-				<ind>360</ind>
-				<dep>360</dep>
-			</entry>
-		</interpolation>
 		<axis>
 			<x>1</x>
 			<y>0</y>
@@ -95,28 +73,6 @@
 		<type>rotate</type>
 		<object-name>Needle1-m</object-name>
 		<property>instrumentation/heading-indicator/heading-bug-deg</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>90</ind>
-				<dep>90</dep>
-			</entry>
-			<entry>
-				<ind>180</ind>
-				<dep>180</dep>
-			</entry>
-			<entry>
-				<ind>270</ind>
-				<dep>270</dep>
-			</entry>
-			<entry>
-				<ind>360</ind>
-				<dep>360</dep>
-			</entry>
-		</interpolation>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
@@ -129,28 +85,6 @@
 		<object-name>Face-t</object-name>
 		<object-name>Needle1-t</object-name>
 		<property>instrumentation/heading-indicator-dg/indicated-heading-deg</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>90</ind>
-				<dep>90</dep>
-			</entry>
-			<entry>
-				<ind>180</ind>
-				<dep>180</dep>
-			</entry>
-			<entry>
-				<ind>270</ind>
-				<dep>270</dep>
-			</entry>
-			<entry>
-				<ind>360</ind>
-				<dep>360</dep>
-			</entry>
-		</interpolation>
 		<axis>
 			<x>1</x>
 			<y>0</y>
@@ -173,28 +107,6 @@
 		<type>rotate</type>
 		<object-name>Needle1-t</object-name>
 		<property>instrumentation/heading-indicator/heading-bug-deg</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>90</ind>
-				<dep>90</dep>
-			</entry>
-			<entry>
-				<ind>180</ind>
-				<dep>180</dep>
-			</entry>
-			<entry>
-				<ind>270</ind>
-				<dep>270</dep>
-			</entry>
-			<entry>
-				<ind>360</ind>
-				<dep>360</dep>
-			</entry>
-		</interpolation>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
@@ -206,28 +118,7 @@
 		<type>rotate</type>
 		<object-name>Knob1</object-name>
 		<property>instrumentation/heading-indicator/heading-bug-deg</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>90</ind>
-				<dep>900</dep>
-			</entry>
-			<entry>
-				<ind>180</ind>
-				<dep>1800</dep>
-			</entry>
-			<entry>
-				<ind>270</ind>
-				<dep>2700</dep>
-			</entry>
-			<entry>
-				<ind>360</ind>
-				<dep>3600</dep>
-			</entry>
-		</interpolation>
+		<factor>10</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>-0.0211482</y-m>
@@ -266,6 +157,11 @@
 			<green>0.0089</green>
 			<blue>0.0089</blue>
 		</emission>
+	</animation>
+
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
 	</animation>
  
 	<!-- *** LoD *** -->

@@ -43,6 +43,10 @@
    <blue>0.005</blue>
   </emission>
  </animation>
+
+ <animation>
+   <type>noshadow</type>
+ </animation>
   
  <!-- *** LoD *** -->
  <animation>

@@ -120,6 +120,10 @@
        <blue>0.0089</blue>
       </emission>
     </animation>
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
     <!-- *** LoD *** -->
 	<animation> 
 		<type>range</type>

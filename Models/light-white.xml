@@ -30,6 +30,12 @@
         </equals>
       </condition>
     </animation>
+
+    <!-- Noshadow -->
+    <animation>
+      <type>noshadow</type>
+    </animation>
+
     
 	<!--    *** LoD *** 
     <animation> 

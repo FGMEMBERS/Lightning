@@ -9,8 +9,6 @@
  <!-- Panel Lighting -->
  <animation>
   <type>material</type>
-  <object-name>bezelinside</object-name>
-  <object-name>outer_face</object-name>
   <emission>
    <factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
    <red>0.03125</red>
@@ -23,13 +21,6 @@
   <type>rotate</type>
   <object-name>outer_face</object-name>
   <property>orientation/heading-magnetic-deg</property>
-  <interpolation>
-   <entry><ind>0</ind><dep>0</dep></entry>
-   <entry><ind>90</ind><dep>90</dep></entry>
-   <entry><ind>180</ind><dep>180</dep></entry>
-   <entry><ind>270</ind><dep>270</dep></entry>
-   <entry><ind>360</ind><dep>360</dep></entry>
-  </interpolation>
   <axis>
    <x>1</x>
    <y>0</y>
@@ -52,10 +43,6 @@
   <type>rotate</type>
   <object-name>adfNeedle</object-name>
   <property>instrumentation/tacan/indicated-bearing-true-deg</property>
-  <interpolation>
-   <entry><ind>0</ind><dep>0</dep></entry>
-   <entry><ind>360</ind><dep>360</dep></entry>
-  </interpolation>
   <axis>
    <x>-1</x>
    <y>0</y>
@@ -67,15 +54,16 @@
   <type>rotate</type>
   <object-name>vorNeedle</object-name>
   <property>instrumentation/adf[0]/indicated-bearing-deg</property>
-  <interpolation>
-   <entry><ind>0</ind><dep>0</dep></entry>
-   <entry><ind>360</ind><dep>360</dep></entry>
-  </interpolation>
   <axis>
    <x>-1</x>
    <y>0</y>
    <z>0</z>
   </axis>
+ </animation>
+
+ <!-- Noshadow -->
+ <animation>
+  <type>noshadow</type>
  </animation>
 
  <!-- *** LoD *** -->
@@ -85,5 +73,3 @@
   <max-m>5</max-m>
  </animation>
 </PropertyList>
-
-
