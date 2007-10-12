@@ -1345,8 +1345,6 @@
 		<object-name>radio_control_box</object-name>
 		<object-name>cockpit_rear_bulkhead</object-name>
 		<object-name>cockpit_rear_bulkhead_top</object-name>
-		<object-name>uc_f_link</object-name>
-		<object-name>uc_f_hub</object-name>
 		<object-name>uc_fr_well</object-name>
 		<object-name>uc_rr_well_port</object-name>
 		<object-name>uc_rr_well_stbd</object-name>
