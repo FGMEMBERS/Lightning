@@ -4,11 +4,11 @@
 
 # set the update period
 
-UPDATE_PERIOD = 0;
+var UPDATE_PERIOD = 0;
 
 # set the timer for the selected function
 
-registerTimer = func {
+var registerTimer = func {
 
 	settimer(gmeterUpdate, UPDATE_PERIOD);
 	settimer(setRPM, UPDATE_PERIOD);
@@ -23,11 +23,11 @@ registerTimer = func {
 
 # =============================== G-Meter stuff =============================================
 
-gmeterUpdate = func {
+var gmeterUpdate = func {
 
-	GCurrent = props.globals.getNode("/accelerations/pilot-g[0]").getValue();
-	GMin = props.globals.getNode("/accelerations/pilot-gmin[0]").getValue();
-	GMax = props.globals.getNode("/accelerations/pilot-gmax[0]").getValue();
+	var GCurrent = props.globals.getNode("/accelerations/pilot-g[0]").getValue();
+	var GMin = props.globals.getNode("/accelerations/pilot-gmin[0]").getValue();
+	var GMax = props.globals.getNode("/accelerations/pilot-gmax[0]").getValue();
 
 	if(GCurrent < 1 and GCurrent < GMin){setprop("/accelerations/pilot-gmin[0]", GCurrent);}
 	else {if(GCurrent > GMax){setprop("/accelerations/pilot-gmax[0]", GCurrent);}}
@@ -38,9 +38,9 @@ registerTimer();
 
 # ====================== Standby / Master AI  ===============================
 
-setRPM = func{
+var setRPM = func{
 	
-	sb_volts = getprop("/systems/electrical/outputs/standby_instruments") ;
+	var sb_volts = getprop("/systems/electrical/outputs/standby_instruments") ;
 	if (sb_volts == nil ){ sb_volts = 0;}
 	if (sb_volts > 22){	rpm = 2000;	} 
 	else { rpm = 0; }
@@ -52,10 +52,10 @@ setRPM = func{
 #### Ice Warning Light - values taken from RAF "Pilot's Notes General, 3rd ed. 1946" ####
 #### Any suggestions for improvement welcomed! ####
 
-icewarn = func {
+var icewarn = func {
 
-	temp = getprop("environment/temperature-degc");
-	volts = getprop("systems/electrical/outputs/annunciators");
+	var temp = getprop("environment/temperature-degc");
+	var volts = getprop("systems/electrical/outputs/annunciators");
 
 	if (temp < -1 and temp > -8 and volts > 23 ) { warn = 1 }
 	else {warn = 0}
@@ -64,39 +64,22 @@ icewarn = func {
 	
 } # End func
 
-#### Reheat-induced fire ####
-
-OverTempFire = func(engine) {
-
-	enginetemp = getprop("engines/engine[~engine~]/egt_degf");
-	overtempStart = getprop("sim/model/lightning/engines/engine[~engine~]/overtempStart");
-	if (enginetemp > 1472){
-		currentTime = getprop("/sim/time/elapsed-sec");
-		if (overtempStart < 1) {
-			setprop("sim/model/lightning/engines/engine[~engine~]/overtempStart", currentTime);
-		}
-		if ( (currentTime - overtempStart) > 1020 ){
-			setprop("sim/model/lightning/engines/engine[~engine~]/onFire",1);
-		}
-	}
-} #end func
-
 # ==================== Undercarriage Indicator Lights =======================
 
-gearLights = func {
+var gearLights = func {
 
-	volts = getprop("systems/electrical/outputs/undercarriage");
+	var volts = getprop("systems/electrical/outputs/undercarriage");
 	if (volts == nil) {volts = 0}
 	if (volts > 1) {power = 1}
 		else {power = 0}
 
-	dayNight = getprop("controls/switches/dayNight");
-	changeLamps = getprop("controls/switches/changeLamps");
-	port = getprop("gear/gear[0]/position-norm");
-	nose = getprop("gear/gear[1]/position-norm");
-	stbd = getprop("gear/gear[2]/position-norm");
+	var dayNight = getprop("controls/switches/dayNight");
+	var changeLamps = getprop("controls/switches/changeLamps");
+	var port = getprop("gear/gear[0]/position-norm");
+	var nose = getprop("gear/gear[1]/position-norm");
+	var stbd = getprop("gear/gear[2]/position-norm");
 
-	brightness = power * (dayNight + 0.5);
+	var brightness = power * (dayNight + 0.5);
 
 	# Port Leg
 	if (port < 1) {
@@ -145,13 +128,13 @@ gearLights = func {
 
 # ==================== Nav Radio Frequency Display  =========================
 
-navdisplay = func(radio) {
-	total=getprop("/instrumentation/"~radio~"[0]/frequencies/selected-mhz");
-	digit1=int(total/100);
-	digit2=int((total/10)-(10*digit1));
-	digit3=int(total-(100*digit1)-(10*digit2));
-	digit4=int(10*(total-int(total)));
-	digit5=int(10*(10*(total-int(total)))-(10*digit4));
+var navdisplay = func(radio) {
+	var total=getprop("/instrumentation/"~radio~"[0]/frequencies/selected-mhz");
+	var digit1=int(total/100);
+	var digit2=int((total/10)-(10*digit1));
+	var digit3=int(total-(100*digit1)-(10*digit2));
+	var digit4=int(10*(total-int(total)));
+	var digit5=int(10*(10*(total-int(total)))-(10*digit4));
 	setprop("sim/model/lightning/radios/"~radio~"[0]/digit1",digit1);
 	setprop("sim/model/lightning/radios/"~radio~"[0]/digit2",digit2);
 	setprop("sim/model/lightning/radios/"~radio~"[0]/digit3",digit3);
@@ -161,12 +144,16 @@ navdisplay = func(radio) {
 
 ####################### Initialise ##############################################
 
-initialize = func {
+var initialize = func {
 
 	### Initialise gmeter stuff ###
 	props.globals.getNode("accelerations/pilot-g[0]", 1).setDoubleValue(1.01);
 	props.globals.getNode("accelerations/pilot-gmin[0]", 1).setDoubleValue(1);
 	props.globals.getNode("accelerations/pilot-gmax[0]", 1).setDoubleValue(1);
+	props.globals.getNode("/sim/rendering/redout/alpha", 1).setDoubleValue(0.0);
+	props.globals.getNode("/sim/rendering/redout/red", 1).setDoubleValue(0.0);
+	props.globals.getNode("/sim/rendering/redout/blue", 1).setDoubleValue(0.0);
+	props.globals.getNode("/sim/rendering/redout/green", 1).setDoubleValue(0.0);
 
 	### Initialise Gear ###
 	props.globals.getNode("sim/lightning/controls/gear", 1).setIntValue(1);

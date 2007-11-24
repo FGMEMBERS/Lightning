@@ -2,7 +2,7 @@
 
 ### Reset values after crash ###
 
-crashReset = func{
+var crashReset = func{
 	
 	Lightning.initialize();
 	Lightning.init_electrical();

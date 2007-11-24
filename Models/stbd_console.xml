@@ -530,7 +530,7 @@
 	<!-- Supplies -->
 	<animation>
 		<type>rotate</type>
-		<object-name>shaft_attitude_hold</object-name>
+		<object-name>shaft_supplies</object-name>
 		<property>controls/switches/autopilot</property>
 		<interpolation>
 			<entry>

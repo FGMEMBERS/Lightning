@@ -4,10 +4,10 @@
 setprop("sim/model/lightning/lights/nav_lights",0);
 
 #Flasher borrowed from Concorde and heavily modified
-NavLights = func {
-	switch = getprop("controls/switches/nav_lights");
-	light = getprop("sim/model/lightning/lights/nav_lights");
-	volts = getprop("systems/electrical/outputs/nav_lights");
+var NavLights = func {
+	var switch = getprop("controls/switches/nav_lights");
+	var light = getprop("sim/model/lightning/lights/nav_lights");
+	var volts = getprop("systems/electrical/outputs/nav_lights");
 	
 	# Off
 	if (switch == "0" or switch == "nil") {
@@ -28,7 +28,7 @@ NavLights = func {
 	       light = "0";
 	       lightsec = 6;
 	   }
-	   value = volts*light;
+	   var value = volts*light;
 	   setprop("sim/model/lightning/lights/nav_lights",value);
 
 	   # re-schedule the next call

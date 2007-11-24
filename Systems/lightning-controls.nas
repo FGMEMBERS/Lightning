@@ -2,23 +2,23 @@
 
 # set the update period
 
-UPDATE_PERIOD = 0.5;
-UPDATE_PERIOD_FINE = 0.1;
-UPDATE_PERIOD_NIL = 0.0;
+var UPDATE_PERIOD = 0.5;
+var UPDATE_PERIOD_FINE = 0.1;
+var UPDATE_PERIOD_NIL = 0.0;
 
 # set the timer for the selected function
 
-registerTimerControls = func {
+var registerTimerControls = func {
 
     settimer(arg[0], UPDATE_PERIOD);
 }
 
-registerTimerControlsFine = func {
+var registerTimerControlsFine = func {
 
     settimer(arg[0], UPDATE_PERIOD_FINE);
 }
 
-registerTimerControlsNil = func {
+var registerTimerControlsNil = func {
 
     settimer(arg[0], UPDATE_PERIOD_NIL);
 }
@@ -31,7 +31,7 @@ controls.flapsDown = func(down){
 	if (down > 0) {setprop("controls/flight/flaps-lever",1);}
 	elsif (down < 0) {setprop("controls/flight/flaps-lever", 0);}
 
-	volts = getprop("systems/electrical/outputs/flaps");
+	var volts = getprop("systems/electrical/outputs/flaps");
 	if (volts > 22) {operative = 1;}
 	else {operative = 0;}
 
@@ -42,9 +42,9 @@ controls.flapsDown = func(down){
 
 } # end function
 
-flapRaise = func{
-	down = getprop("controls/flight/flaps-lever");
-	airspeed = getprop("velocities/airspeed-kt");
+var flapRaise = func{
+	var down = getprop("controls/flight/flaps-lever");
+	var airspeed = getprop("velocities/airspeed-kt");
 
 	if (down == 1 and airspeed < 250) {
 		setprop("controls/flight/flaps", 1);
@@ -62,10 +62,10 @@ flapRaise = func{
 
 # ================================== Airbrakes ==================================================
 
-airbrakes = func{
+var airbrakes = func{
 	
-	out = getprop("surface-positions/speedbrake-pos-norm");
-	volts = getprop("systems/electrical/outputs/airbrakes");
+	var out = getprop("surface-positions/speedbrake-pos-norm");
+	var volts = getprop("systems/electrical/outputs/airbrakes");
 	if (volts > 22) {operative = 1;}
 	else {operative = 0;}
 
@@ -76,8 +76,8 @@ airbrakes = func{
 
 } # end function
 
-airbrakesIn = func{
-	airspeed = getprop("velocities/mach");
+var airbrakesIn = func{
+	var airspeed = getprop("velocities/mach");
 
 	if (airspeed > 1.3) { setprop("controls/flight/speedbrake", 0);} # Retract airbrakes
 	#if (airspeed > 1.3) { Lightning.airbrakes(0);}		# Retract airbrakes
@@ -88,10 +88,10 @@ airbrakesIn = func{
 
 # ================================== Property Toggle ========================================
 
-propToggle = func {
+var propToggle = func {
 
-	property = arg[0];
-	currentValue = getprop( property );
+	var property = arg[0];
+	var currentValue = getprop( property );
 
  	if ((currentValue))  {
 		newValue = "0";
@@ -105,19 +105,17 @@ propToggle = func {
 } # end function
 # ================================== Chute ==================================================
 
-chuteAngle = func {
+var chuteAngle = func {
 
-	chute_open = getprop('sim/model/lightning/controls/flight/chute_open');
+	var chute_open = getprop('sim/model/lightning/controls/flight/chute_open');
 	
 	if (chute_open != '1') {return();}
 
-	speed = getprop('velocities/airspeed-kt');
-	aircraftpitch = getprop('orientation/pitch-deg[0]');
-	chutepitch = getprop("sim/model/lightning/orientation/chute_pitch");
-	aircraftyaw = getprop('orientation/side-slip-deg');
-	chuteyaw = getprop("sim/model/lightning/orientation/chute_yaw");
-	aircraftroll = getprop('orientation/roll-deg');
-	chuteroll = getprop("sim/model/lightning/orientation/chute_roll");
+	var speed = getprop('velocities/airspeed-kt');
+	var aircraftpitch = getprop('orientation/pitch-deg[0]');
+	var aircraftyaw = getprop('orientation/side-slip-deg');
+	var chuteyaw = getprop("sim/model/lightning/orientation/chute_yaw");
+	var aircraftroll = getprop('orientation/roll-deg');
 
 	if (speed > 210) {
 		setprop("sim/model/lightning/controls/flight/chute_jettisoned", 1); # Model Shear Pin
@@ -125,25 +123,25 @@ chuteAngle = func {
 	}
 
 	# Chute Pitch
-	chutepitch = aircraftpitch * -1;
+	var chutepitch = aircraftpitch * -1;
 	setprop("sim/model/lightning/orientation/chute_pitch", chutepitch);
 
 	# Damped yaw from Vivian's A4 work
 	var n = 0.01;
 	if (aircraftyaw == nil) {aircraftyaw = 0;}
 	if (chuteyaw == nil) {chuteyaw = 0;}
-	chuteyaw = ( aircraftyaw * n) + ( chuteyaw * (1 - n));	
+	var chuteyaw = ( aircraftyaw * n) + ( chuteyaw * (1 - n));	
 	setprop("sim/model/lightning/orientation/chute_yaw", chuteyaw);
 
 	# Chute Roll - no twisting for now
-	chuteroll = aircraftroll;
-	setprop("sim/model/lightning/orientation/chute_roll", chuteroll);
+	var chuteroll = aircraftroll;
+	setprop("sim/model/lightning/orientation/chute_roll", chuteroll*rand()*-1 );
 
 	return registerTimerControlsNil(chuteAngle);	# Keep watching
 
 } # end function
 
-chuteRepack = func{
+var chuteRepack = func{
 
 	setprop('sim/model/lightning/controls/flight/chute_open', 0);
 	setprop('sim/model/lightning/controls/flight/chute_deployed', 0);
@@ -153,9 +151,9 @@ chuteRepack = func{
 
 # =============================== Master Camera =============================================
 
-setMasterCamera = func {
+var setMasterCamera = func {
 
-	alreadySet =  getprop("controls/switches/camera");
+	var alreadySet =  getprop("controls/switches/camera");
 	if (alreadySet == nil){return();}
 	elsif (alreadySet == 1 ){
 		initialTime = getprop("sim/time/elapsed-sec");
@@ -170,10 +168,10 @@ setMasterCamera = func {
 
 setlistener("controls/switches/camera", setMasterCamera);
 
-doReplay = func{
+var doReplay = func{
 
-	startTime = getprop("sim/model/lightning/controls/camera-start-time");
-	stopTime = getprop("sim/time/elapsed-sec");
+	var startTime = getprop("sim/model/lightning/controls/camera-start-time");
+	var stopTime = getprop("sim/time/elapsed-sec");
 
 	if (startTime > 0 or startTime == nil) {
 		duration = stopTime - startTime ;
@@ -188,7 +186,7 @@ doReplay = func{
 
 # Autothrottle Engage
 
-autothrottleWatch = func{
+var autothrottleWatch = func{
 
 	var lever = getprop("controls/switches/autothrottle");
 	var power = getprop("systems/electrical/outputs/autothrottle");
@@ -208,32 +206,30 @@ setlistener("controls/switches/autothrottle", autothrottleWatch);
 
 # Pitch Hold / Off
 
-autopilot_pitch = func {
+var autopilot_pitch = func {
 
-	on = getprop("sim/model/lightning/controls/flight/ap_pitch");
-	aircraftpitch = getprop('orientation/pitch-deg[0]');
+	var on = getprop("sim/model/lightning/controls/flight/ap_pitch");
+	var aircraftpitch = getprop('orientation/pitch-deg[0]');
 
 	if ( on != '1' ) {
 		setprop("autopilot/locks/altitude[0]", 0);
 		setprop("autopilot/gui/alt-active[0]", 0);
-		#print("turning off")
 	}
 	else {
 		setprop("autopilot/settings/target-pitch-deg[0]", aircraftpitch);
 		setprop("autopilot/locks/altitude[0]", "pitch-hold");
 		setprop("autopilot/gui/alt-active[0]", 1);
-		#print("turning on")
 	}
 } # end function
 
 setlistener("sim/model/lightning/controls/flight/ap_pitch", autopilot_pitch);
 
 # Roll&Yaw hold / Off
-autopilot_rollyaw = func {
+var autopilot_rollyaw = func {
 
-	aircraftheading = getprop('orientation/heading-deg[0]');
+	var aircraftheading = getprop('orientation/heading-deg[0]');
 
-	on = getprop("sim/model/lightning/controls/flight/ap_ry");
+	var on = getprop("sim/model/lightning/controls/flight/ap_ry");
 	
 	if ( on != '1' ) {
 		setprop("autopilot/locks/heading[0]", "");
@@ -248,11 +244,11 @@ autopilot_rollyaw = func {
 setlistener("sim/model/lightning/controls/flight/ap_pitch", autopilot_rollyaw);
 
 # ILS / attitude hold
-autopilot_ILS = func {
+var autopilot_ILS = func {
 
-	on = getprop("sim/model/lightning/controls/flight/ap_ILS");
-	current_p_setting = getprop("sim/model/lightning/controls/flight/ap_pitch");
-	current_r_setting = getprop("sim/model/lightning/controls/flight/ap_ry");
+	var on = getprop("sim/model/lightning/controls/flight/ap_ILS");
+	var current_p_setting = getprop("sim/model/lightning/controls/flight/ap_pitch");
+	var current_r_setting = getprop("sim/model/lightning/controls/flight/ap_ry");
 	
 	if ( on != '1' ) {
 
@@ -271,10 +267,10 @@ autopilot_ILS = func {
 setlistener("sim/model/lightning/controls/flight/ap_ILS", autopilot_ILS);
 
 # Glide / Off 
-autopilot_glide = func {
+var autopilot_glide = func {
 
-	on = getprop("sim/model/lightning/controls/flight/ap_glide");
-	current_p_setting = getprop("sim/model/lightning/controls/flight/ap_pitch");
+	var on = getprop("sim/model/lightning/controls/flight/ap_glide");
+	var current_p_setting = getprop("sim/model/lightning/controls/flight/ap_pitch");
 	
 	if ( on != '1' ) {
 		setprop("autopilot/locks/altitude[0]", "");
@@ -293,13 +289,13 @@ setlistener("sim/model/lightning/controls/flight/ap_glide", autopilot_glide);
 
 # ================================== Seat Height =================================================
 
-seatRaise = func {
+var seatRaise = func {
 
-	switchPos = getprop("sim/model/lightning/controls/seat");
-	power = getprop("systems/electrical/outputs/seat"); 
-	y_offset = getprop("sim/current-view/y-offset-m");
-	min = 1.35;
-	max = 1.5;
+	var switchPos = getprop("sim/model/lightning/controls/seat");
+	var power = getprop("systems/electrical/outputs/seat"); 
+	var y_offset = getprop("sim/current-view/y-offset-m");
+	var min = 1.35;
+	var max = 1.5;
 	
 	while(switchPos!=0) {
 		y_offset = y_offset + ((power * 0.00000417)*switchPos);
@@ -318,14 +314,14 @@ setlistener("sim/model/lightning/controls/seat", seatRaise);
 
 # ================================== Radar View ==================================================
 
-toggle_radar_view = func {
+var toggle_radar_view = func {
 
-	radar_x = 0.12;
-	radar_y = 1.37;
-	radar_z = 4.5;
-	radar_fov = 12;
-	radar_pitch = -16;
-	radar_view_already_selected = props.globals.getNode("/sim/model/lightning/controls/radarview").getValue();
+	var radar_x = 0.12;
+	var radar_y = 1.37;
+	var radar_z = 4.5;
+	var radar_fov = 12;
+	var radar_pitch = -16;
+	var radar_view_already_selected = props.globals.getNode("/sim/model/lightning/controls/radarview").getValue();
 
 	if (radar_view_already_selected != 1) {
 		current_x = props.globals.getNode("sim/current-view/x-offset-m").getValue();
@@ -350,11 +346,11 @@ toggle_radar_view = func {
 		setprop('instrumentation/radar/minimized', 1);
 	}
 	else {
-		stored_x = props.globals.getNode("sim/model/lightning/views/stored-x-offset-m").getValue();
-		stored_y = props.globals.getNode("sim/model/lightning/views/stored-y-offset-m").getValue();
-		stored_z = props.globals.getNode("sim/model/lightning/views/stored-z-offset-m").getValue();
-		stored_fov = props.globals.getNode("sim/model/lightning/views/stored-field-of-view").getValue();
-		stored_pitch = props.globals.getNode("sim/model/lightning/views/stored-pitch").getValue();
+		var stored_x = props.globals.getNode("sim/model/lightning/views/stored-x-offset-m").getValue();
+		var stored_y = props.globals.getNode("sim/model/lightning/views/stored-y-offset-m").getValue();
+		var stored_z = props.globals.getNode("sim/model/lightning/views/stored-z-offset-m").getValue();
+		var stored_fov = props.globals.getNode("sim/model/lightning/views/stored-field-of-view").getValue();
+		var stored_pitch = props.globals.getNode("sim/model/lightning/views/stored-pitch").getValue();
 
 		props.globals.getNode("sim/current-view/x-offset-m",1).setDoubleValue(stored_x);
 		props.globals.getNode("sim/current-view/y-offset-m",1).setDoubleValue(stored_y);
@@ -369,9 +365,9 @@ toggle_radar_view = func {
 
 # ============================= Engine Starts  =================================================
 
-AvpinPump = func(number){
+var AvpinPump = func(number){
 
-	volts = getprop("systems/electrical/outputs/ignition["~number~"]");
+	var volts = getprop("systems/electrical/outputs/ignition["~number~"]");
 
 	if ( volts > 27){
 		setprop("sim/model/lightning/engines/engine["~number~"]/avpin_flowing",1);
@@ -380,7 +376,7 @@ AvpinPump = func(number){
 
 } # End Function
 
-Combustion = func(number){
+var Combustion = func(number){
 
 	setprop("sim/model/lightning/engines/engine["~number~"]/avpin_flowing",0);
 	setprop("sim/model/lightning/engines/engine["~number~"]/combustion",1);
@@ -388,11 +384,11 @@ Combustion = func(number){
 
 } # End Function
 		
-EngineStart = func {
+var EngineStart = func {
 	
-	number = arg[0];
-	volts = getprop("systems/electrical/outputs/ignition["~number~"]");
-	cutoff = getprop("sim/model/lightning/controls/shut_down");
+	var number = arg[0];
+	var volts = getprop("systems/electrical/outputs/ignition["~number~"]");
+	var cutoff = getprop("sim/model/lightning/controls/shut_down");
 
 	setprop("sim/model/lightning/engines/engine["~number~"]/combustion",0);
 
@@ -414,12 +410,12 @@ EngineStart = func {
 
 # ============================= Engine Stop  =================================================
 
-EngineStop = func {
+var EngineStop = func {
 	
-	no1Running = getprop("engines/engine[0]/n1");
-	no2Running = getprop("engines/engine[1]/n1");
-	shutoff0 = getprop("fdm/jsbsim/fcs/shutoff0");
-	shutoff1 = getprop("fdm/jsbsim/fcs/shutoff1");
+	var no1Running = getprop("engines/engine[0]/n1");
+	var no2Running = getprop("engines/engine[1]/n1");
+	var shutoff0 = getprop("fdm/jsbsim/fcs/shutoff0");
+	var shutoff1 = getprop("fdm/jsbsim/fcs/shutoff1");
 
 
 	if (shutoff0 == 1 and no1Running > 30){
@@ -434,11 +430,11 @@ EngineStop = func {
 
 # ========================= Ground Fuelling ====================================
 
-refuel = func{
+var refuel = func{
 
-	brakesOn = getprop("/controls/gear/brake-parking");
-	wow = getprop("/gear/gear/wow");
-	fueltanks = props.globals.getNode("consumables/fuel").getChildren("tank");
+	var brakesOn = getprop("/controls/gear/brake-parking");
+	var wow = getprop("/gear/gear/wow");
+	var fueltanks = props.globals.getNode("consumables/fuel").getChildren("tank");
 
 	if (brakesOn and wow){
 		foreach(tank; fueltanks) {
@@ -449,7 +445,7 @@ refuel = func{
 	}
 } # End function
 
-ventralJettison = func(jettison){
+var ventralJettison = func(jettison){
 
 	setprop("/sim/model/lightning/controls/tank_jettisoned", jettison);
 	setprop("/sim/model/lightning/controls/tank_jettisoned_lever", jettison);
@@ -461,7 +457,7 @@ ventralJettison = func(jettison){
 
 } # End function
 
-ventralRefit = func{
+var ventralRefit = func{
 
 	setprop('sim/model/lightning/controls/tank_jettisoned', 0);
 	setprop('sim/model/lightning/controls/tank_jettisoned_lever', 0);
@@ -473,13 +469,13 @@ ventralRefit = func{
 
 controls.gearDown = func(down){
 
-	emergency = getprop("sim/model/lightning/controls/emergency_uc_selected");
+	var emergency = getprop("sim/model/lightning/controls/emergency_uc_selected");
 	if (emergency > 0) { return () };
 
-	power = getprop("systems/electrical/outputs/undercarriage");
+	var power = getprop("systems/electrical/outputs/undercarriage");
 	if (power < 24) { return () };
 
-	airspeed = getprop("velocities/airspeed-kt");
+	var airspeed = getprop("velocities/airspeed-kt");
 
 	if (down < 0 and airspeed > 150) {
 		setprop("controls/gear/gear-down", 0);
@@ -489,7 +485,7 @@ controls.gearDown = func(down){
 
 } # end of function
 
-emergencyGearDown = func(set){
+var emergencyGearDown = func(set){
 
 	if (set < 1){
 		setprop("sim/model/lightning/controls/emergency_uc_selected", 0);
