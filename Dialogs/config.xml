@@ -97,6 +97,17 @@
 				<script>Lightning.emergencyGearDown(0)</script>
 			</binding>
 		</button>
+
+		<button>
+			<halign>center</halign>
+			<legend>Auto Engine Start</legend>
+			<pref-width>130</pref-width>
+			<pref-height>24</pref-height>
+			<binding>
+				<command>nasal</command>
+				<script>Lightning.idiotStart()</script>
+			</binding>
+		</button>
 	</group>
 
 	<empty><pref-height>3</pref-height></empty>
