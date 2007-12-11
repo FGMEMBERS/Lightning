@@ -20,6 +20,7 @@
 
 	<model>
 		<path>Models/Aircraft/marker.xml</path>
+		<nopreview/>
 	</model>
 
 	<!-- Main Panel Top Row -->
@@ -434,6 +435,7 @@
 			<z-m>0</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
+		<nopreview/>
 	</model>
 	<model>
 		<path>Aircraft/Lightning/Models/exhaust2.xml</path>
@@ -443,6 +445,7 @@
 			<z-m>0.92</z-m>
 			<pitch-deg>0</pitch-deg>
 		</offsets>
+		<nopreview/>
 	</model>
 	<!-- Port Nav Light -->
 	<model>
