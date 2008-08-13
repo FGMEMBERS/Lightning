@@ -271,6 +271,12 @@ AJ MacLeod (aj-lists@adpetopensource.co.uk)
 		</gear>
 	</controls>
 
+	<systems>
+		<refuel>
+			<system>probe</system>
+		</refuel>
+	</systems>
+
 	<nasal>
 		<Lightning>
 			<file>Aircraft/Lightning/Systems/lightning-main.nas</file>
