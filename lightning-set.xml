@@ -273,7 +273,7 @@ AJ MacLeod (aj-lists@adpetopensource.co.uk)
 
 	<systems>
 		<refuel>
-			<system>probe</system>
+			<type>probe</type>
 		</refuel>
 	</systems>
 
