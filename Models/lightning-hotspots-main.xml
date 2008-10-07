@@ -459,26 +459,8 @@
       <value type="int">1</value>
      </binding>
      <binding>
-      <command>property-assign</command>
-		<condition>
-			<greater-than>
-				<property>/systems/electrical/outputs/chute_jett</property>
-				<value>20</value>
-			</greater-than>
-		</condition>
-      <property>sim/model/lightning/controls/flight/chute_jettisoned</property>
-      <value type="int">1</value>
-     </binding>
-     <binding>
-      <command>property-assign</command>
-		<condition>
-			<greater-than>
-				<property>/systems/electrical/outputs/chute_jett</property>
-				<value>20</value>
-			</greater-than>
-		</condition>
-      <property>sim/model/lightning/controls/flight/chute_open</property>
-      <value type="int">0</value>
+      <command>nasal</command>
+      <script>controls.deployChute(-1)</script>
      </binding>
      <mod-up>
       <binding>
@@ -497,18 +479,8 @@
      <w>60</w>
      <h>45</h>
      <binding>
-      <command>property-assign</command>
-      <property>sim/model/lightning/controls/flight/chute_deployed</property>
-      <value type="int">1</value>
-     </binding>
-     <binding>
-      <command>property-assign</command>
-      <property>sim/model/lightning/controls/flight/chute_open</property>
-      <value type="int">1</value>
-     </binding>
-     <binding>
       <command>nasal</command>
-      <script>Lightning.chuteAngle(0)</script>
+      <script>controls.deployChute(1)</script>
      </binding>
     </action>
 	

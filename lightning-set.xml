@@ -440,18 +440,8 @@ AJ MacLeod (aj-lists@adpetopensource.co.uk)
 				<name>d</name>
 				<desc>Deploy braking chute</desc>
 				<binding>
-					<command>property-assign</command>
-					<property>sim/model/lightning/controls/flight/chute_deployed</property>
-					<value type="int">1</value>
-				</binding>
-				<binding>
-					<command>property-assign</command>
-					<property>sim/model/lightning/controls/flight/chute_open</property>
-					<value type="int">1</value>
-				</binding>
-				<binding>
 					<command>nasal</command>
-					<script>Lightning.chuteAngle()</script>
+					<script>controls.deployChute(1)</script>
 				</binding>
 			</key>
 		</keyboard>

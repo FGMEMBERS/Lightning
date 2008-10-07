@@ -105,6 +105,25 @@ var propToggle = func {
 } # end function
 # ================================== Chute ==================================================
 
+controls.deployChute = func(v){
+
+	# Deploy
+	if (v > 0){
+		setprop("sim/model/lightning/controls/flight/chute_deployed",1);
+		setprop("sim/model/lightning/controls/flight/chute_open",1);
+		chuteAngle();
+	}
+	# Jettison
+	if (v < 0){ 
+		var voltage = getprop("systems/electrical/outputs/chute_jett");
+		if (voltage > 20) {
+			setprop("sim/model/lightning/controls/flight/chute_jettisoned",1);
+			setprop("sim/model/lightning/controls/flight/chute_open",0);
+		}
+	}
+}
+
+
 var chuteAngle = func {
 
 	var chute_open = getprop('sim/model/lightning/controls/flight/chute_open');
