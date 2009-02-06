@@ -9,7 +9,7 @@
  <animation>
   <type>rotate</type>
   <object-name>fuel_Needle1</object-name>
-  <property>consumables/fuel/tank[2]/level-lb</property>
+  <property>consumables/fuel/tank[2]/level-lbs</property>
   <interpolation>
    <entry><ind>0</ind><dep>-120</dep></entry>
    <entry><ind>1400</ind><dep>20</dep></entry>

@@ -36,7 +36,7 @@
 		<pitch-offset>0</pitch-offset>
 		<eda>2</eda>
 		<weight>200</weight>
-		<contents>consumables/fuel/tank[0]/level-lb</contents>
+		<contents>consumables/fuel/tank[0]/level-lbs</contents>
 	</submodel>
 	<!-- Exhaust Plume 1 -->
 	<!-- For OSG only
