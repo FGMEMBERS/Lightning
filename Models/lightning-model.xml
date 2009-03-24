@@ -1543,7 +1543,6 @@
 		</offsets>
 	</model>
 
-
 	<model>
 		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
 		<name>tyre-smoke-p</name>
