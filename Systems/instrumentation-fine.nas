@@ -56,6 +56,7 @@ var icewarn = func {
 
 	var temp = getprop("environment/temperature-degc");
 	var volts = getprop("systems/electrical/outputs/annunciators");
+	var warn = 0;
 
 	if (temp < -1 and temp > -8 and volts > 23 ) { warn = 1 }
 	else {warn = 0}
@@ -69,6 +70,7 @@ var icewarn = func {
 var gearLights = func {
 
 	var volts = getprop("systems/electrical/outputs/undercarriage");
+	var power = 0;
 	if (volts == nil) {volts = 0}
 	if (volts > 1) {power = 1}
 		else {power = 0}
@@ -145,7 +147,8 @@ var navdisplay = func(radio) {
 ####################### Initialise ##############################################
 
 var initialize = func {
-
+        var initialized = 0;
+	
 	### Initialise gmeter stuff ###
 	props.globals.getNode("accelerations/pilot-g[0]", 1).setDoubleValue(1.01);
 	props.globals.getNode("accelerations/pilot-gmin[0]", 1).setDoubleValue(1);

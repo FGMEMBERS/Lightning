@@ -7,21 +7,18 @@
 # Initialize internal values
 #
 
-external = nil;
-battery = nil;
-alternator = nil;
-
-last_time = 0.0;
-
-vbus_volts = 0.0;
-
-ammeter_ave = 0.0;
+var external = nil;
+var battery = nil;
+var alternator = nil;
+var last_time = 0.0;
+var vbus_volts = 0.0;
+var ammeter_ave = 0.0;
 
 ##
 # Initialize the electrical system
 #
 
-init_electrical = func {
+var init_electrical = func {
     print("Initializing Nasal Electrical System");
     external = ExternalClass.new();
     battery = BatteryClass.new();
@@ -29,7 +26,7 @@ init_electrical = func {
 
     props.globals.getNode("systems/electrical/suppliers/rpm_source", 1).setDoubleValue(1);
     props.globals.getNode("systems/electrical/outputs/standby_instruments", 1).setDoubleValue(0);
-	props.globals.getNode("systems/electrical/outputs/annunciators", 1).setDoubleValue(0);
+    props.globals.getNode("systems/electrical/outputs/annunciators", 1).setDoubleValue(0);
     props.globals.getNode("controls/switches/dayNight", 1).setBoolValue(1);
     props.globals.getNode("controls/switches/changeLamps", 1).setBoolValue(0);
 
@@ -55,49 +52,44 @@ init_electrical = func {
     setprop("controls/switches/instr-lights-stbd", 0);
     setprop("controls/switches/wscreen_front", 0);
     setprop("controls/switches/wscreen_side", 0);
-
-	setprop("systems/electrical/suppliers/gen_online", 0);
-	setprop("systems/electrical/suppliers/external", 0);
-	setprop("controls/electric/external-power", 1);
-
-	setprop("sim/model/lightning/electrical-initialized", "true");
+    setprop("systems/electrical/suppliers/gen_online", 0);
+    setprop("systems/electrical/suppliers/external", 0);
+    setprop("controls/electric/external-power", 1);
+    setprop("sim/model/lightning/electrical-initialized", "true");
 
     # Request that the update fuction be called next frame
     settimer(update_electrical, 0);
 }
 
-ExternalClass = {};
+var ExternalClass = {
 
-ExternalClass.new = func {
-    obj = { parents : [ExternalClass],
+new: func {
+    var obj = { parents : [ExternalClass],
 			extvolts : getprop("/systems/electrical/suppliers/external")};
     return obj;
-}
+},
 
-ExternalClass.get_output_volts = func {
+get_output_volts: func {
+	me.extvolts = getprop("systems/electrical/suppliers/external");
+	return me.extvolts * 29;
+    },
+};	
+var BatteryClass = {
 
-		me.extvolts = getprop("systems/electrical/suppliers/external");
-
-		return me.extvolts * 29;
-
-}
-	
-BatteryClass = {};
-
-BatteryClass.new = func {
-    obj = { parents : [BatteryClass],
+new: func {
+    var obj = { parents : [BatteryClass],
             ideal_volts : 24.0,
             ideal_amps : 30.0,
             amp_hours : 25.0,
             charge_percent : 1.0,
             charge_amps : 7.0 };
     return obj;
-}
+    },
 
-
-BatteryClass.apply_load = func( amps, dt ) {
-    amphrs_used = amps * dt / 3600.0;
-    percent_used = amphrs_used / me.amp_hours;
+apply_load: func( amps, dt ) {
+#    print("Battery Apply Load ", me.amp_hours );
+    var amphrs_used = amps * dt / 3600000.0;
+    var percent_used = amphrs_used / me.amp_hours;
     me.charge_percent -= percent_used;
     if ( me.charge_percent < 0.0 ) {
         me.charge_percent = 0.0;
@@ -106,45 +98,43 @@ BatteryClass.apply_load = func( amps, dt ) {
     }
     #print( "battery percent = ", me.charge_percent);
     return me.amp_hours * me.charge_percent;
-}
+    },
 
-
-BatteryClass.get_output_volts = func {
-    x = 1.0 - me.charge_percent;
-    tmp = -(3.0 * x - 1.0);
-    factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+get_output_volts: func {
+    var x = 1.0 - me.charge_percent;
+    var tmp = -(3.0 * x - 1.0);
+    var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
     return me.ideal_volts * factor ;
-}
+    },
 
-
-BatteryClass.get_output_amps = func {
-    x = 1.0 - me.charge_percent;
-    tmp = -(3.0 * x - 1.0);
-    factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+get_output_amps: func {
+    var x = 1.0 - me.charge_percent;
+    var tmp = -(3.0 * x - 1.0);
+    var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
     return me.ideal_amps * factor;
-}
+    },
+};
 
 
-AlternatorClass = {};
+var AlternatorClass = {
 
-AlternatorClass.new = func {
-    obj = { parents : [AlternatorClass],
-			rpm_source : "/systems/electrical/suppliers/rpm_source",
-            rpm_upper_threshold : 58,
-            rpm_lower_threshold : 57,
-            ideal_volts : 28.0,
-            ideal_amps : 200.0 };
+new: func {
+    var obj = { parents : [AlternatorClass],
+	rpm_source : "/systems/electrical/suppliers/rpm_source",
+        rpm_upper_threshold : 58,
+        rpm_lower_threshold : 57,
+        ideal_volts : 28.0,
+        ideal_amps : 200.0 };
     setprop( obj.rpm_source, 0.0 );
     return obj;
-}
+},
 
-AlternatorClass.update_source = func( dt ) {
+update_source: func( dt ) {
 	# Choose fastest spinning engine to supply, prefer no2	
-	rpm1 = getprop("/engines/engine[0]/n1");
-	rpm2 = getprop("/engines/engine[1]/n1");
+	var rpm1 = getprop("/engines/engine[0]/n1");
+	var rpm2 = getprop("/engines/engine[1]/n1");
 	if (rpm1 == nil){rpm1="0"};
 	if (rpm2 == nil){rpm2="0"};
-
 	if (rpm2 < rpm1) {
 		setprop("/systems/electrical/suppliers/rpm_source", rpm1);
 		if (rpm1 > 58) {
@@ -161,12 +151,13 @@ AlternatorClass.update_source = func( dt ) {
 				setprop("/systems/electrical/suppliers/gen_online", 0);
 				}
 		}
-}
+},
 
-AlternatorClass.apply_load = func( amps, dt ) {
+apply_load: func( amps, dt ) {
     # give full output.  This is as documented in the Pilot's Notes.
-    rpm = getprop( me.rpm_source );
-    factor = rpm / me.rpm_upper_threshold;
+    var rpm = getprop( me.rpm_source );
+ #   print("Alternator Apply Load ", me.rpm_upper_threshold );
+    var factor = rpm / me.rpm_upper_threshold;
     if ( factor > 1.0 ) {
         factor = 1.0;
     }
@@ -174,15 +165,15 @@ AlternatorClass.apply_load = func( amps, dt ) {
         factor = 0.000001;
     }
 	# print( "alternator amps = ", me.ideal_amps * factor );
-    available_amps = me.ideal_amps * factor;
+    var available_amps = me.ideal_amps * factor;
     return available_amps - amps;
-}
+},
 
-
-AlternatorClass.get_output_volts = func {
+get_output_volts: func {
     # give full output.  This is as documented in the Pilot's Notes.
-	rpm = getprop( me.rpm_source );
-    factor = rpm / me.rpm_upper_threshold;
+    var rpm = getprop( me.rpm_source );
+  #  print("Get Alternator Output Volts ", me.rpm_upper_threshold );
+    var factor = rpm / me.rpm_upper_threshold;
     if ( factor > 1.0 ) {
         factor = 1.0;
     }
@@ -191,13 +182,13 @@ AlternatorClass.get_output_volts = func {
         factor = 0.000001;
     } 
 	return me.ideal_volts * factor;
-}
+},
 
-
-AlternatorClass.get_output_amps = func {
+get_output_amps: func {
     # give full output.  
-    rpm = getprop( me.rpm_source );
-    factor = rpm / me.rpm_upper_threshold;
+    var rpm = getprop( me.rpm_source );
+#    print("Get  Alternator Output Amps ", me.rpm_upper_threshold );
+    var factor = rpm / me.rpm_upper_threshold;
     if ( factor > 1.0 ) {
         factor = 1.0;
     }
@@ -206,38 +197,34 @@ AlternatorClass.get_output_amps = func {
         factor = 0.000001;
     } 
     return me.ideal_amps * factor;
-}
+    },
+};
 
-
-update_electrical = func {
-    time = getprop("/sim/time/elapsed-sec");
-    dt = time - last_time;
+var update_electrical = func {
+    var time = getprop("/sim/time/elapsed-sec"); ## NB this is time in miliiseconds since sim started
+    var dt = time - last_time;
     last_time = time;
-
     update_virtual_bus( dt );
-
     # Request that the update fuction be called again next frame
     settimer(update_electrical, 0);
 }
 
-
-
-update_virtual_bus = func( dt ) {
-    battery_volts = battery.get_output_volts();
-    alternator_source = alternator.update_source(dt);
-    alternator_volts = alternator.get_output_volts();
-    external_volts = external.get_output_volts();
-    load = 0.0;
+var update_virtual_bus = func( dt ) {
+#    print ("update virtual bus");
+    var battery_volts = battery.get_output_volts();
+    var alternator_source = alternator.update_source(dt);
+    var alternator_volts = alternator.get_output_volts();
+    var external_volts = external.get_output_volts();
+    var load = 0.0;
 
     # switch state
-    master_bat = getprop("/controls/switches/battery");
-    master_alt = getprop("/controls/electric/engine/generator");
+    var master_bat = getprop("/controls/switches/battery");
+    var master_alt = getprop("/controls/electric/engine/generator");
 
     # determine power source
 
-
-    bus_volts = 0.0;
-    power_source = nil;
+    var bus_volts = 0.0;
+    var power_source = nil;
 	if ( master_bat > 0) {
         bus_volts = battery_volts;
         power_source = "battery";
@@ -263,7 +250,7 @@ update_virtual_bus = func( dt ) {
 	load += electrical_28VAC1phase_bus();
 
     # system loads and ammeter gauge
-    ammeter = 0.0;
+    var ammeter = 0.0;
     if ( bus_volts > 1.0 ) {
         # normal load
         load += 15.0;
@@ -288,23 +275,25 @@ update_virtual_bus = func( dt ) {
     ammeter_ave = 0.8 * ammeter_ave + 0.2 * ammeter;
 
     # outputs
-    #setprop("/systems/electrical/amps", ammeter_ave);
-    #setprop("/systems/electrical/volts", bus_volts);
+    setprop("/systems/electrical/amps", ammeter_ave);
+    setprop("/systems/electrical/volts", bus_volts);
     vbus_volts = bus_volts;
 
     return load;
 }
 
-electrical_28VDC_bus = func() {
+var electrical_28VDC_bus = func() {
 	
-    engSw = (getprop("controls/switches/eng_start_master"));
-    ignSw = (getprop("controls/switches/ignition"));
-	start = engSw * ignSw;
-    portlightSw = getprop("controls/switches/instr-lights-port");
-    stbdlightSw = getprop("controls/switches/instr-lights-stbd");
+    var engSw = (getprop("controls/switches/eng_start_master"));
+    var ignSw = (getprop("controls/switches/ignition"));
+    var start = engSw * ignSw;
+    if (start == nil){start="0"};
+    var portlightSw = getprop("controls/switches/instr-lights-port");
+    var stbdlightSw = getprop("controls/switches/instr-lights-stbd");
+    if (vbus_volts == nil){vbus_volts="0"};
+    var bus_volts = vbus_volts ;
+    var load = 0.0;
 
-	bus_volts = vbus_volts ;
-	load = 0.0;
 	
 	# Voltmeter	
     setprop("/systems/electrical/outputs/annunciators", bus_volts);
@@ -315,9 +304,9 @@ electrical_28VDC_bus = func() {
     # Standby AI and Direction Indicator
     setprop("systems/electrical/outputs/standby_instruments", bus_volts);
     # Brake Chute Jettison
-	setprop("systems/electrical/outputs/chute_jett", bus_volts);
+    setprop("systems/electrical/outputs/chute_jett", bus_volts);
     # Camera Controls
-   	setprop("systems/electrical/outputs/camera", bus_volts);
+    setprop("systems/electrical/outputs/camera", bus_volts);
     # Com 1 Power
     setprop("systems/electrical/outputs/comm[0]", bus_volts);
     # Com 2 Power
@@ -327,14 +316,14 @@ electrical_28VDC_bus = func() {
     # DME Power
     setprop("systems/electrical/outputs/dme[0]", bus_volts);
     # Engine Start and Relight
-	setprop("systems/electrical/outputs/ignition[0]", bus_volts * start);
-	setprop("systems/electrical/outputs/ignition[1]", bus_volts * start);
+    setprop("systems/electrical/outputs/ignition[0]", bus_volts * start);
+    setprop("systems/electrical/outputs/ignition[1]", bus_volts * start);
     # Flaps power and indication
     setprop("systems/electrical/outputs/flaps", bus_volts);
 	# HSI Power
     setprop("systems/electrical/outputs/hsi", bus_volts);
     # Instruments Lights-Port
-	setprop("systems/electrical/outputs/instr-lights-port", bus_volts * portlightSw);
+    setprop("systems/electrical/outputs/instr-lights-port", bus_volts * portlightSw);
     # Instruments Lights-Stbd
 	setprop("systems/electrical/outputs/instr-lights-stbd", bus_volts * stbdlightSw);
     # Nav Lights
@@ -368,15 +357,15 @@ electrical_28VDC_bus = func() {
     return load;
 }
 
-electrical_115VAC3phase_unswitched_bus = func() {
-	gen_online = getprop("systems/electrical/suppliers/gen_online");
-    bus_volts = vbus_volts * gen_online * 4.1072;
-	load = 0.0;
+var electrical_115VAC3phase_unswitched_bus = func() {
+	var gen_online = getprop("systems/electrical/suppliers/gen_online");
+    var bus_volts = vbus_volts * gen_online * 4.1072;
+	var load = 0.0;
 
     # A.I. 23B Radar
     setprop("systems/electrical/outputs/radar", bus_volts);
-	if(bus_volts > 114){setprop("instrumentation/radar/switch","on" );}
-	else{setprop("instrumentation/radar/switch","off");}
+#######	if(bus_volts > 114){setprop("instrumentation/radar/switch","on" );} # this can crash flightgear !!!!
+#######	else{setprop("instrumentation/radar/switch","off");}
     # G.W. Supply
     setprop("systems/electrical/outputs/gw", bus_volts);
     # Ventral Pack Fuel Pump
@@ -394,16 +383,17 @@ electrical_115VAC3phase_unswitched_bus = func() {
     return load;
 }
 
-electrical_115VAC3phase_with_standby_inverter_bus = func() {
+var electrical_115VAC3phase_with_standby_inverter_bus = func() {
     # Can run from either main or standby inverter
-    ins_master_switch = getprop("controls/switches/instrument_master");
-    inverter_norm_switch = getprop("controls/switches/inverter_normal");
+    var ins_master_switch = getprop("controls/switches/instrument_master");
+    var inverter_norm_switch = getprop("controls/switches/inverter_normal");
+    var inv_switch = 0;
     if (inverter_norm_switch != 0) {
-									inv_switch = 1;
+	inv_switch = 1;
 	}
 	else { inv_switch = 0 }
-    bus_volts = vbus_volts * 4.1072 * ins_master_switch * inv_switch ;
-    load = 0.0;
+    var bus_volts = vbus_volts * 4.1072 * ins_master_switch * inv_switch ;
+    var load = 0.0;
 
     # Fuel Contents Display
     setprop("systems/electrical/outputs/fuel_contents", bus_volts);
@@ -413,13 +403,13 @@ electrical_115VAC3phase_with_standby_inverter_bus = func() {
     return load;
 }
 
-electrical_115VAC3phase_without_standby_inverter_bus = func() {
+var electrical_115VAC3phase_without_standby_inverter_bus = func() {
 	# Contains instruments with no standby AC power available
-    switch = getprop("controls/switches/instrument_master");
-    switch2 = getprop("controls/switches/inverter_normal");
-	gen_online = getprop("systems/electrical/suppliers/gen_online");
-    bus_volts = vbus_volts * 4.1072 * gen_online * switch * switch2;
-    load = 0.0;
+    var switch = getprop("controls/switches/instrument_master");
+    var switch2 = getprop("controls/switches/inverter_normal");
+	var gen_online = getprop("systems/electrical/suppliers/gen_online");
+    var bus_volts = vbus_volts * 4.1072 * gen_online * switch * switch2;
+    var load = 0.0;
 
     # Autopilot Power
 	
@@ -450,10 +440,10 @@ electrical_115VAC3phase_without_standby_inverter_bus = func() {
     return load;
 }
 
-electrical_115VAC1phase_bus = func() {
-	gen_online = getprop("/systems/electrical/suppliers/gen_online");
-    bus_volts = vbus_volts * 4.1072 * gen_online;
-	load = 0.0;
+var electrical_115VAC1phase_bus = func() {
+	var gen_online = getprop("/systems/electrical/suppliers/gen_online");
+    var bus_volts = vbus_volts * 4.1072 * gen_online;
+	var load = 0.0;
 
     # TACAN Power
     setprop("/systems/electrical/outputs/TACAN", bus_volts);
@@ -464,10 +454,10 @@ electrical_115VAC1phase_bus = func() {
     return load;
 }
 
-electrical_28VAC1phase_bus = func() {
-	gen_online = getprop("/systems/electrical/suppliers/gen_online");
-    bus_volts = vbus_volts * gen_online;
-	load = 0.0;
+var electrical_28VAC1phase_bus = func() {
+	var gen_online = getprop("/systems/electrical/suppliers/gen_online");
+    var bus_volts = vbus_volts * gen_online;
+	var load = 0.0;
 
     # Pitot Heaters
     setprop("/systems/electrical/outputs/pitot-heat", bus_volts);

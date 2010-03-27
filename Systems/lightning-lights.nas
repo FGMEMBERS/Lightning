@@ -8,6 +8,7 @@ var NavLights = func {
 	var switch = getprop("controls/switches/nav_lights");
 	var light = getprop("sim/model/lightning/lights/nav_lights");
 	var volts = getprop("systems/electrical/outputs/nav_lights");
+	var lightsec = 3;
 	
 	# Off
 	if (switch == "0" or switch == "nil") {

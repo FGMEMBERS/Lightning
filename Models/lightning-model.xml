@@ -1428,7 +1428,7 @@
 
 	<animation>
 		<type>material</type>
-		<global type="bool">true</global>
+		<!-- <global type="bool">true</global> -->
 		<object-name>main_fuselage_spine</object-name>
 		<object-name>tail</object-name>
 		<property-base>/sim/model/livery/material/tail_color</property-base>

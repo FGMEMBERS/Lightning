@@ -30,7 +30,8 @@ controls.flapsDown = func(down){
 	
 	if (down > 0) {setprop("controls/flight/flaps-lever",1);}
 	elsif (down < 0) {setprop("controls/flight/flaps-lever", 0);}
-
+	
+	var operative = 0;
 	var volts = getprop("systems/electrical/outputs/flaps");
 	if (volts > 22) {operative = 1;}
 	else {operative = 0;}
@@ -66,6 +67,7 @@ var airbrakes = func{
 	
 	var out = getprop("surface-positions/speedbrake-pos-norm");
 	var volts = getprop("systems/electrical/outputs/airbrakes");
+        var operative = 0;
 	if (volts > 22) {operative = 1;}
 	else {operative = 0;}
 
@@ -92,6 +94,7 @@ var propToggle = func {
 
 	var property = arg[0];
 	var currentValue = getprop( property );
+	var newValue = "0";
 
  	if ((currentValue))  {
 		newValue = "0";
@@ -193,7 +196,7 @@ var doReplay = func{
 	var stopTime = getprop("sim/time/elapsed-sec");
 
 	if (startTime > 0 or startTime == nil) {
-		duration = stopTime - startTime ;
+		var duration = stopTime - startTime ;
 		setprop("sim/replay/duration", duration);
 	}
 
@@ -343,11 +346,11 @@ var toggle_radar_view = func {
 	var radar_view_already_selected = props.globals.getNode("/sim/model/lightning/controls/radarview").getValue();
 
 	if (radar_view_already_selected != 1) {
-		current_x = props.globals.getNode("sim/current-view/x-offset-m").getValue();
-		current_y = props.globals.getNode("sim/current-view/y-offset-m").getValue();
-		current_z = props.globals.getNode("sim/current-view/z-offset-m").getValue();
-		current_fov = props.globals.getNode("sim/current-view/field-of-view").getValue();
-		current_pitch = props.globals.getNode("sim/current-view/pitch-offset-deg").getValue();
+		var current_x = props.globals.getNode("sim/current-view/x-offset-m").getValue();
+		var current_y = props.globals.getNode("sim/current-view/y-offset-m").getValue();
+		var current_z = props.globals.getNode("sim/current-view/z-offset-m").getValue();
+		var current_fov = props.globals.getNode("sim/current-view/field-of-view").getValue();
+		var current_pitch = props.globals.getNode("sim/current-view/pitch-offset-deg").getValue();
 
 		props.globals.getNode("sim/model/lightning/views/stored-x-offset-m",1).setDoubleValue(current_x);
 		props.globals.getNode("sim/model/lightning/views/stored-y-offset-m",1).setDoubleValue(current_y);
@@ -386,8 +389,8 @@ var toggle_radar_view = func {
 
 var AvpinPump = func(number){
 
-	var volts = getprop("systems/electrical/outputs/ignition["~number~"]");
-
+        var volts = getprop("systems/electrical/outputs/ignition["~number~"]");
+#       var volts = 28.0;
 	if ( volts > 27){
 		setprop("sim/model/lightning/engines/engine["~number~"]/avpin_flowing",1);
 		settimer(func{Combustion(number);},2);
