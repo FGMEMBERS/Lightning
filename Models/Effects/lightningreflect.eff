@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+	<name>Effects/lightningreflect</name>
+	<inherits-from>Effects/reflect</inherits-from>
+
+	<parameters>
+		<texture n="5">
+			<!-- we use 6 images here instead of a cube cross-->
+			<type>cubemap</type>
+			<images>
+				<positive-x>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_px.png</positive-x>
+				<negative-x>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_nx.png</negative-x>
+				<positive-y>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_py.png</positive-y>
+				<negative-y>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_ny.png</negative-y>
+				<positive-z>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_pz.png</positive-z>
+				<negative-z>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_nz.png</negative-z>
+			</images>
+		</texture>
+	</parameters>
+
+	<technique n="9">
+		<pass>
+
+			<texture-unit>
+				<unit>0</unit>
+				<image>
+					<use>texture[0]/image</use>
+				</image>
+				<filter>
+					<use>texture[0]/filter</use>
+				</filter>
+				<wrap-s>
+					<use>texture[0]/wrap-s</use>
+				</wrap-s>
+				<wrap-t>
+					<use>texture[0]/wrap-t</use>
+				</wrap-t>
+				<internal-format>
+					<use>texture[0]/internal-format</use>
+				</internal-format>
+			</texture-unit>
+			
+			<texture-unit>
+				<!-- we use 6 images here instead of a cube cross-->
+				<unit>5</unit>
+				<type>
+					<use>texture[5]/type</use>
+				</type>
+				<images>
+					<use>texture[5]/images</use>
+				</images>
+			</texture-unit>
+
+			<uniform>
+				<name>BaseTex</name>
+				<type>sampler-2d</type>
+				<value type="int">0</value>
+			</uniform>
+
+			<uniform>
+				<name>Environment</name>
+				<type>sampler-cube</type>
+				<value type="int">5</value>
+			</uniform>
+
+			<uniform>
+				<name>Rainbow</name>
+				<type>sampler-2d</type>
+				<value type="int">6</value>
+			</uniform>
+
+			<uniform>
+				<name>Fresnel</name>
+				<type>sampler-2d</type>
+				<value type="int">7</value>
+			</uniform>
+
+			<!-- set the amount of fringing colour 0.0 - 1.0 -->
+			<uniform>
+				<name>rainbowiness</name>
+				<type>float</type>
+				<value type="float">0.05</value>
+			</uniform>
+
+			<!-- set the amount of fresnel effect colour 0.0 - 1.0 -->
+			<uniform>
+				<name>fresneliness</name>
+				<type>float</type>
+				<value type="float">0.075</value>
+			</uniform>
+
+			<!-- set the amount of tranparency 0.0 (fully tranaparent)
+				- 1.0 (fully opaque) -->
+			<uniform>
+				<name>transparency</name>
+				<type>float</type>
+				<value type="float">0.9</value>
+			</uniform>
+
+			<!-- set the amount of ambient light correction 0.0 -1.0  -->
+			<uniform>
+				<name>correction</name>
+				<type>float</type>
+				<value type="float">0.2</value>
+			</uniform>
+		</pass>
+	</technique>
+</PropertyList>
