@@ -16,6 +16,10 @@
 				<negative-z>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_nz.png</negative-z>
 			</images>
 		</texture>
+		<rainbowiness>0.05</rainbowiness>
+		<fresneliness>0.1</fresneliness>
+		<refl_correction>0.0</refl_correction>
+		<ambient_correction>0.2</ambient_correction>
 	</parameters>
 
 	<technique n="9">
@@ -51,7 +55,7 @@
 				</images>
 			</texture-unit>
 
-			<uniform>
+			<!--<uniform>
 				<name>BaseTex</name>
 				<type>sampler-2d</type>
 				<value type="int">0</value>
@@ -75,34 +79,34 @@
 				<value type="int">7</value>
 			</uniform>
 
-			<!-- set the amount of fringing colour 0.0 - 1.0 -->
+			--><!-- set the amount of fringing colour 0.0 - 1.0 --><!--
 			<uniform>
 				<name>rainbowiness</name>
 				<type>float</type>
 				<value type="float">0.05</value>
 			</uniform>
 
-			<!-- set the amount of fresnel effect colour 0.0 - 1.0 -->
+			--><!-- set the amount of fresnel effect colour 0.0 - 1.0 --><!--
 			<uniform>
 				<name>fresneliness</name>
 				<type>float</type>
 				<value type="float">0.075</value>
 			</uniform>
 
-			<!-- set the amount of tranparency 0.0 (fully tranaparent)
-				- 1.0 (fully opaque) -->
+			--><!-- set the amount of reflection correction -1.0 (fully transparent)
+				- 1.0 (fully opaque) --><!--
 			<uniform>
-				<name>transparency</name>
+				<name>refl_correction</name>
 				<type>float</type>
-				<value type="float">0.9</value>
+				<value type="float">-0.1</value>
 			</uniform>
 
-			<!-- set the amount of ambient light correction 0.0 -1.0  -->
+			--><!-- set the amount of ambient light correction 0.0 - 1.0  --><!--
 			<uniform>
-				<name>correction</name>
+				<name>ambient</name>
 				<type>float</type>
 				<value type="float">0.2</value>
-			</uniform>
+			</uniform>-->
 		</pass>
 	</technique>
 </PropertyList>
