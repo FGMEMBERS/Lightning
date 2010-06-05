@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.082 0.09 0.09  shi 26  trans 0
 MATERIAL "ac3dmat2" rgb 0 0.082 0.271  amb 0 0.122 0.2  emis 0 0 0  spec 0 0.122 0.298  shi 70  trans 0
 MATERIAL "ac3dmat3" rgb 1 1 1  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0.969
