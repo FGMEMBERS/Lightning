@@ -85,12 +85,12 @@
       <y>   0.00 </y>
       <z> -79.56 </z>
     </location>
-    <static_friction>  0.02 </static_friction>
-    <dynamic_friction> 0.02 </dynamic_friction>
+    <static_friction>  0.80 </static_friction>
+    <dynamic_friction> 0.50 </dynamic_friction>
     <rolling_friction> 0.02 </rolling_friction>
     <spring_coeff unit="LBS/FT">      20000.0 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  4000.0 </damping_coeff>
-    <max_steer unit="DEG"> 360 </max_steer>
+    <max_steer unit="DEG"> 360.0 </max_steer>
     <brake_group>NONE</brake_group>
     <retractable>1</retractable>
   </contact>
@@ -240,7 +240,7 @@
        <z>  17.72 </z>
      </location>
      <orient unit="DEG">
-       <roll>   0.00 </roll>
+       <roll>  0.00 </roll>
        <pitch> 0.00 </pitch>
        <yaw>   0.00 </yaw>
      </orient>
@@ -256,6 +256,7 @@
      </location>
      <capacity unit="LBS"> 2000.00 </capacity>
      <contents unit="LBS"> 1750.00 </contents>
+     <priority>1</priority>
   </tank>
 
   <tank type="FUEL">
@@ -267,6 +268,7 @@
      </location>
      <capacity unit="LBS"> 2500.00 </capacity>
      <contents unit="LBS"> 2250.00 </contents>
+     <priority>2</priority>
   </tank>
 
   <tank type="FUEL">
@@ -278,29 +280,20 @@
      </location>
      <capacity unit="LBS"> 2500.00 </capacity>
      <contents unit="LBS"> 2250.00 </contents>
+     <priority>2</priority>
   </tank>
 
  </propulsion>
 
  <flight_control name="FCS: lightning-f1a">
 
-  <!-- Declare Properties -->
-    <property>/accelerations/pilot-g</property>
-    <property>/sim/model/lightning/controls/shut_down</property>
-    <property>/sim/model/lightning/engines/aux_intakes_open</property>
-  <!-- <property>/gear/gear/caster-angle-deg</property> -->
-
-<!--
   <channel name="nosewheel">
-
-     <pure_gain name="nosewheel caster">
-       <input>fcs/steer-pos-deg</input>
-       <gain>1</gain>
-       <output>/gear/gear/caster-angle-deg</output>
-     </pure_gain>
-
+    <pure_gain name="nosewheel caster">
+      <input>gear/unit/steering-angle-rad</input>
+      <gain>-57.29578</gain>
+      <output>/gear/gear/caster-angle-deg</output>
+    </pure_gain>
   </channel>
--->
 
   <channel name="Pitch">
     <summer name="Pitch Trim Sum">
