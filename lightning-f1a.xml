@@ -289,8 +289,8 @@
 
   <channel name="nosewheel">
     <pure_gain name="nosewheel caster">
-      <input>gear/unit/steering-angle-rad</input>
-      <gain>-57.29578</gain>
+      <input>gear/unit/steering-angle-deg</input>
+      <gain>-1.0</gain>
       <output>/gear/gear/caster-angle-deg</output>
     </pure_gain>
   </channel>
