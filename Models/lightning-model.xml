@@ -1382,7 +1382,7 @@
 		<type>material</type>
 		<object-name>burner1</object-name>
 		<emission>
-			<factor-prop>engines/engine[0]/egt_degf</factor-prop>
+			<factor-prop>engines/engine[0]/egt-degf</factor-prop>
 			<red>0.0001</red>
 			<green>0.0</green>
 			<blue>0.0</blue>
@@ -1392,7 +1392,7 @@
 		<type>material</type>
 		<object-name>burner2</object-name>
 		<emission>
-			<factor-prop>engines/engine[1]/egt_degf</factor-prop>
+			<factor-prop>engines/engine[1]/egt-degf</factor-prop>
 			<red>0.0001</red>
 			<green>0.0</green>
 			<blue>0.0</blue>
