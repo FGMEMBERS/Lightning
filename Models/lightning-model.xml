@@ -496,7 +496,7 @@
 	<!-- Chrome animation, courtesy of Vivian  -->
 
 	<effect>
-		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect</inherits-from>
+		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect-uber</inherits-from>
 		<object-name>uc_fr_door_rear</object-name>
 		<object-name>uc_fr_door_stbd</object-name>
 		<object-name>uc_fr_door_port</object-name>
@@ -516,7 +516,7 @@
 
 
 	<effect>
-		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect</inherits-from>
+		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect-uber</inherits-from>
 		<object-name>ventral_tank</object-name>
 		<object-name>ventral_fin</object-name>
 		<object-name>main_fuselage</object-name>
@@ -536,23 +536,23 @@
 	</effect>
 
 	<effect>
-		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect</inherits-from>
+		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect-uber</inherits-from>
 		<object-name>tailplane_port</object-name>
 		<object-name>tailplane_stbd</object-name>
 	</effect>
 
 	<effect>
-		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect</inherits-from>
+		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect-uber</inherits-from>
 		<object-name>aileron_stbd</object-name>
 	</effect>
 
 	<effect>
-		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect</inherits-from>
+		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect-uber</inherits-from>
 		<object-name>aileron_port</object-name>
 	</effect>
 
 	<effect>
-		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect</inherits-from>
+		<inherits-from>Aircraft/Lightning/Models/Effects/lightningreflect-uber</inherits-from>
 		<object-name>flap_stbd</object-name>
 		<object-name>flap_port</object-name>
 	</effect>
