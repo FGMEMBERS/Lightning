@@ -12,7 +12,10 @@
 		<reflection_fresnel type="float">0.1</reflection_fresnel>
 		<reflection_rainbow type="float">0.05</reflection_rainbow>
 		<reflection_noise type="float">0.1</reflection_noise>
-		<reflection_correction type="float">0.0</reflection_correction>
+		<!--<reflection_correction type="float">0.0</reflection_correction>-->
+		<reflection_correction>
+			<use>/sim/rendering/refl_correction</use>
+		</reflection_correction>
 		<ambient_correction type="float">0.4</ambient_correction>
 
 		<!-- 		quality slider -->

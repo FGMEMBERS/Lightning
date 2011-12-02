@@ -250,7 +250,12 @@ AJ MacLeod (aj-lists@adpetopensource.co.uk)
 		<ai>
 			<scenario n="100">refueling_demo_1</scenario>
 		</ai>
-
+		
+		<rendering>
+			<refl_correction type="float">-0.1</refl_correction>
+			<ambient_correction type="float">0.1</ambient_correction>
+		</rendering>
+		
 	</sim>
 
 	<engines>
