@@ -5,6 +5,11 @@
 
 	<path>exhaust.ac</path>
 
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>exhaust</object-name>
+	</effect>
+
 	<animation>
 		<type>select</type>
 		<object-name>noshadow.Exhaust</object-name>
