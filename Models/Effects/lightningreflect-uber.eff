@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PropertyList>
 	<name>lightningreflect-uber</name>
-	<inherits-from>/Effects/model-combined</inherits-from>
-
+	<!--<inherits-from>/Effects/model-combined</inherits-from>-->
+	<inherits-from>/Effects/model-combined-deferred</inherits-from>
+	
 	<parameters>
 		<!-- Reflection -->
 		<reflection-enabled type="int">1</reflection-enabled>
@@ -16,7 +17,10 @@
 		<reflection-correction>
 			<use>/sim/rendering/refl-correction</use>
 		</reflection-correction>
-		<ambient-correction type="float">0.4</ambient-correction>
+		<ambient-correction>
+			<use>/sim/rendering/ambient-correction</use>
+		</ambient-correction>
+		<!--<ambient-correction type="float">0.4</ambient-correction>-->
 </parameters>
 
 </PropertyList>
