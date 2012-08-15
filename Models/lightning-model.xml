@@ -23,6 +23,14 @@
 		<nopreview/>
 	</model>
 
+	<!-- transparencies -->
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>windscreen_glass</object-name>
+		<object-name>canopy_glass</object-name>
+	</effect>
+
 	<!-- Main Panel Top Row -->
 
 	<model>
@@ -437,6 +445,7 @@
 		</offsets>
 		<nopreview/>
 	</model>
+
 	<model>
 		<path>Aircraft/Lightning/Models/exhaust2.xml</path>
 		<offsets>
@@ -447,6 +456,7 @@
 		</offsets>
 		<nopreview/>
 	</model>
+
 	<!-- Port Nav Light -->
 	<model>
 		<path>Aircraft/Lightning/Models/light-red.xml</path>
@@ -1272,7 +1282,6 @@
 	</animation>
 
 
-	<!-- spin wheels (not possible in JSBSim AFAIK)
 	<animation>
 		<type>spin</type>
 		<object-name>uc_f_wheel_assy</object-name>
@@ -1323,7 +1332,6 @@
 			<z>0.0</z>
 		</axis>
 	</animation>
--->
 
 	<!-- Shadow Removal -->
 	<animation>
