@@ -1347,8 +1347,8 @@
 		<object-name>cockpit_rear_bulkhead</object-name>
 		<object-name>cockpit_rear_bulkhead_top</object-name>
 		<object-name>uc_fr_well</object-name>
-		<object-name>uc_rr_well_port</object-name>
-		<object-name>uc_rr_well_stbd</object-name>
+		<!--<object-name>uc_rr_well_port</object-name>
+		<object-name>uc_rr_well_stbd</object-name>-->
 		<object-name>chute_pull_outer</object-name>
 		<object-name>seat_base</object-name>
 		<object-name>roundels</object-name>
