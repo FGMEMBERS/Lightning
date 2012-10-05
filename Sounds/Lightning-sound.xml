@@ -5,8 +5,9 @@
  <fx>
   <avpin0>
    <name>AVPIN pump</name>
+   <mode>once</mode>
    <path>Aircraft/Lightning/Sounds/avpin_pump.wav</path>
-   <property>/sim/model/lightning/engines/engine[0]/avpin_flowing</property>
+   <property>sim/model/lightning/engines/engine[0]/avpin_flowing</property>
    <orientation>
     <x>0.0</x>
     <y>0.0</y>
@@ -16,15 +17,16 @@
     <outer-gain>0.2</outer-gain>
    </orientation>
    <volume>
-    <property>/sim/current-view/internal</property>
+    <property>sim/current-view/internal</property>
     <offset>1</offset>
     <factor>-0.2</factor>
    </volume>
   </avpin0>
   <combustion0>
    <name>combustion</name>
+   <mode>once</mode>
    <path>Aircraft/Lightning/Sounds/avpin_combustion.wav</path>
-   <property>/sim/model/lightning/engines/engine[0]/combustion</property>
+   <property>sim/model/lightning/engines/engine[0]/combustion</property>
    <orientation>
     <x>0.0</x>
     <y>0.0</y>
@@ -34,7 +36,7 @@
     <outer-gain>0.2</outer-gain>
    </orientation>
    <volume>
-    <property>/sim/current-view/internal</property>
+    <property>sim/current-view/internal</property>
     <offset>1</offset>
     <factor>-0.2</factor>
    </volume>
@@ -42,7 +44,7 @@
   <spoolup0>
    <name>Avon spooling up</name>
    <path>Aircraft/Lightning/Sounds/avon_spoolup.wav</path>
-   <property>/sim/model/lightning/engines/engine[0]/starting</property>
+   <property>sim/model/lightning/engines/engine[0]/starting</property>
    <orientation>
     <x>0.0</x>
     <y>0.0</y>
@@ -52,7 +54,7 @@
     <outer-gain>0.2</outer-gain>
    </orientation>
    <volume>
-    <property>/sim/current-view/internal</property>
+    <property>sim/current-view/internal</property>
     <offset>1</offset>
     <factor>-0.6</factor>
    </volume>
@@ -64,11 +66,11 @@
    <condition>
     <and>
       <equals>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <value type="bool">true</value>
       </equals>
       <greater-than>
-        <property>/engines/engine[0]/n1</property>
+        <property>engines/engine[0]/n1</property>
         <value>1</value>
       </greater-than>
     </and>
@@ -82,7 +84,7 @@
     <outer-gain>0.0</outer-gain>
    </orientation>
    <pitch>
-    <property>/engines/engine[0]/n1</property>
+    <property>engines/engine[0]/n1</property>
     <factor>0.01</factor>
     <max>0.8</max>
    </pitch>
@@ -97,11 +99,11 @@
    <condition>
     <and>
       <equals>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <value type="bool">false</value>
       </equals>
       <greater-than>
-        <property>/engines/engine[0]/n1</property>
+        <property>engines/engine[0]/n1</property>
         <value>1</value>
       </greater-than>
     </and>
@@ -115,7 +117,7 @@
     <outer-gain>0.0</outer-gain>
    </orientation>
    <pitch>
-    <property>/engines/engine[0]/n1</property>
+    <property>engines/engine[0]/n1</property>
     <factor>0.01</factor>
     <max>0.8</max>
    </pitch>
@@ -139,7 +141,8 @@
   <avpin1>
    <name>AVPIN pump1</name>
    <path>Aircraft/Lightning/Sounds/avpin_pump.wav</path>
-   <property>/sim/model/lightning/engines/engine[1]/avpin_flowing</property>
+   <mode>once</mode>
+   <property>sim/model/lightning/engines/engine[1]/avpin_flowing</property>
    <orientation>
     <x>0.0</x>
     <y>0.0</y>
@@ -149,7 +152,7 @@
     <outer-gain>0.2</outer-gain>
    </orientation>
    <volume>
-    <property>/sim/current-view/internal</property>
+    <property>sim/current-view/internal</property>
     <offset>1</offset>
     <factor>-0.2</factor>
    </volume>
@@ -158,7 +161,8 @@
   <combustion1>
    <name>combustion1</name>
    <path>Aircraft/Lightning/Sounds/avpin_combustion.wav</path>
-   <property>/sim/model/lightning/engines/engine[1]/combustion</property>
+   <mode>once</mode>
+   <property>sim/model/lightning/engines/engine[1]/combustion</property>
    <orientation>
     <x>0.0</x>
     <y>0.0</y>
@@ -168,7 +172,7 @@
     <outer-gain>0.2</outer-gain>
    </orientation>
    <volume>
-    <property>/sim/current-view/internal</property>
+    <property>sim/current-view/internal</property>
     <offset>1</offset>
     <factor>-0.2</factor>
    </volume>
@@ -176,7 +180,7 @@
   <spoolup1>
    <name>Avon spooling up1</name>
    <path>Aircraft/Lightning/Sounds/avon_spoolup.wav</path>
-   <property>/sim/model/lightning/engines/engine[1]/starting</property>
+   <property>sim/model/lightning/engines/engine[1]/starting</property>
    <orientation>
     <x>0.0</x>
     <y>0.0</y>
@@ -186,7 +190,7 @@
     <outer-gain>0.2</outer-gain>
    </orientation>
    <volume>
-    <property>/sim/current-view/internal</property>
+    <property>sim/current-view/internal</property>
     <offset>1</offset>
     <factor>-0.5</factor>
    </volume>
@@ -198,11 +202,11 @@
    <condition>
     <and>
       <equals>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <value type="bool">true</value>
       </equals>
       <greater-than>
-        <property>/engines/engine[1]/n1</property>
+        <property>engines/engine[1]/n1</property>
         <value>1</value>
       </greater-than>
     </and>
@@ -216,7 +220,7 @@
     <outer-gain>0.0</outer-gain>
    </orientation>
    <pitch>
-    <property>/engines/engine[1]/n1</property>
+    <property>engines/engine[1]/n1</property>
     <factor>0.01</factor>
     <max>0.8</max>
    </pitch>
@@ -231,11 +235,11 @@
    <condition>
     <and>
       <equals>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <value type="bool">false</value>
       </equals>
       <greater-than>
-        <property>/engines/engine[1]/n1</property>
+        <property>engines/engine[1]/n1</property>
         <value>1</value>
       </greater-than>
     </and>
@@ -249,7 +253,7 @@
     <outer-gain>0.0</outer-gain>
    </orientation>
    <pitch>
-    <property>/engines/engine[1]/n1</property>
+    <property>engines/engine[1]/n1</property>
     <factor>0.01</factor>
     <max>0.8</max>
    </pitch>
@@ -277,13 +281,13 @@
    <path>Sounds/rumble.wav</path>
    <condition>
     <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
+     <property>gear/gear[0]/wow</property>
+     <property>gear/gear[1]/wow</property>
+     <property>gear/gear[2]/wow</property>
     </or>
    </condition>
    <volume>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <factor>.004</factor>
    </volume>
   </rumble>
@@ -305,7 +309,7 @@
    <path>Sounds/gear-lck.wav</path>
    <condition>
     <equals>
-     <property>/gear/gear[0]/position-norm</property>
+     <property>gear/gear[0]/position-norm</property>
      <value>0</value>
     </equals>
    </condition>
@@ -316,17 +320,17 @@
    <path>Sounds/squeal.wav</path>
    <condition>
     <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
+     <property>gear/gear[0]/wow</property>
+     <property>gear/gear[1]/wow</property>
+     <property>gear/gear[2]/wow</property>
     </or>
    </condition>
    <volume>
-    <property>/velocities/speed-down-fps</property>
+    <property>velocities/speed-down-fps</property>
     <factor>0.05</factor>
    </volume>
    <volume>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <factor>0.01</factor>
    </volume>
    <volume>
@@ -335,7 +339,7 @@
     <max>1.0</max>
    </volume>
    <pitch>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <factor>0.0025</factor>
     <offset>1.2</offset>
    </pitch>
@@ -345,7 +349,7 @@
    <name>flaps</name>
    <mode>in-transit</mode>
    <path>Sounds/flaps.wav</path>
-   <property>/surface-positions/flap-pos-norm</property>
+   <property>surface-positions/flap-pos-norm</property>
    <volume>
     <max>0.35</max>
    </volume>
@@ -357,16 +361,16 @@
    <path>Aircraft/Lightning/Sounds/motor.wav</path>
    <condition>
     <equals>
-     <property>/controls/seat/vertical-adjust</property>
+     <property>controls/seat/vertical-adjust</property>
      <value>1</value>
     </equals>
     <greater-than>
-     <property>/systems/electrical/outputs/seat</property>
+     <property>systems/electrical/outputs/seat</property>
      <value>1</value>
     </greater-than>
    </condition>
    <pitch>
-    <property>/systems/electrical/outputs/seat</property>
+    <property>systems/electrical/outputs/seat</property>
     <factor>0.042</factor>
     <offset>0</offset>
    </pitch>
@@ -377,22 +381,22 @@
    <name>wind</name>
    <mode>looped</mode>
    <path>Sounds/wind.wav</path>
-   <property>/velocities/airspeed-kt</property>
+   <property>velocities/airspeed-kt</property>
    <volume>
-    <property>/position/altitude-ft</property>
+    <property>position/altitude-ft</property>
     <factor>-0.000015</factor>
     <offset>1.0</offset>
     <min>0.1</min>
     <max>1.0</max>
    </volume>
    <volume>
-     <property>/velocities/airspeed-kt</property>
+     <property>velocities/airspeed-kt</property>
      <factor>0.0015</factor>
      <min>0.03</min>
      <max>0.25</max>
    </volume>
    <pitch>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <factor>0.01</factor>
     <offset>1.25</offset>
    </pitch>
@@ -401,9 +405,9 @@
   <stall>
    <name>stall</name>
    <path>Sounds/stall.wav</path>
-   <property>/sim/alarms/stall-warning</property>
+   <property>sim/alarms/stall-warning</property>
    <volume>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <max>0.3</max>
    </volume>
    <pitch>
@@ -413,8 +417,8 @@
 
   <ventraltank>
     <name>Ventral Tank Release</name>
-    <path>/Aircraft/Lightning/Sounds/clunk.wav</path>
-    <property>/sim/model/lightning/controls/tank_jettisoned</property>
+    <path>Aircraft/Lightning/Sounds/clunk.wav</path>
+    <property>sim/model/lightning/controls/tank_jettisoned</property>
     <volume>
       <factor>0.5</factor>
     </volume>
