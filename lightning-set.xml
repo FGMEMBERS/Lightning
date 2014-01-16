@@ -301,8 +301,8 @@ AJ MacLeod (aj-lists@adpetopensource.co.uk)
 	<input>
 		<keyboard>
 			<!-- instant replay -->
-			<key n="9">
-				<name>Ctrl-I</name>
+			<key n="61">
+				<name>=</name>
 				<desc>Show configuration dialog</desc>
 				<binding>
 					<command>nasal</command>
