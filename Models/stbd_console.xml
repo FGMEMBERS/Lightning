@@ -1,0 +1,638 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<!-- Starboard Console -->
+
+	<path>stbd_console.ac</path>
+
+	<!-- Stbd Console Hotspots -->
+	<panel>
+		<path>Aircraft/Lightning/Models/stbd_console-hotspots.xml</path>
+		<top-left>
+			<x-m>3.12</x-m>
+			<y-m>0.33</y-m>
+			<z-m>0.541</z-m>
+		</top-left>
+		<bottom-left>
+			<x-m>3.58711</x-m>
+			<y-m>0.33</y-m>
+			<z-m>0.541</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>3.58711</x-m>
+			<y-m>0.54</y-m>
+			<z-m>0.541</z-m>
+    	</bottom-right>
+	</panel>
+
+	<!-- Included instruments -->
+	<model>
+		<path>Aircraft/Lightning/Models/nozzles.xml</path>
+		<offsets>
+			<x-m>3.15</x-m>
+			<y-m>0.375</y-m>
+			<z-m>0.54</z-m>
+			<pitch-deg>-90</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Switch Animations -->
+
+	<!-- Nav Lights: Steady, Off, Flash -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_navlights</object-name>
+		<property>controls/switches/nav_lights</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.16284</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.5435</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Taxi Lights: Off, On -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_taxilights</object-name>
+		<property>controls/switches/taxi-lights[0]</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.19383</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Iris: Dull, Bright -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_iris</object-name>
+		<property>controls/switches/iris</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.22511</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.543501</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Master Camera: On, Off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_master_camera</object-name>
+		<property>controls/switches/camera</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.25777</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.5435</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Ice Warn Light -->
+	<animation>
+		<type>material</type>
+		<object-name>lens_ice_warn</object-name>
+		<emission>
+			<factor-prop>sim/model/lightning/lights/ice_warn</factor-prop>
+			<red>1.0</red>
+			<green>0.263</green>
+			<blue>0.118</blue>
+		</emission>
+	</animation>
+
+	<!-- De-Ice Light -->
+	<animation>
+		<type>material</type>
+		<object-name>lens_de-ice</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/de-ice</factor-prop>
+			<red>0.0</red>
+			<green>0.00355</green>
+			<blue>0.00713</blue>
+		</emission>
+	</animation>
+
+	<!-- Rain Dispersal, De-Ice: De-Ice, Off, Rain Displ -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_rain_dispersal</object-name>
+		<property>controls/switches/rain_dispersal</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.29742</x-m>
+			<y-m>0.505108</y-m>
+			<z-m>0.5435</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Pitot Heater: On, Off, Standby -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_standby_pitot_heater</object-name>
+		<property>controls/switches/pitot_heater</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.33391</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.5435</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- FCR: Off, GW -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_gw_fcr</object-name>
+		<property>controls/switches/gw_fcr</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-40</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.3339</x-m>
+			<y-m>0.505109</y-m>
+			<z-m>0.5435</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Windscreen Front: On, Off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_wscreen_front</object-name>
+		<property>controls/switches/wscreen_front</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.37161</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+		</animation>
+	
+	<!-- Windscreen Side: On, Off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_wscreen_side</object-name>
+		<property>controls/switches/wscreen_side</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.37161</x-m>
+			<y-m>0.505109</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- eng. start master: on, off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_eng_start_master</object-name>
+		<property>controls/switches/eng_start_master</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.40607</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Inverter: Normal, Standby -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_standby_inverter</object-name>
+		<property>controls/switches/inverter_normal</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.40607</x-m>
+			<y-m>0.505109</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Ignition: On, Off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_ignition</object-name>
+		<property>controls/switches/ignition</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.44</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Eng. Start no. 1: off, on -->
+	<animation>
+		<type>translate</type>
+		<object-name>sw_no1</object-name>
+		<property>controls/switches/engine_start_0</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-0.004442</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<!-- Eng. Start no. 2: off, on -->
+	<animation>
+		<type>translate</type>
+		<object-name>sw_no2</object-name>
+		<property>controls/switches/engine_start_1</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-0.004442</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- Cabin Air: On, Off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_cabin_air</object-name>
+		<property>controls/switches/cabin_air</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.50933</x-m>
+			<y-m>0.479354</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- Battery: On, Off -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_battery</object-name>
+		<property>controls/switches/battery</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.50933</x-m>
+			<y-m>0.505109</y-m>
+			<z-m>0.543499</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Autopilot -->
+
+	<!-- Pitch -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_pitch</object-name>
+		<property>sim/model/lightning/controls/flight/ap_pitch</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.33399</x-m>
+			<y-m>0.364647</y-m>
+			<z-m>0.538552</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<!-- Roll and Yaw -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_roll_and_yaw</object-name>
+		<property>sim/model/lightning/controls/flight/ap_ry</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.33399</x-m>
+			<y-m>0.364647</y-m>
+			<z-m>0.538552</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<!-- ILS -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_attitude_hold</object-name>
+		<property>sim/model/lightning/controls/flight/ap_ILS</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.33399</x-m>
+			<y-m>0.423366</y-m>
+			<z-m>0.538552</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<!-- Supplies -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_supplies</object-name>
+		<property>controls/switches/autopilot</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.4071</x-m>
+			<y-m>0.374381</y-m>
+			<z-m>0.53864</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<!-- Glide -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_glide</object-name>
+		<property>sim/model/lightning/controls/flight/ap_glide</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.40776</x-m>
+			<y-m>0.423366</y-m>
+			<z-m>0.538463</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	<!-- Supplies -->
+	<animation>
+		<type>rotate</type>
+		<object-name>shaft_supplies</object-name>
+		<property>controls/switches/autopilot</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.4071</x-m>
+			<y-m>0.374381</y-m>
+			<z-m>0.53864</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<!-- AP Supplies Light -->
+	<animation>
+		<type>material</type>
+		<object-name>autopilot_supplies_light</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/autopilot</factor-prop>
+			<red>0.00348</red>
+			<green>0.00157</green>
+			<blue>0.0</blue>
+		</emission>
+	</animation>
+
+	<!-- Panel Lighting -->
+	<animation> 
+		<type>material</type>
+		<object-name>panel_rh</object-name>
+		<object-name>panel_lh</object-name>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
+			<red>0.0047</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+		</emission>
+    </animation>
+
+	<!-- Disable Shadows -->
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>stbd_console</object-name>
+		<object-name>AI23_control_panel</object-name>
+		<object-name>autopilot_panel</object-name>
+	</animation>
+
+</PropertyList>
+

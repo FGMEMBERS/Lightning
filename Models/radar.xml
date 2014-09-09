@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>ai23.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>tube_surface</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/radar</factor-prop>
+			<red>0.00869565</red>
+			<green>0.00443478</green>
+			<blue>0.0</blue>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>radar_screen</object-name>
+		<emission>
+			<factor-prop>systems/electrical/outputs/radar</factor-prop>
+			<red>0.008696</red>
+			<green>0.008696</green>
+			<blue>0.008696</blue>
+		</emission>
+	</animation>
+
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation> 
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>35</max-m>
+	</animation>
+
+</PropertyList>

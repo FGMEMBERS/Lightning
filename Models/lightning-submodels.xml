@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<!-- Drag Chute -->
+	<submodel>
+		<name>Braking Parachute</name>
+		<model>Aircraft/Lightning/Models/chute.ac</model>
+		<trigger>sim/model/lightning/controls/flight/chute_jettisoned</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<x-offset>0</x-offset>
+		<y-offset>0</y-offset>
+		<z-offset>0</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>0</pitch-offset>
+		<buoyancy>32</buoyancy>
+		<wind>true</wind>
+		<!-- pure guesswork from here on :-( -->
+		<!--cd>1.5</cd-->
+		<eda>250</eda>
+		<weight>50</weight>
+	</submodel>
+	<!-- Ventral Tank -->
+	<submodel>
+		<name>Ventral Tank</name>
+		<model>Aircraft/Lightning/Models/ventral_tank.ac</model>
+		<trigger>sim/model/lightning/controls/tank_jettisoned</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<x-offset>-30.047</x-offset>
+		<y-offset>0</y-offset>
+		<z-offset>-4.3011</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>0</pitch-offset>
+		<eda>2</eda>
+		<weight>200</weight>
+		<contents>consumables/fuel/tank[0]/level-lbs</contents>
+	</submodel>
+	<!-- Exhaust Plume 1 -->
+	<!-- For OSG only
+	<submodel>
+		<name>engine exhaust 1</name>
+		<model>Aircraft/Lightning/Models/contrail-1.xml</model>
+		<trigger>engines/engine[0]/running</trigger>
+		<speed-node>engines/engine[0]/n1</speed-node>
+		<speed>10</speed>
+		<repeat>true</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-52.8</x-offset>
+		<y-offset>0.0</y-offset>
+		<z-offset>-1.38</z-offset>
+		<yaw-offset>180</yaw-offset>
+		<life>10</life>
+		<buoyancy>128</buoyancy>
+		<aero-stabilised>0</aero-stabilised>
+		<wind>true</wind>
+		<eda>1</eda>
+		<cd>0.95</cd>
+		<weight>1</weight>
+		<random>1</random>
+	</submodel>
+	-->
+	<!-- Exhaust Plume 2 -->
+	<!-- For OSG only
+	<submodel>
+		<name>engine exhaust 2</name>
+		<model>Aircraft/Lightning/Models/contrail-2.xml</model>
+		<trigger>engines/engine[1]/running</trigger>
+		<speed-node>engines/engine[1]/n1</speed-node>
+		<speed>10</speed>
+		<repeat>true</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-52.8</x-offset>
+		<y-offset>0.0</y-offset>
+		<z-offset>1.64</z-offset>
+		<yaw-offset>180</yaw-offset>
+		<life>10</life>
+		<buoyancy>128</buoyancy>
+		<aero-stabilised>0</aero-stabilised>
+		<wind>true</wind>
+		<eda>1</eda>
+		<cd>0.95</cd>
+		<weight>1</weight>
+		<random>1</random>
+	</submodel>
+	-->
+</PropertyList>

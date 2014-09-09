@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- Starboard Console -->
+
+	<path>throttles.ac</path>
+
+	<!-- Throttle Panel Hotspots -->
+	<panel>
+		<path>Aircraft/Lightning/Models/throttle_panel-hotspots.xml</path>
+		<top-left>
+			<x-m>3.465</x-m>
+			<y-m>-0.317011</y-m>
+			<z-m>0.560876</z-m>
+		</top-left>
+		<bottom-left>
+			<x-m>3.4925</x-m>
+			<y-m>-0.317011</y-m>
+			<z-m>0.559812</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>3.4925</x-m>
+			<y-m>-0.302559</y-m>
+			<z-m>0.559812</z-m>
+		</bottom-right>
+	</panel>
+
+	<!-- Main Animation -->
+	<!-- Throttle No1 -->
+	<animation>
+		<type>translate</type>
+		<object-name>throttle_no1</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.19</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+		</axis>
+	</animation>
+
+	<!-- Throttle No2 -->
+	<animation>
+		<type>translate</type>
+		<object-name>throttle_no2_assy</object-name>
+		<property>controls/engines/engine[1]/throttle</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.19</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>throttle_no2_link</object-name>
+		<property>controls/engines/engine[1]/throttle</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>5</dep>
+			</entry>
+			<entry>
+				<ind>0.16</ind>
+				<dep>5</dep>
+			</entry>
+			<entry>
+				<ind>0.19</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.45054</x-m>
+			<y-m>-0.349587</y-m>
+			<z-m>0.566589</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Shut-Down cock -->	
+	<animation>
+		<type>rotate</type>
+		<object-name>shut_off_cock</object-name>
+		<property>sim/model/lightning/controls/shut_down</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.4804</x-m>
+			<y-m>-0.307898</y-m>
+			<z-m>0.551296</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Auto-throttle control -->	
+	<animation>
+		<type>rotate</type>
+		<object-name>throttle_servo_knob</object-name>
+		<property>controls/switches/autothrottle</property>
+		<factor>90</factor>
+		<center>
+			<x-m>3.36733</x-m>
+			<y-m>-0.281208</y-m>
+			<z-m>0.431478</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>throttle_servo_knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/autothrottle</property>
+			</binding>
+		</action>
+	</animation>
+
+	<!-- Rudder Trim -->	
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder_trim_bar</object-name>
+		<property>sim/model/lightning/controls/flight/rudder-trim</property>
+		<factor>30</factor>
+		<center>
+			<x-m>3.53147</x-m>
+			<y-m>-0.328154</y-m>
+			<z-m>0.547087</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>rudder_trim_left</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.rudderTrim(-1)</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/lightning/controls/flight/rudder-trim</property>
+					<value type="int">0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>rudder_trim_right</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.rudderTrim(1)</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/lightning/controls/flight/rudder-trim</property>
+					<value type="int">0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
+	<!-- disable shadows -->
+	<animation>
+		<type>noshadow</type>
+		<object-name>throttles</object-name>
+		<object-name>auto-throttle</object-name>
+		<object-name>rudder_trim</object-name>
+	</animation>
+			
+</PropertyList>
+

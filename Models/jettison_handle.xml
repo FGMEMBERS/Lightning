@@ -1,0 +1,30 @@
+<?xml version = '1.0' ?>
+<PropertyList>
+	<!-- Tank Jett lever -->
+	<path>jettison_handle.ac</path>
+	<animation>
+		<type>select</type>
+		<object-name>jettison_handle</object-name>
+		<condition>
+			<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>jettison_handle</object-name>
+		<property>sim/model/lightning/controls/tank_jettisoned</property>
+		<factor>0.05</factor>
+		<axis>
+			<x>0.03966</x>
+			<y>0</y>
+			<z>0.0472</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>noshadow</type>
+		<object-name>jettison_handle</object-name>
+	</animation>
+</PropertyList>

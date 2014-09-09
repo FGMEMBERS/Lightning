@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<!-- Flaps Position -->
+<PropertyList> 
+	<path>flaps.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>flap_needle_left</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>180</factor>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>-0.018793</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis> 
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>flap_needle_right</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>180</factor>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>0.018793</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis> 
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation> 
+		<type>material</type>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instr-lights-port</factor-prop>
+   			<red>0.03125</red>
+ 			<green>0.0089</green>
+			<blue>0.0089</blue>
+		</emission>
+	</animation>
+
+    <!-- Noshadow -->
+    <animation>
+        <type>noshadow</type>
+    </animation>
+  
+	<!-- *** LoD *** -->
+	<animation> 
+	<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>

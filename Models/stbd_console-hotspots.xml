@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+	<name>Stbd Console Hotspots</name>
+	<background>Aircraft/Lightning/Models/transparent.rgb</background>
+	<x>0</x>
+	<y>0</y>
+	<w>500</w>
+	<h>1000</h>
+	<y-offset>0</y-offset>
+	<instruments>
+		<instrument>
+			<x>250</x>
+			<y>500</y>
+			<w>500</w>
+			<h>1000</h>
+			<w-base>500</w-base>
+			<h-base>1000</h-base>
+			<layers>
+				<layer>
+					<name>background</name>
+					<texture>
+						<path>Aircraft/Lightning/Models/transparent.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+				<!--
+				<layer>
+					<name>grid</name>
+					<texture>
+						<path>Aircraft/Lightning/Models/hotspotgrid.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+				-->
+			</layers>
+
+
+			<actions>
+
+				<!-- Nav Lights up -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>410</y>
+					<w>50</w>
+					<h>20</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/nav_lights</property>
+						<step>-1</step>
+						<min>-1</min>
+						<max>1</max>
+					</binding>
+				</action>
+				<!-- Nav Lights down -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>390</y>
+					<w>50</w>
+					<h>20</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/nav_lights</property>
+						<step>1</step>
+						<min>-1</min>
+						<max>1</max>
+					</binding>
+				</action>
+				<!-- Taxi Lights toggle -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>320</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/taxi-lights[0]")</script>
+					</binding>
+				</action>
+
+				<!-- Iris Dull/Bright toggle -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>255</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/iris")</script>
+					</binding>
+				</action>
+
+				<!-- Master Camera toggle -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>185</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/camera")</script>
+					</binding>
+				</action>
+
+				<!-- Rain Disp. Up -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>130</y>
+					<w>50</w>
+					<h>20</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/rain_dispersal</property>
+						<step>-1</step>
+						<min>-1</min>
+						<max>1</max>
+					</binding>
+				</action>
+				<!-- Rain Disp. Down -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>100</y>
+					<w>50</w>
+					<h>20</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/rain_dispersal</property>
+						<step>1</step>
+						<min>-1</min>
+						<max>1</max>
+					</binding>
+				</action>
+
+				<!-- Pitot Heater (on off, standby) up -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>045</y>
+					<w>50</w>
+					<h>20</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/pitot_heater</property>
+						<step>-1</step>
+						<min>-1</min>
+						<max>1</max>
+					</binding>
+				</action>
+				<!-- Pitot Heater (on off, standby) down -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>015</y>
+					<w>50</w>
+					<h>20</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>controls/switches/pitot_heater</property>
+						<step>1</step>
+						<min>-1</min>
+						<max>1</max>
+					</binding>
+				</action>
+				
+				<!-- FCR - GW/Off toggle -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>015</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/gw_fcr")</script>
+					</binding>
+				</action>
+
+				<!-- WScreen Front - On/Off toggle -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>-60</y>
+					<w>60</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/wscreen_front")</script>
+					</binding>
+				</action>
+
+				<!-- WScreen Side - On/Off toggle -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>-60</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/wscreen_side")</script>
+					</binding>
+				</action>
+
+				<!-- Eng Start Master - On/Off toggle -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>-125</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/eng_start_master")</script>
+					</binding>
+				</action>
+				<!-- Inverter Normal / Standby toggle -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>-125</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/inverter_normal")</script>
+					</binding>
+				</action>
+
+				<!-- Ignition toggle -->
+				<action>
+					<button>0</button>
+					<x>080</x>
+					<y>-200</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/ignition")</script>
+					</binding>
+				</action>
+
+
+				<!-- Engine Start No1 -->
+				<action>
+					<button>0</button>
+					<x>85</x>
+					<y>-280</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/engine_start_0</property>
+						<value type="int">1</value>
+					</binding>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.AvpinPump(0)</script>
+					</binding>
+					<mod-up>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/switches/engine_start_0</property>
+							<value type="int">0</value>
+						</binding>
+					</mod-up>
+				</action>
+
+				<!-- Engine Start No2 -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>-280</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/engine_start_1</property>
+						<value type="int">1</value>
+					</binding>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.AvpinPump(1)</script>
+					</binding>
+					<mod-up>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/switches/engine_start_1</property>
+							<value type="int">0</value>
+						</binding>
+					</mod-up>
+				</action>
+
+				<!-- Cabin Air On/Off toggle -->
+				<action>
+					<button>0</button>
+					<x>80</x>
+					<y>-360</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/cabin_air")</script>
+					</binding>
+				</action>
+				<!-- Battery On/Off toggle -->
+				<action>
+					<button>0</button>
+					<x>150</x>
+					<y>-360</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/battery")</script>
+					</binding>
+				</action>
+
+			<!--   Autopilot Controls -->
+				<!-- Pitch toggle -->
+				<action>
+					<button>0</button>
+					<x>-200</x>
+					<y>5</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("sim/model/lightning/controls/flight/ap_pitch")</script>
+					</binding>
+				</action>
+				<!-- Roll& Yaw toggle -->
+				<action>
+					<button>0</button>
+					<x>-120</x>
+					<y>5</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("sim/model/lightning/controls/flight/ap_ry")</script>
+					</binding>
+				</action>
+				<!-- ILS toggle -->
+				<action>
+					<button>0</button>
+					<x>-60</x>
+					<y>5</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("sim/model/lightning/controls/flight/ap_ILS")</script>
+					</binding>
+				</action>
+				<!-- Glide toggle -->
+				<action>
+					<button>0</button>
+					<x>-60</x>
+					<y>-140</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("sim/model/lightning/controls/flight/ap_glide")</script>
+					</binding>
+				</action>
+				<!-- Supplies toggle -->
+				<action>
+					<button>0</button>
+					<x>-150</x>
+					<y>-140</y>
+					<w>50</w>
+					<h>40</h>
+					<binding>
+						<command>nasal</command>
+						<script>Lightning.propToggle("controls/switches/autopilot")</script>
+					</binding>
+				</action>
+			</actions>
+		</instrument>
+	</instruments>
+
+</PropertyList>
+

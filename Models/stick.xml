@@ -1,0 +1,64 @@
+<?xml version = '1.0' ?>
+<PropertyList>
+
+<!-- Control Column -->
+
+<path>stick.ac</path>
+
+	<animation>
+	<type>rotate</type>
+	<object-name>stick</object-name>
+		<property>controls/flight/elevator</property>
+		<factor>30</factor>
+		<center>
+			<x-m>3.21267</x-m>
+			<y-m>0</y-m>
+			<z-m>0.502281</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+	<type>rotate</type>
+	<object-name>stick</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>30</factor>
+		<center>
+			<x-m>3.21267</x-m>
+			<y-m>0</y-m>
+			<z-m>0.502281</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Brake Lever -->
+
+	<animation>
+	<type>rotate</type>
+	<object-name>brake_lever</object-name>
+		<property>controls/gear/brake-parking</property>
+		<factor>40</factor>
+		<center>
+			<x-m>3.2061</x-m>
+			<y-m>0.0248755</y-m>
+			<z-m>0.764313</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+	</animation>
+
+</PropertyList>

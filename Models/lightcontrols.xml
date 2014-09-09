@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!-- Cockpit lighting controls -->
+
+<PropertyList>
+
+	<path>lightcontrols.ac</path>
+
+	<!-- "Port" Knob -->
+	<animation>
+		<type>rotate</type>
+		<object-name>port_knob</object-name>
+		<property>controls/switches/instr-lights-port</property>
+		<factor>360</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0112822</x-m>
+			<y-m>-0.013694</y-m>
+			<z-m>0.019117</z-m>
+		</center>
+	</animation>
+	<!-- "Stbd" Knob -->
+	<animation>
+		<type>rotate</type>
+		<object-name>stbd_knob</object-name>
+		<property>controls/switches/instr-lights-stbd</property>
+		<factor>360</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0112822</x-m>
+			<y-m>0.00953546</y-m>
+			<z-m>-0.0213747</z-m>
+		</center>
+	</animation>
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

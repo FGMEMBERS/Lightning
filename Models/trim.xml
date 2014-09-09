@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+
+<!-- Trim and A/B position -->
+<PropertyList> 
+	<path>trim.ac</path>
+		<!-- Don't move if insufficient voltage -->
+		<condition>
+			<greater-than>
+   		    	<property>systems/electrical/outputs/control_pos_indicator</property>
+        		<value type="int">25</value>
+			</greater-than>
+		</condition>
+
+	<!-- Rudder Trim -->
+	<animation>
+		<!-- Don't move if insufficient voltage -->
+		<condition>
+			<greater-than>
+   		    	<property>systems/electrical/outputs/control_pos_indicator</property>
+        		<value type="int">25</value>
+			</greater-than>
+		</condition>
+
+		<type>rotate</type>
+		<object-name>trim-rud</object-name>
+		<property>controls/flight/rudder-trim</property>
+		<factor>-50</factor>
+		<center>
+			<x-m>0.00627251</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0257958</z-m>
+		</center>
+		<axis> 
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Elevator (tail) trim -->
+	<animation>
+		<!-- Don't move if insufficient voltage -->
+		<condition>
+			<greater-than>
+   		    	<property>systems/electrical/outputs/control_pos_indicator</property>
+        		<value type="int">25</value>
+			</greater-than>
+		</condition>
+
+		<type>rotate</type>
+		<object-name>trim-tail</object-name>
+		<property>controls/flight/elevator-trim</property>
+		<factor>40</factor>
+		<center>
+			<x-m>0.00487887</x-m>
+			<y-m>-0.0221798</y-m>
+			<z-m>0.00215656</z-m>
+		</center>
+		<axis> 
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Aileron Trim -->
+	<animation>
+		<!-- Don't move if insufficient voltage -->
+		<condition>
+			<greater-than>
+   		    	<property>systems/electrical/outputs/control_pos_indicator</property>
+        		<value type="int">25</value>
+			</greater-than>
+		</condition>
+
+		<type>rotate</type>
+		<object-name>trim-ail</object-name>
+		<property>controls/flight/aileron-trim</property>
+		<factor>50</factor>
+		<center>
+			<x-m>0.00627251</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.0284626</z-m>
+		</center>
+		<axis> 
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Airbrake Position -->
+	<animation>
+		<!-- Don't move if insufficient voltage -->
+		<condition>
+			<greater-than>
+   		    	<property>systems/electrical/outputs/control_pos_indicator</property>
+        		<value type="int">25</value>
+			</greater-than>
+		</condition>
+
+		<type>rotate</type>
+		<object-name>trim-airbrake</object-name>
+		<property>fdm/jsbsim/fcs/speedbrake-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-45</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>45</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0.00487887</x-m>
+			<y-m>0.0258304</y-m>
+			<z-m>-0.00206325</z-m>
+		</center>
+		<axis> 
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation> 
+	<type>material</type>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instr-lights-port</factor-prop>
+   			<red>0.03125</red>
+ 			<green>0.0089</green>
+			<blue>0.0089</blue>
+		</emission>
+	</animation>
+
+	<!-- Noshadow -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
+
+    <!-- *** LoD *** -->
+    <animation> 
+      <type>range</type>
+      <min-m>0</min-m>
+      <max-m>5</max-m>
+    </animation>
+  </PropertyList>

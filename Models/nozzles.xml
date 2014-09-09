@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<!-- Reheat Nozzles Position -->
+
+<PropertyList>
+
+ <path>nozzles.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>nozzle-Needle1</object-name>
+  <property>engines/engine[0]/n1</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>-90</dep></entry>
+   <entry><ind>27</ind><dep>-40</dep></entry>	<!-- Cruise -->
+   <entry><ind>96.5</ind><dep>90</dep></entry>	<!-- Max Dry (open) -->
+   <entry><ind>97</ind><dep>210</dep></entry>	<!-- Min Reheat -->
+   <entry><ind>102</ind><dep>90</dep></entry>	<!-- Max Reheat (closed) -->
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>-0.0173</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>nozzle-Needle2</object-name>
+  <property>engines/engine[1]/n1</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>-90</dep></entry>
+   <entry><ind>27</ind><dep>-40</dep></entry>	<!-- Cruise -->
+   <entry><ind>96.5</ind><dep>90</dep></entry>	<!-- Max Dry (open) -->
+   <entry><ind>97</ind><dep>210</dep></entry>	<!-- Min Reheat -->
+   <entry><ind>102</ind><dep>90</dep></entry>	<!-- Max Reheat (closed) -->
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0.0173</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Panel Lighting -->
+ <animation> 
+  <type>material</type>
+  <emission> 
+   <factor-prop>systems/electrical/outputs/instr-lights-stbd</factor-prop>
+   <red>0.03125</red>
+   <green>0.0089</green>
+   <blue>0.0089</blue>
+  </emission>
+ </animation>
+
+ <!-- Noshadow -->
+ <animation>
+  <type>noshadow</type>
+ </animation>
+ 
+<!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+</PropertyList>
