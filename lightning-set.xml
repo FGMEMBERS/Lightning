@@ -20,6 +20,21 @@ AJ MacLeod (aj-lists@adpetopensource.co.uk)
       <model type="int">3</model>
     </rating>
 
+    <tags>
+      <tag>fighter</tag>
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>coldwar</tag>
+      <tag>delta</tag>
+      <tag>supersonic</tag>
+      <tag>refuel</tag>
+      <tag>retractable-gear</tag>
+      <tag>afterburner</tag>
+      <tag>jet</tag>
+      <tag>single-engine</tag>
+    </tags>
+
     <flight-model>jsb</flight-model>
     <aero>lightning-f1a</aero>
 
